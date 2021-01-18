@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/bollicine.iml" filepath="$PROJECT_DIR$/.idea/bollicine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bollicineWeb/bollicineSito.iml" filepath="$PROJECT_DIR$/bollicineWeb/bollicineSito.iml" />
+    </modules>
+  </component>
+</project>
