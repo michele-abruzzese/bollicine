@@ -22,7 +22,7 @@ public class ProdottoControl extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        System.out.println("servlet");
         CarrelloBean cart = (CarrelloBean) req.getSession().getAttribute("cart");
         if(cart == null) {
             cart = new CarrelloBean();
@@ -35,7 +35,7 @@ public class ProdottoControl extends HttpServlet {
             throwables.printStackTrace();
         }
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CatalogoView.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/CatalogoView.jsp");
         dispatcher.forward(req, resp);
     }
 
