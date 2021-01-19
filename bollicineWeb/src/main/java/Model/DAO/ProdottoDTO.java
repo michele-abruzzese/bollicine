@@ -5,13 +5,24 @@ public class ProdottoDTO {
     String nome;
     String categoria;
     String descrizione;
+    //path e file name mandato dalla servelet
     String immagine;
     String tipo;
     int annata;
     float prezzo;
     int disponibilità;
+    //per leggere l'immagine in byte
+    byte[] img=null;
 
     public ProdottoDTO() {
+    }
+
+    public byte[] getImg() {
+        return img;
+    }
+
+    public void setImg(byte[] img) {
+        this.img = img;
     }
 
     public int getIdProdotto() {

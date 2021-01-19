@@ -8,5 +8,6 @@ import java.util.List;
 public interface ProdottoDAOIn {
     public void doSaveProdotto(ProdottoDTO prod) throws SQLException, IOException;
     public List<ProdottoDTO> doRetriveAll()throws SQLException;
-    public List<ProdottoDTO> doRetriveByCat()throws SQLException;
+    public List<ProdottoDTO> doRetriveByCat(String cat)throws SQLException;
+    public byte[] doRetriveImgById(int id)throws SQLException;
 }

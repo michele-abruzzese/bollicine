@@ -14,19 +14,18 @@ public class IndirizzoSpedDAO implements IndirizzoSpedDAOIn{
     public synchronized int doSaveIndirizzo(IndirizzoSpedDTO indirizzo) throws SQLException {
         PreparedStatement ps=null;
 
-        String query="INSERT INTO "+IndirizzoSpedDAO.TABLE_NAME+" (idIndirizzoSpedizione,Nome,Cognome,Indirizzo,CAP,Città,Provincia,Alias,idAccount) VALUES (?,?,?,?,?,?,?,?,?)";
+        String query="INSERT INTO "+IndirizzoSpedDAO.TABLE_NAME+" (Nome,Cognome,Indirizzo,CAP,Città,Provincia,Alias,idAccount) VALUES (?,?,?,?,?,?,?,?)";
 
         ps= con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
-        ps.setInt(1,indirizzo.getIdIndirizzo());
-        ps.setString(2,indirizzo.getNome());
-        ps.setString(3,indirizzo.getCognome());
-        ps.setString(4,indirizzo.getIndirizzo());
-        ps.setInt(5,indirizzo.getCap());
-        ps.setString(6,indirizzo.getCittà());
-        ps.setString(7,indirizzo.getProvincia());
-        ps.setString(8,indirizzo.getAlias());
-        ps.setInt(9,indirizzo.getIdAccount());
+        ps.setString(1,indirizzo.getNome());
+        ps.setString(2,indirizzo.getCognome());
+        ps.setString(3,indirizzo.getIndirizzo());
+        ps.setInt(4,indirizzo.getCap());
+        ps.setString(5,indirizzo.getCittà());
+        ps.setString(6,indirizzo.getProvincia());
+        ps.setString(7,indirizzo.getAlias());
+        ps.setInt(8,indirizzo.getIdAccount());
 
         ResultSet rs = ps.getGeneratedKeys();
         rs.next();
