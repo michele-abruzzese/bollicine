@@ -9,6 +9,7 @@
         <webroots>
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
+        <sourceRoots />
       </configuration>
     </facet>
   </component>
@@ -35,6 +36,7 @@
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+        <jarDirectory url="jar://$USER_HOME$/Desktop/mysql-connector-java-8.0.16.jar!/" recursive="false" />
       </library>
     </orderEntry>
   </component>
