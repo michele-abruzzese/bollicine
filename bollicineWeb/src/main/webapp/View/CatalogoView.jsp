@@ -2,13 +2,11 @@
 	pageEncoding="UTF-8"%>
 
 <%
-	System.out.println("sssssss");
-List<ProdottoDTO> products = (List<ProdottoDTO>)  request.getAttribute("products");
+Collection<?> products = (Collection<?>) request.getAttribute("products");
 if(products == null) {
-	response.sendRedirect("./Prodotto");
+	response.sendRedirect("/Prodotto");
 	return;
 }
-
 ProdottoDTO product = (ProdottoDTO) request.getAttribute("product");
 
 CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
