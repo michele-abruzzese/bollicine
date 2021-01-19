@@ -1,0 +1,1365 @@
+body {
+	background-color:#c0c0c0;
+	font-family:'Source Sans Pro';
+}
+
+div#header {
+	width:100%;
+	height:100%;
+	margin: 0 auto;
+}
+
+
+div#SingleProduct {
+	width:100%;
+	height:100%;
+	margin: 0 auto;
+	background-color:#ffffff;
+	margin-top:3px;
+	margin-bottom:3px;
+	display:table;
+	
+}
+
+div#Catalogo {
+	width:100%;
+	height:100%;
+	margin: 0 auto;
+	background-color:#ffffff;
+	margin-top:3px;
+	margin-bottom:3px;
+	
+}
+
+div#Login {
+	width:100%;
+	height:800px;
+	margin: 0 auto;
+	background-color:#ffffff;
+	margin-top:3px;
+	margin-bottom:3px;
+	overflow:hidden;
+	display:table;
+}
+
+
+/**ordini cliente**/
+div#ordiniCliente {
+	width:100%;
+	height:100%;
+	margin: 0 auto;
+	background-color:#ffffff;
+	margin-top:3px;
+	margin-bottom:3px;
+	min-height:600px;
+
+}
+
+#noOrdiniCliente {
+	margin:0 auto;
+	width:80%;
+	height:600px;
+	text-align:center;
+}
+
+#noOrdiniCliente h1 {
+	margin-top:0px;
+	padding-top:100px;
+}
+
+
+
+#contentOrdini {
+	margin:0 auto;
+	width:80%;
+	height:100%;
+	padding-bottom:20px;
+	text-align:center;
+}
+
+#contentOrdini h1 {
+	margin:0px;
+	padding:20px;
+}
+
+#contentOrdini table {
+	width:80%;
+	margin: 0 auto;
+	text-align:center;
+	border-collapse:collapse;
+}
+
+#contentOrdini td {
+	border-bottom:1px solid #c0c0c0;
+	padding:15px;
+}
+
+#contentOrdini th { 
+	background-color:#BF7333;
+	color:#fff;
+	border-bottom:1px solid #c0c0c0;
+	height: 25px;
+}
+
+#ordiniClientResp {
+	display:none;
+}
+
+@media screen and (max-width: 920px){
+	
+	.fa-info{
+		color:#fff;
+	}
+	
+	#infoOrder{
+		background:#BF7333;
+		border:0;
+	}
+	
+	#ordiniClientResp {
+		display:block;
+		width:100%;
+		padding-bottom: 25px;
+	}
+	
+	#numViaOrdine {
+		display:table;
+		width:100%;
+	}
+	
+	#dettOrder {
+		width:5%;
+		float:left;
+	}
+	
+	#numOrder {
+		width:40%;
+		float:left;
+	}
+	
+	#viaOrder {
+		width:50%;
+		float:left;
+	}
+	
+	#dataTotOrdine {
+		display:table;
+		width:100%;
+	}
+	
+	#dataOrder {
+		width:50%;
+		float:left;
+	}
+	
+	#totOrder {
+		width:50%;
+		float:left;
+	}
+	#tableOrdini{
+		display:none;
+	}
+}
+/**fine ordini cliente**/
+
+/**dettaglio ordine cliente**/
+div#dettaglioOrdine {
+	width:100%;
+	height:100%;
+	margin: 0 auto;
+	background-color:#ffffff;
+	margin-top:3px;
+	margin-bottom:3px;
+	min-height:600px;
+
+}
+
+#contentDettaglio {
+	margin:0 auto;
+	width:80%;
+	height:100%;
+	padding-bottom:20px;
+	text-align:center;
+}
+
+#contentDettaglio h1 {
+	margin:0px;
+	padding:20px;
+}
+#contentDettaglio table {
+	width:100%;
+	margin: 0 auto;
+	text-align:center;
+	border-collapse:collapse;
+}
+
+#contentDettaglio td {
+	border-bottom:1px solid #c0c0c0;
+}
+
+#contentDettaglio th { 
+	background-color:#BF7333;
+	color:#fff;
+	border-bottom:1px solid #c0c0c0;
+	height: 25px;
+}
+
+#respDettaglio{
+	display:none;
+}
+
+.BtnFeed {
+	background: transparent;
+    border: 0;
+}
+
+#votoFeed {
+	margin-bottom:10px;
+}
+
+#buttonVoteFeed {
+	background: #BF7333;
+    border: 0px;
+    color: #fff;
+}
+/*
+@media screen and (max-width: 610px){
+	
+	#respDettaglio {
+		display:block;
+		width:100%;
+		
+	}
+	
+	#imgDescProd {
+		display:table;
+		width:100%;
+	}
+	
+	#imgProdOr {
+		width:50%;
+		float:left;
+	}
+	
+	#descProdOr {
+		width:40%;
+		float:left;
+		padding-top:40px;
+		
+	}
+	
+	#feed {
+		width:10%;
+		float:left;
+		padding-top:40px;
+	}
+	
+	#qtIvaPrzTot {
+		display:table;
+		width:100%;
+	}
+	
+	#qtProdOr {
+		width:25%;
+		float:left;
+	}
+	
+	#ivaProdOr {
+		width:25%;
+		float:left;
+	}
+	
+	#przProdOr {
+		width:25%;
+		float:left;
+	}
+	
+	#totProdOr {
+		width:25%;
+		float:left;
+	}
+	#tableDettaglio {
+		display:none;
+	}
+	
+	
+}
+*/
+/**dettaglio ordine cliente**/
+
+/**carrello**/
+
+div#Cart {
+	width:100%;
+	height:100%;
+	margin: 0 auto;
+	background-color:#ffffff;
+	margin-top:3px;
+	margin-bottom:3px;
+	text-align:center;
+}
+
+#noProductCart {
+	margin:0 auto;
+	width:80%;
+	height:600px;
+	text-align:center;
+}
+
+#noProductCart h1 {
+	margin-top:0px;
+	padding-top:100px;
+}
+
+
+#imgNoProduct img{
+	max-width:100%;
+	max-height:100%;
+}
+
+#contentCart {
+	margin:0 auto;
+	width:80%;
+	height:100%;
+}
+
+#elementCart {
+	margin: 0 auto;
+	width:100%;
+	display:inline-block;
+	border-bottom:solid 1px #c0c0c0;
+	padding-bottom:5px;
+	padding-top:5px;
+}
+
+#imgCart {
+	float:left;
+}
+
+#nomeCart {
+	float:left;
+	line-height:104px;
+	margin-left:20px;
+}
+
+#formQt{
+	line-height:104px;
+}
+@media screen and (max-width: 660px) {
+	#imgCart {
+		float:left;
+		width:50%
+	}
+
+	div#nomeCart {
+		float:right;
+		width:50%;
+		line-height:104px;
+		margin:0;
+	}
+	
+	#responsive {
+		width:100%;
+		margin:0 auto;
+		display:table;
+	}
+	
+	div#prezzoProdCart {
+		width:25%;
+		float:left;
+		margin-right:0px;
+	}
+	
+	div#quantitaCart {
+		width:50%;
+		float:left;
+		margin-right:0px;
+	}	
+	
+	#aggiornaQt {
+		float:left;
+		margin-top:43px;
+		font-size: 12px;
+		width: 75px;
+    	height: 22px
+	}
+	
+	div#deleteCart {
+		width:25%;
+		float:left;
+		margin-right:0px;
+	}
+	
+}
+
+@media screen and (max-width: 500px) {
+	#imgCart {
+		float:left;
+		width:50%
+	}
+
+	div#nomeCart {
+		float:right;
+		width:50%;
+		line-height:104px;
+		margin:0;
+	}
+	
+	#responsive {
+		width:100%;
+		margin:0 auto;
+		display:table;
+	}
+	
+	div#prezzoProdCart {
+		width:50%;
+		float:left;
+		margin-right:0px;
+		line-height: inherit;
+	}
+	
+	div#quantitaCart {
+		width:100%;
+		float:left;
+		margin-right:0px;
+		
+	}	
+	
+	#formQt{
+		display: inline-block;
+	}
+	
+	#aggiornaQt {
+		margin-top: 43px;
+		font-size: 12px;
+		margin-right:20px;
+		width: 75px;
+    	height: 22px;
+	}
+	
+	div#deleteCart {
+		width:50%;
+		float:right;
+		margin-right:0px;
+		line-height: inherit;
+	}
+	
+}
+
+#nomeCart h3 {
+	
+    margin: 0;
+}
+
+#deleteCart {
+	float:right;
+	line-height:104px;
+	margin-right:20px;
+}
+
+#quantitaCart {
+	float:right;
+	height:104px;
+	margin-right:20px;
+}
+
+#selectCart {
+	background-color:#c0c0c0;;	
+}
+.buttonCart {
+	background-color:#BF7333;
+	color:#fff;
+	width:140px;
+	height:30px;
+	border:0px;
+	font-size:14px;
+}
+
+#aggiornaQt {
+	width:85px;
+}
+
+#qtCart {
+	width:158px;
+}
+#quantitaCart form{
+	line-height:104px;
+}
+
+#prezzoProdCart {
+	float:right;
+	line-height:104px;	
+	margin-right:20px;
+}
+
+
+
+.fa-trash{
+	color:#c0c0c0;
+}
+
+#checkoutCart {
+	padding-bottom:10px;
+}
+/**fine carrello**/
+
+/** indirizzi dal carrello**/
+
+div#cartIndirizzi {
+	width:100%;
+	height:100%;
+	margin: 0 auto;
+	background-color:#ffffff;
+	margin-top:3px;
+	margin-bottom:3px;
+	text-align:center;
+	min-height:600px;
+}
+
+.intestNonRegi {
+	padding-top:0px;
+}
+
+div#cartIndirizzi h3 {
+	margin:0px;
+	padding:20px;
+	text-align:center;
+}
+
+.selectIndirizzi:hover .dropdown_indirizzi {
+    display: block;
+}
+
+.selectIndirizzi {
+    display: inline-block;
+    position:relative;
+    background-color:#c0c0c0;
+    width: 200px;
+    margin-bottom: 70px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+#aliasIndirizzo {
+	color:#fff;
+}
+
+.dropdown_indirizzi {
+    display: none;
+    position: absolute;
+    background-color: #c0c0c0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width:200px
+}
+
+/* The Modal (background) */
+#myBtn {
+	background-color:#BF7333;
+	color:#fff;
+	height:30px;
+	border:0px;
+	font-size:14px;
+	margin-bottom:20px;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 50px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  width: 50%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border:solid 1px #BF7333;
+  color: #000;
+  text-align: center;
+}
+
+#formModal {
+	display:inline-grid;
+}
+
+#buttonFormModal {
+	background-color:#BF7333;
+	color:#fff;
+	width:140px;
+	height:30px;
+	border:0px;
+	font-size:14px;
+	margin:20px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.buttonCeckout {
+	background-color:#BF7333;
+	color:#fff;
+	width:140px;
+	height:30px;
+	border:0px;
+	font-size:14px;
+	margin-bottom:20px;
+}
+/**fine cartIndirizzi**/
+
+/**pagina protetta**/
+
+div#protectedPage {
+	width:100%;
+	height:100%;
+	margin: 0 auto;
+	background-color:#ffffff;
+	margin-top:3px;
+	margin-bottom:3px;
+	display:table;
+	padding-bottom: 15px;
+	
+}
+
+div#contenutoProtected{
+	margin:0 auto;
+	width:80%;
+	height:100%;
+}
+
+
+#contenutoProtected table {
+	border-collapse:collapse;
+}
+
+#contenutoProtected th {
+	background-color:#BF7333;
+	color:#fff;
+	border:1px solid #c0c0c0;
+	height: 25px;
+}
+
+#contenutoProtected td {
+	border:1px solid #c0c0c0;
+}
+
+ @media only screen and (max-width: 1170px) { 
+     /* Forza la tabella a non comportarsi come una normale tabella */ 
+  
+ 	.no-more-tables table,  
+ 	.no-more-tables thead,  
+ 	.no-more-tables tbody,  
+ 	.no-more-tables th,  
+ 	.no-more-tables td,  
+ 	.no-more-tables tr {  
+ 		display: block;  
+ 	} 
+  
+ 	/* Nasconde le intestazioni della tabella */ 
+  
+ 	.no-more-tables thead tr {  
+ 		position: absolute; 
+ 		top:-9999px; 
+ 		left:-9999px; 
+ 	} 
+   
+ 	.no-more-tables tr { border: 1px solid #ccc; } 
+  
+ 	.no-more-tables td {  
+ 		/* Inserisce il comportamento come una riga */ 
+  
+ 		border: none; 
+ 		border-bottom: 1px solid #eee;  
+ 		position: relative; 
+ 		padding-left: 50%;  
+ 		white-space: normal; 
+ 		text-align:left; 
+ 	} 
+  
+ 	.no-more-tables td:before {  
+ 		/* Inserisce il comportamento come un'intestazione di tabella */ 
+  
+ 		position: absolute; 
+ 		/* I valori top/left agiscono come padding */ 
+  
+ 		top: 0; 
+ 		left: 6px; 
+ 		width: 45%;  
+ 		padding-right: 10px;  
+ 		white-space: nowrap; 
+ 		text-align:left; 
+ 		font-weight: bold; 
+ 	} 
+  
+ 	/* Aggiunge l'etichetta ai dati della tabella */ 
+  
+ 	.no-more-tables td:before { content: attr(data-title); } 
+ 	
+ 	
+ } 
+ 
+ 
+/** scritta sopra la tabella**/
+
+div#contenutoProtected h1 {
+	padding-top:10px;
+}
+
+.intestazione{
+	padding-top:8px;
+	margin-top:0px;
+	text-align:center;
+}
+
+div#protectedPage table {
+	width:100%;
+	margin: 0 auto;
+	text-align:center;
+	box-shadow: 0px 9px 17px 0px rgba(0,0,0,0.6);
+}
+
+#InsertUpdate {
+	margin:0 auto;
+	margin-top:15px;
+	width:100%;
+	display:table;
+	padding-bottom:15px;
+	box-shadow: 0px 9px 17px 0px rgba(0,0,0,0.6);
+}
+
+#formInsert {
+	width:45%;
+	float:left;
+	padding-left: 10px;
+}
+
+.h2Form {
+	background:#BF7333;
+	color:#fff;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+#formUpdate {
+	text-align:right;
+	width:45%;
+	float:right;
+	padding-right: 10px;
+}
+
+.buttonProtected {
+	background-color:#BF7333;
+	color:#fff;
+	border:0px;
+}
+
+@media screen and (max-width: 830px) {
+	#InsertUpdate {
+		margin:0 auto;
+		margin-top:15px;
+		width:100%;
+		padding-bottom:15px;
+		box-shadow: 0px 9px 17px 0px rgba(0,0,0,0.6);
+		text-align: center;
+	}
+	
+	#formInsert {
+		width:100%;
+		padding:0px;
+	}
+	
+	#formUpdate {
+		width:100%;
+		padding:0px;
+		text-align: center;
+	}
+}
+/**fine pagina protetta**/
+
+/**ordini amministratore**/
+div#ordiniAdministrador {
+	width:100%;
+	height:100%;
+	margin: 0 auto;
+	background-color:#ffffff;
+	margin-top:3px;
+	margin-bottom:3px;
+	display:table;
+	min-height:600px;
+}
+
+div#contenutoOrdiniAdm{
+	margin:0 auto;
+	width:80%;
+	height:100%;
+	text-align:center;
+	padding-bottom:5px;
+}
+
+div#contenutoOrdiniAdm form{
+	padding-bottom:20px;
+}
+
+#contenutoOrdiniAdm table {
+	border-collapse:collapse;
+	width:80%;
+	margin: 0 auto;
+	text-align:center;
+	box-shadow: 0px 9px 17px 0px rgba(0,0,0,0.6);
+}
+
+#contenutoOrdiniAdm th {
+	background-color:#BF7333;
+	color:#fff;
+	border:1px solid #c0c0c0;
+	height: 25px;
+}
+
+#contenutoOrdiniAdm td {
+	border:1px solid #c0c0c0;
+}
+
+/**fine protectedOrder**/
+
+/**login**/
+.intest {
+	text-align:center;
+}
+
+#contentLogin {
+	width:70%;
+	max-width:1000px;
+	height:80%;
+	margin:0 auto;
+	display: table;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  	border:solid 1px #c0c0c0;
+  	background-image: url("./imgs/background-museo-entrata.jpg");
+  	color:#fff;
+}
+
+#contentLogin label {
+	margin-top:3px;
+}
+.inputTranspar {
+	background: none;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 15px;
+    color:#fff;
+}
+
+#showPw {
+	background: none;
+    border: 0;
+    margin-bottom: 15px;
+  	color:#fff;
+}
+
+#showPwInModal {
+	background: none;
+    border: 0;
+    margin-bottom: 15px;
+}
+#createAccount {
+	float:left;
+	width:50%;
+}
+
+#registrazione {
+	width:80%;
+	margin:0 auto;
+	display: table;
+}
+
+#datiAnagrafici {
+	float:left;
+	width:50%;
+	
+}
+
+#datiLogin {
+	float:right;
+	width:50%;
+	text-align:right;
+}
+
+.buttonRegi{
+	background-color:#BF7333;
+	color:#fff;
+	width:40%;
+	height:30px;
+	border:0px;
+	font-size:16px;
+	margin-top:12px;
+}
+
+#nuovoCliente {
+	display:none;
+}
+@media screen and (max-width: 1295px){
+	#createAccount {
+		width:100%;
+	}
+	div#formLogin {
+		width:100%;
+	}
+	
+	div#form {
+		width:80%;
+	}
+}
+
+@media screen and (max-width: 670px){
+	#createAccount {
+		display:none;
+	}
+	
+	div#form {
+		width:100%;
+	}
+	
+	#nuovoCliente {
+		display:block;
+		text-align: center;
+		padding-top: 15px;
+	}
+	
+	#BtnRegi {
+		background:transparent;
+		border: 1px solid #fff;
+    	color: #fff;
+	}
+}
+#errorLogin {
+	color: #c02230;
+	border-color: #c02230;
+    background-color: #F5DAD3;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    margin-top:15px;
+}
+
+#errorLogin p {
+	margin:0px;
+}
+
+#formLogin {
+	float:right;
+	width:50%;
+	
+}
+
+#form {
+	text-align:center;
+	width:50%;
+	margin:0 auto;
+	margin-top: 40px;
+}
+
+.h4 {
+	margin-bottom:0px;
+	
+}
+
+.textArea {
+	margin-top:15px;
+	height:30px;
+	width:70%;
+	background: none;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    color:#fff;
+}
+
+.buttonLogin {
+	margin-top:40px;
+	background-color:#BF7333;
+	color:#fff;
+	width:35%;
+	height:30px;
+	border:0px;
+	font-size:16px;
+}
+/**fine eleementi login**/
+
+/*catalogo*/
+#videoDiv {
+	width:100%;	
+	pointer-events: none;
+}
+
+#imgCat {
+	width:100%;
+}
+
+#imgCat img {
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	width:100%;
+}
+
+#video {
+	width:100%;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.column:hover {
+	box-shadow:0px 0px 15px rgba(0,0,0,0.22);
+}
+.column {
+	text-align:center;
+	float:left;
+	width:33%;
+	padding:10px;
+	box-sizing:border-box;
+	margin-top:15px;
+}
+
+@media screen and (max-width: 1200px) {
+	.column{
+		text-align:center;
+		float:left;
+		width:50%;
+		padding:10px;
+		box-sizing:border-box;
+		margin-top:15px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.column{
+		text-align:center;
+		float:left;
+		width:100%;
+		padding:10px;
+		box-sizing:border-box;
+		margin-top:15px;
+	}
+}
+.column img {
+	max-width:100%;
+	max-height:423px;
+}
+
+.column h1 {
+	margin-bottom:0px;
+}
+
+.column h2 {
+	margin-top:5px;
+}
+
+.row:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+
+div#imgProdotto {
+	float:left;
+	width:50%;
+	background-color:#ffffff;
+	text-align:center;
+}
+
+
+div#imgProdotto img {
+	width:100%;
+	max-width:500px;
+	max-height:480px;
+}
+
+div#descrizioneProd {
+	text-align:left;
+	float:right;
+	width:50%;
+	background-color:#ffffff;
+}
+
+#feedback {
+	background:#fff;
+	text-align:center;
+}
+
+#feedback p {
+	padding-left: 10px;
+}
+
+.fa-star {
+	color: #BF7333;
+}
+
+#votComm {
+    border-top: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
+    border-radius: 15px;
+    margin-bottom: 2px;
+}
+
+#feedback h2 {
+	margin-top:0px;
+}
+
+
+@media screen and (max-width: 600px) {
+	div#imgProdotto {
+		width:100%;
+		background-color:#ffffff;
+		text-align:center;
+	}
+	
+	div#descrizioneProd {
+		text-align:center;
+		width:100%;
+		background-color:#ffffff;
+		height:300px;
+	}
+}
+/**selezionare la quantità da aggiungere al carrello**/
+
+
+#prezzo {
+	color:#BF7333;
+}
+
+#buttonAddCart {
+	background-color:#BF7333;
+	color:#fff;
+	width: 180px;
+    height: 30px;
+	border:0px;
+	font-size:16px;
+}
+
+/*bottone aggiungi al carrello in catalogo*/
+#buttonAddCartCatal {
+	background-color:#BF7333;
+	color:#fff;
+	height:30px;
+	border:0px;
+	font-size:14px;
+}
+
+#header img {
+	width:100%;
+}
+
+#nav {
+	width:100%;
+	min-height:53px;
+	background-color:#BF7333; 
+
+}
+
+#bars {
+	display:none;
+	background:transparent;
+	border:0;
+	padding-top: 12px;
+}
+
+#closeMenu {
+	display:none;
+	background:transparent;
+	border:0;
+	padding-top: 12px;
+}
+
+.fa-times {
+	color:#fff;
+}
+
+.fa-bars {
+	color:#fff;
+}
+
+#contentNav{
+	display:block; 
+}
+
+#nav a	{
+	color:#fff;
+ 	padding:14px 16px;
+	display:inline-block;
+	text-decoration:none;
+	font-size:20px;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 1;
+}
+
+.dropdown {
+	float:right;
+    display: inline-block;
+    position:relative;
+    margin-right:10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #c0c0c0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    min-width:160px;
+}
+
+
+
+/** quando si passa con il mouse sugli elementi**/
+.navElement:hover {
+	background:#DFB740;
+}
+
+/*menu a tendina per elementi nella nav*/
+.dropdownNav:hover .dropdown-contentNav {
+    display: block;
+    z-index: 1;
+}
+
+.dropdownNav {
+    display: inline-block;
+    position:relative;
+}
+
+.dropdown-contentNav {
+    display: none;
+    position: absolute;
+    background-color: #c0c0c0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width:160px;
+}
+
+.btnDropdown {
+	color: #fff;
+    padding: 14px 16px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+    border: 0;
+    background: transparent;
+}
+
+.btnDropdown:hover {
+	background:#DFB740;
+}
+
+
+#footer {
+	width:100%;
+	margin: 0 auto;
+	background-color:#BF7333; 
+	text-align: center;
+	color:#fff;
+}
+
+#footer p {
+	padding-top: 14px;
+    padding-bottom:14px;
+    font-size:20px;
+    margin:0px;
+}
+
+/**fattura**/
+div#fattura {
+	width:100%;
+	height:100%;
+	margin: 0 auto;
+	background-color:#ffffff;
+	margin-top:3px;
+	margin-bottom:3px;
+	min-height:600px;
+
+}
+#contentFattura {
+	margin:0 auto;
+	width:95%;
+	height:100%;
+	padding-bottom:20px;
+	text-align:center;
+}
+
+#intestFattura {
+	margin:0 auto;	
+}
+
+#intestFattura img {
+	width:95%;
+}
+
+#intestFattura h3{
+	margin-bottom:0px;
+}
+
+#intestFattura p{
+	margin-top:0px;
+	margin-bottom:3px;
+}
+#dati {
+	width:95%;
+	margin:0 auto;
+	display:table;
+}
+#datiCliente {
+	width:50%;
+	float:left;
+	text-align:left;
+}
+
+#datiSpedizione {
+	width:50%;
+	float:right;
+	text-align:right;
+}
+
+#contentFattura table {
+	width:95%;
+	margin: 0 auto;
+	text-align:center;
+	border-collapse:collapse;
+	clear:none;
+	margin-top: 20px;
+	
+}
+
+#contentFattura td {
+	border-bottom:1px solid #c0c0c0;
+	padding:15px;
+}
+
+#contentFattura th { 
+	background-color:#BF7333;
+	color:#fff;
+	border-bottom:1px solid #c0c0c0;
+	height: 25px;
+}
+
+@media print {
+	.buttStamp {
+		display:none;
+	}
+}
+/****/

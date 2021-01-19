@@ -1,0 +1,88 @@
+package Beans;
+
+import Model.DAO.ProdottoDTO;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class CarrelloBean {
+    private List<ProdottoDTO> products;
+    int[] q;
+
+
+
+    public CarrelloBean() {
+        products = new ArrayList<ProdottoDTO>();
+        q= new int[200];
+    }
+
+    public void addProduct(ProdottoDTO product, int quantita) {
+        products.add(product);
+        int i=product.getIdProdotto();
+        q[i]=quantita;
+    }
+
+    public void deleteProduct(ProdottoDTO product) {
+        for(ProdottoDTO prod : products) {
+            if(prod.getIdProdotto() == product.getIdProdotto()) {
+                products.remove(prod);
+                break;
+            }
+        }
+    }
+
+    public boolean getIfExists(ProdottoDTO product) {
+        boolean flag = false;
+        for(ProdottoDTO prod : products) {
+            if(product.getIdProdotto()==prod.getIdProdotto()) {
+                flag=true;
+            }
+        }
+        return flag;//se true allora presente
+    }
+
+    public List<ProdottoDTO> getProducts() {
+        return  products;
+    }
+
+    public int getQ(int id) {
+        return q[id];
+    }
+
+    public void updateQ(int id,int quantita) {
+        q[id]=quantita;
+    }
+
+    public void setQ(int id,int quantita) {
+        for(ProdottoDTO prod : products) {
+            if(prod.getIdProdotto()==id && prod.getDisponibilità()>=q[id]+quantita) {
+                q[id]=q[id]+quantita;
+            }
+        }
+
+    }
+
+    public double getTotal() {
+
+        double total=0;
+        for(ProdottoDTO prod : products) {
+            total+=prod.getPrezzo()*q[prod.getIdProdotto()];
+        }
+
+        return total;
+    }
+
+    @Override
+    public String toString() {
+        return "Cart [products=" + products + ", q=" + Arrays.toString(q) + "]";
+    }
+
+    public boolean noProduct() {
+        if(products.isEmpty()) {
+            return true;
+        }
+        return false;
+    }
+
+}
