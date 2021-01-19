@@ -12,16 +12,6 @@ public class AccountDTO {
     public AccountDTO() {
     }
 
-    public AccountDTO(String nome, String cognome, String email, String password, String stato, String tipo) {
-        this.id=-1;
-        this.nome = nome;
-        this.cognome = cognome;
-        this.email = email;
-        this.password = password;
-        this.stato = stato;
-        this.tipo = tipo;
-    }
-
     public int getId() {
         return id;
     }

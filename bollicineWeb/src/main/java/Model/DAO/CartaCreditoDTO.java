@@ -11,17 +11,7 @@ public class CartaCreditoDTO {
 
     public CartaCreditoDTO() {
     }
-
-    public CartaCreditoDTO(String nome, String cognome, int numero, int ccv, String scandenza, int idAccount) {
-        this.idCartaCredito=-1;
-        this.nome = nome;
-        this.cognome = cognome;
-        this.numero = numero;
-        this.ccv = ccv;
-        this.scandenza = scandenza;
-        this.idAccount = idAccount;
-    }
-
+    
     public int getIdCartaCredito() {
         return idCartaCredito;
     }

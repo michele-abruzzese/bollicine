@@ -11,7 +11,7 @@ public class CartaCreditoDAO implements CartaCreditoDAOIn{
     private static final String TABLE_NAME = "cartadicredito";
 
     @Override
-    public int doSaveCartaCredito(CartaCreditoDTO cc)throws SQLException {
+    public synchronized int doSaveCartaCredito(CartaCreditoDTO cc)throws SQLException {
         PreparedStatement ps = null;
 
         String query="INSERT INTO "+CartaCreditoDAO.TABLE_NAME+" (Nome,Cognome,Numero,CCV,Scadenza,idAccount) VALUES (?,?,?,?,?,?)";
@@ -29,11 +29,11 @@ public class CartaCreditoDAO implements CartaCreditoDAOIn{
         rs.next();
         int key= rs.getInt(1);
 
-        return 0;
+        return key;
     }
 
     @Override
-    public List<CartaCreditoDTO> doRetriveByAccount(int idAccount)throws SQLException {
+    public synchronized List<CartaCreditoDTO> doRetriveByAccount(int idAccount)throws SQLException {
         List <CartaCreditoDTO> carte=new ArrayList<CartaCreditoDTO>();
 
         PreparedStatement ps = null;
