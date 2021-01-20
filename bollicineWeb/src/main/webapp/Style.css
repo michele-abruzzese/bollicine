@@ -95,7 +95,7 @@ div#ordiniCliente {
 }
 
 #contentOrdini th { 
-	background-color:#BF7333;
+	background-color: #9c1a1a;
 	color:#fff;
 	border-bottom:1px solid #c0c0c0;
 	height: 25px;
@@ -112,7 +112,7 @@ div#ordiniCliente {
 	}
 	
 	#infoOrder{
-		background:#BF7333;
+		background: #9c1a1a;
 		border:0;
 	}
 	
@@ -198,7 +198,7 @@ div#dettaglioOrdine {
 }
 
 #contentDettaglio th { 
-	background-color:#BF7333;
+	background-color: #9c1a1a;
 	color:#fff;
 	border-bottom:1px solid #c0c0c0;
 	height: 25px;
@@ -218,7 +218,7 @@ div#dettaglioOrdine {
 }
 
 #buttonVoteFeed {
-	background: #BF7333;
+	background: #9c1a1a;
     border: 0px;
     color: #fff;
 }
@@ -467,7 +467,7 @@ div#Cart {
 	background-color:#c0c0c0;;	
 }
 .buttonCart {
-	background-color:#BF7333;
+	background-color: #9c1a1a;
 	color:#fff;
 	width:140px;
 	height:30px;
@@ -553,7 +553,7 @@ div#cartIndirizzi h3 {
 
 /* The Modal (background) */
 #myBtn {
-	background-color:#BF7333;
+	background-color: #9c1a1a;
 	color:#fff;
 	height:30px;
 	border:0px;
@@ -581,7 +581,7 @@ div#cartIndirizzi h3 {
   padding: 20px;
   width: 50%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  border:solid 1px #BF7333;
+  border:solid 1px #9c1a1a;
   color: #000;
   text-align: center;
 }
@@ -591,7 +591,7 @@ div#cartIndirizzi h3 {
 }
 
 #buttonFormModal {
-	background-color:#BF7333;
+	background-color: #9c1a1a;
 	color:#fff;
 	width:140px;
 	height:30px;
@@ -616,7 +616,7 @@ div#cartIndirizzi h3 {
 }
 
 .buttonCeckout {
-	background-color:#BF7333;
+	background-color: #9c1a1a;
 	color:#fff;
 	width:140px;
 	height:30px;
@@ -652,7 +652,7 @@ div#contenutoProtected{
 }
 
 #contenutoProtected th {
-	background-color:#BF7333;
+	background-color: #9c1a1a;
 	color:#fff;
 	border:1px solid #c0c0c0;
 	height: 25px;
@@ -753,7 +753,7 @@ div#protectedPage table {
 }
 
 .h2Form {
-	background:#BF7333;
+	background: #9c1a1a;
 	color:#fff;
 	padding-left: 3px;
 	padding-right: 3px;
@@ -766,7 +766,7 @@ div#protectedPage table {
 }
 
 .buttonProtected {
-	background-color:#BF7333;
+	background-color: #9c1a1a;
 	color:#fff;
 	border:0px;
 }
@@ -827,7 +827,7 @@ div#contenutoOrdiniAdm form{
 }
 
 #contenutoOrdiniAdm th {
-	background-color:#BF7333;
+	background-color: #9c1a1a;
 	color:#fff;
 	border:1px solid #c0c0c0;
 	height: 25px;
@@ -903,7 +903,7 @@ div#contenutoOrdiniAdm form{
 }
 
 .buttonRegi{
-	background-color:#BF7333;
+	background-color: #9c1a1a;
 	color:#fff;
 	width:40%;
 	height:30px;
@@ -993,7 +993,7 @@ div#contenutoOrdiniAdm form{
 
 .buttonLogin {
 	margin-top:40px;
-	background-color:#BF7333;
+	background-color: #9c1a1a;
 	color:#fff;
 	width:35%;
 	height:30px;
@@ -1006,6 +1006,10 @@ div#contenutoOrdiniAdm form{
 #videoDiv {
 	width:100%;	
 	pointer-events: none;
+}
+
+#videoDiv img {
+	max-width: 100%;
 }
 
 #imgCat {
@@ -1106,7 +1110,7 @@ div#descrizioneProd {
 }
 
 .fa-star {
-	color: #BF7333;
+	color: #9c1a1a;
 }
 
 #votComm {
@@ -1139,11 +1143,11 @@ div#descrizioneProd {
 
 
 #prezzo {
-	color:#BF7333;
+	color: #9c1a1a;
 }
 
 #buttonAddCart {
-	background-color:#BF7333;
+	background-color: #9c1a1a;
 	color:#fff;
 	width: 180px;
     height: 30px;
@@ -1153,7 +1157,7 @@ div#descrizioneProd {
 
 /*bottone aggiungi al carrello in catalogo*/
 #buttonAddCartCatal {
-	background-color:#BF7333;
+	background-color: #9c1a1a;
 	color:#fff;
 	height:30px;
 	border:0px;
@@ -1167,7 +1171,7 @@ div#descrizioneProd {
 #nav {
 	width:100%;
 	min-height:53px;
-	background-color:#BF7333; 
+	background-color: #000000;
 
 }
 
@@ -1271,7 +1275,7 @@ div#descrizioneProd {
 #footer {
 	width:100%;
 	margin: 0 auto;
-	background-color:#BF7333; 
+	background-color: #000000;
 	text-align: center;
 	color:#fff;
 }
@@ -1351,7 +1355,7 @@ div#fattura {
 }
 
 #contentFattura th { 
-	background-color:#BF7333;
+	background-color: #9c1a1a;
 	color:#fff;
 	border-bottom:1px solid #c0c0c0;
 	height: 25px;
