@@ -21,7 +21,7 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link href="../Style.css?ts=<?=time()?>&quot" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.css">
+	<link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.css" type="text/css">
 	<title>Catalogo</title>
 </head>
 
@@ -121,7 +121,7 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 				<%-- immagine del prodotto, cliccandoci sopra andiamo nella pagina del prodotto in dettaglio --%>
 				
 				<a href="./SingleProductControl?id=<%= bean.getIdProdotto() %>">
-					<img src="./GetImmagineControl?id=<%=bean.getIdProdotto() %>" onerror="this.src='../imgs/nophoto.png'">
+					<img src="./GetImmagine?id=<%=bean.getIdProdotto() %>" onerror="this.src='../imgs/nophoto.png'">
 				</a>		
 				<h1><%=bean.getNome() %></h1>
 				<h2><%=bean.getPrezzo() %> €</h2>

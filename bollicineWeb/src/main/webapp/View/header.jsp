@@ -14,8 +14,8 @@
 </head>
 <body onload="myFun()" onresize="myFun()">
 	<div id="header">
-		<img src="../imgs/bollicine%20logo.png">
-		
+		<img src="../imgs/bollicine logo.png">
+
 		<div id="nav">
 			<button id="bars" onclick="myOpen()"><i class="fa fa-bars fa-2x" ></i></button>
 			<button id="closeMenu" onclick="myClose()"><i class="fas fa-times fa-2x"></i></button>

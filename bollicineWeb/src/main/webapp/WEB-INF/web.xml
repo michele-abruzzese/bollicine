@@ -15,4 +15,13 @@
         <url-pattern>/Prodotto</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>GetImmagineControl</servlet-name>
+        <servlet-class>Control.GetImmagineControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetImmagineControl</servlet-name>
+        <url-pattern>/GetImmagine</url-pattern>
+    </servlet-mapping>
+
 </web-app>
