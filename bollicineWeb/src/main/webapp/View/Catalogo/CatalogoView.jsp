@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <%
-	System.out.println("sssssss");
+
 List<ProdottoDTO> products = (List<ProdottoDTO>)  request.getAttribute("products");
 if(products == null) {
 	response.sendRedirect("./Prodotto");
@@ -20,19 +20,19 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link href="./Style.css?ts=<?=time()?>&quot" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.css" type="text/css">
+	<link href="../../Style.css?ts=<?=time()?>&quot" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../../fontawesome-free-5.13.0-web/css/all.css" type="text/css">
 	<title>Catalogo</title>
 </head>
 
 <body>
-	<%@ include file="header.jsp" %>
+	<%@ include file="../header.jsp" %>
 	<div id="Catalogo">
 		<%
-			if(request.getParameter("cat")==null && request.getParameter("tag")==null){
+			if(request.getParameter("cat")==null){
 		%>
-			<div id="videoDiv">
-				<img src="./imgs/paesaggio2.jpg">
+			<div id="imgCat">
+				<img src="${pageContext.servletContext.contextPath}/imgs/paesaggio2.jpg">
 			</div>
 			
 		<%
@@ -140,7 +140,7 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 		</div>
 		
 	</div>
-	<%@include file="footer.html"%>
+	<%@include file="../footer.html"%>
 	
 	<script>
 		function addCart(idProd) {

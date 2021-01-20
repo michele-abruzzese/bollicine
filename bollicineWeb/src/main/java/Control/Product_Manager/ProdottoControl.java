@@ -1,6 +1,7 @@
-package Control;
+package Control.Product_Manager;
 
 import Beans.CarrelloBean;
+import Beans.ProdottoBean;
 import Model.DAO.ProdottoDAO;
 import Model.DAO.ProdottoDAOIn;
 
@@ -15,7 +16,7 @@ import java.sql.SQLException;
 
 public class ProdottoControl extends HttpServlet {
 
-    static ProdottoDAOIn model=new ProdottoDAO();
+    static ProdottoBean bean= new ProdottoBean();
     public ProdottoControl() {
         super();
     }
@@ -30,12 +31,12 @@ public class ProdottoControl extends HttpServlet {
         }
         req.removeAttribute("products");
         try {
-            req.setAttribute("products", model.doRetriveAll());
+            req.setAttribute("products", bean.doRetriveAll());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/CatalogoView.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Catalogo/CatalogoView.jsp");
         dispatcher.forward(req, resp);
     }
 

@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <welcome-file-list>
-        <welcome-file>/View/CatalogoView.jsp</welcome-file>
+        <welcome-file>/View/Catalogo/CatalogoView.jsp</welcome-file>
     </welcome-file-list>
     <servlet>
         <servlet-name>ProdottoControl</servlet-name>
-        <servlet-class>Control.ProdottoControl</servlet-class>
+        <servlet-class>Control.Product_Manager.ProdottoControl</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ProdottoControl</servlet-name>
@@ -22,6 +22,15 @@
     <servlet-mapping>
         <servlet-name>GetImmagineControl</servlet-name>
         <url-pattern>/GetImmagine</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CategorieControl</servlet-name>
+        <servlet-class>Control.Product_Manager.CategorieConrol</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CategorieControl</servlet-name>
+        <url-pattern>/Categorie</url-pattern>
     </servlet-mapping>
 
 </web-app>

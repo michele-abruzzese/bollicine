@@ -1,5 +1,6 @@
 package Control;
 
+import Beans.ProdottoBean;
 import Model.DAO.ProdottoDAO;
 import Model.DAO.ProdottoDAOIn;
 
@@ -12,7 +13,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class GetImmagineControl extends HttpServlet {
-    static ProdottoDAOIn model=new ProdottoDAO();
+    static ProdottoBean bean=new ProdottoBean();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -21,7 +22,7 @@ public class GetImmagineControl extends HttpServlet {
         {
             byte[] bt=null;
             try {
-                bt = model.doRetriveImgById(id);
+                bt = bean.doRetriveImgById(id);
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
