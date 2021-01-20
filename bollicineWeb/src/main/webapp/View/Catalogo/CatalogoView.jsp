@@ -38,75 +38,28 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 		<%
 			}else if(request.getParameter("cat")!=null){
 				
-				if(request.getParameter("cat").equalsIgnoreCase("br")){
+				if(request.getParameter("cat").equalsIgnoreCase("bi")){
 		%>
 				<div id="imgCat">
-					<img src="./imgs/bracciali.jpg">
+					<img src="${pageContext.servletContext.contextPath}/imgs/vino-bianco.jpg">
 				</div>
 		<%
-				}else if(request.getParameter("cat").equalsIgnoreCase("an")){
+				}else if(request.getParameter("cat").equalsIgnoreCase("ro")){
 		%>
 				<div id="imgCat">
-					<img src="./imgs/anelli.jpg">
+					<img src="${pageContext.servletContext.contextPath}/imgs/vino-rosso.jpg">
 				</div>
 		<%
-				}else if(request.getParameter("cat").equalsIgnoreCase("col")){
+				}else if(request.getParameter("cat").equalsIgnoreCase("spu")){
 		%>
 				<div id="imgCat">
-					<img src="./imgs/collane.jpg">
-				</div>
-		<%
-				}else if(request.getParameter("cat").equalsIgnoreCase("ore")){
-		%>
-				<div id="imgCat">
-					<img src="./imgs/orecchini.jpg">
-				</div>
-		<%
-				}else if(request.getParameter("cat").equalsIgnoreCase("orol")){
-		%>
-				<div id="imgCat">
-					<img src="./imgs/orologi.jpg">
-				</div>
-		<%
-				}else if(request.getParameter("cat").equalsIgnoreCase("dia")){
-		%>		
-				<div id="imgCat">
-					<img src="./imgs/diamanti.jpg">
-				</div>
-		<% 
-				}
-				
-			}else if(request.getParameter("tag")!=null){
-				if(request.getParameter("tag").equalsIgnoreCase("Compleanno")){
-		%>	
-				<div id="imgCat">
-					<img src="./imgs/compleanno.jpg">
-				</div>
-		<% 		
-				}else if(request.getParameter("tag").equalsIgnoreCase("Matrimonio")){
-					
-		%>
-				<div id="imgCat">
-					<img src="./imgs/matrimonio.jpg">
-				</div>
-		<% 
-				}else if(request.getParameter("tag").equalsIgnoreCase("FPapa")){
-					
-		%>
-				<div id="imgCat">
-					<img src="./imgs/Fpapà.png">
-				</div>
-		<% 
-				}else if(request.getParameter("tag").equalsIgnoreCase("FMamma")){
-					
-		%>
-				<div id="imgCat">
-					<img src="./imgs/Fmamma.jpg">
+					<img src="${pageContext.servletContext.contextPath}/imgs/spumante.jpg">
 				</div>
 		<%
 				}
 			}
 		%>
+
 		<div class="row">
 			<%
 				if (products != null && products.size() != 0) {
@@ -118,10 +71,10 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 			<div class="column">
 				<%-- immagine del prodotto, cliccandoci sopra andiamo nella pagina del prodotto in dettaglio --%>
 				
-				<a href="./SingleProductControl?id=<%= bean.getIdProdotto() %>">
+				<a href="./ProdottoSingolo?id=<%= bean.getIdProdotto() %>">
 					<img src="./GetImmagine?id=<%=bean.getIdProdotto() %>" onerror="this.src='../imgs/nophoto.png'">
 				</a>		
-				<h1><%=bean.getNome() %></h1>
+				<h2><%=bean.getNome() %></h2>
 				<h2><%=bean.getPrezzo() %> €</h2>
 				
 				

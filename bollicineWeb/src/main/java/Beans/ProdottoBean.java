@@ -39,4 +39,8 @@ public class ProdottoBean {
 
         return null;
     }
+
+    public ProdottoDTO doRetriveById(int id) throws SQLException {
+        return model.doRetriveById(id);
+    }
 }

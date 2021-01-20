@@ -33,4 +33,13 @@
         <url-pattern>/Categorie</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ProdottoSingoloControl</servlet-name>
+        <servlet-class>Control.Product_Manager.ProdottoSingoloControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProdottoSingoloControl</servlet-name>
+        <url-pattern>/ProdottoSingolo</url-pattern>
+    </servlet-mapping>
+
 </web-app>

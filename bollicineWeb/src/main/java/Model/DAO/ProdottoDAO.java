@@ -119,4 +119,29 @@ public class ProdottoDAO implements ProdottoDAOIn{
         }
         return bt;
     }
+
+    @Override
+    public ProdottoDTO doRetriveById(int id) throws SQLException {
+        ProdottoDTO prod=new ProdottoDTO();
+
+        String query="SELECT * FROM "+ProdottoDAO.TABLE_NAME+" WHERE idProdotto=?";
+
+        PreparedStatement st= con.prepareStatement(query);
+        st.setInt(1,id);
+
+        ResultSet rs= st.executeQuery();
+
+        while(rs.next()){
+            prod.setIdProdotto(rs.getInt("idProdotto"));
+            prod.setNome(rs.getString("Nome"));
+            prod.setCategoria(rs.getString("Categoria"));
+            prod.setDescrizione(rs.getString("Descrizione"));
+            prod.setTipo(rs.getString("Tipo"));
+            prod.setAnnata(rs.getInt("Annata"));
+            prod.setPrezzo(rs.getFloat("Prezzo"));
+            prod.setDisponibilità(rs.getInt("Disponibilità"));
+        }
+
+        return prod;
+    }
 }
