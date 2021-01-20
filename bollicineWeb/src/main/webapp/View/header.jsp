@@ -8,13 +8,13 @@
 	<title>head</title>
 	<!-- per responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 ">
-	<link href="../Style.css?ts=<?=time()?>&quot" rel="stylesheet" type="text/css">
+	<link href="./Style.css?ts=<?=time()?>&quot" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.css">
+	<link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.css">
 </head>
 <body onload="myFun()" onresize="myFun()">
 	<div id="header">
-		<img src="../imgs/bollicine logo.png">
+		<img src="./imgs/bollicine%20logo.jpg">
 
 		<div id="nav">
 			<button id="bars" onclick="myOpen()"><i class="fa fa-bars fa-2x" ></i></button>

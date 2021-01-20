@@ -20,8 +20,8 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link href="../Style.css?ts=<?=time()?>&quot" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.css" type="text/css">
+	<link href="./Style.css?ts=<?=time()?>&quot" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.css" type="text/css">
 	<title>Catalogo</title>
 </head>
 
@@ -32,9 +32,7 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 			if(request.getParameter("cat")==null && request.getParameter("tag")==null){
 		%>
 			<div id="videoDiv">
-				<video id="video" autoplay loop muted="muted">
-					<source src="./imgs/video2.mp4" type="video/mp4">
-				</video>
+				<img src="./imgs/paesaggio2.jpg">
 			</div>
 			
 		<%
