@@ -54,11 +54,10 @@
                 </div>
 
                 <div id="prezzoProdCart">
-                    <%int i= beancart.getIdProdotto();%>
                     <%=beancart.getPrezzo()*cart.getQ(beancart) %> €
                 </div>
                 <div id="deleteCart">
-                    <a href="product?action=deleteC&id=<%=beancart.getIdProdotto()%>"><i class="fas fa-trash"></i></a>
+                    <a href="${pageContext.servletContext.contextPath}/DeleteFromCart?id=<%=beancart.getIdProdotto()%>"><i class="fas fa-trash"></i></a>
                 </div>
             </div>
         </div>
@@ -81,7 +80,7 @@
 
     <div id="noProductCart">
         <h1>Nessun prodotto nel carrello</h1>
-        <div id="imgNoProduct"><img src="../../imgs/cartempty.jpg"></div>
+        <div id="imgNoProduct"><img src="${pageContext.servletContext.contextPath}/imgs/cartempty.jpg"></div>
     </div>
     <%
         }

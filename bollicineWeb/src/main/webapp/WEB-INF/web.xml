@@ -51,4 +51,13 @@
         <url-pattern>/AddInCart</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>DeleteFromCartControl</servlet-name>
+        <servlet-class>Control.Product_Manager.DeteleFomCartControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteFromCartControl</servlet-name>
+        <url-pattern>/DeleteFromCart</url-pattern>
+    </servlet-mapping>
+
 </web-app>

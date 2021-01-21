@@ -51,4 +51,10 @@ public class ProdottoBean {
         }else cart.addProduct(prod,qt);
 
     }
+
+    public void deleteProductFromCart(int id, CarrelloBean cart)throws SQLException {
+        ProdottoDTO prod= model.doRetriveById(id);
+
+        cart.deleteProduct(prod);
+    }
 }
