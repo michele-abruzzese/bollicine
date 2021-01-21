@@ -15,7 +15,8 @@
     Email:<br>
     <input type="text"  required><br>
     Password:<br>
-    <input type="password" required>
+    <input type="password" required><br>
+    <input type="submit">
 </form>
 </body>
 </html>
