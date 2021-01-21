@@ -81,7 +81,7 @@
             %>
             <h2 class="intest">Hai già un account?</h2>
             <div id="form">
-                <form action="Login" method="post">
+                <form action="/Login" method="post">
 
                     <h4 class="h4">Username</h4>
                     <input id="usernameControlLog" onfocusout="controlUsernameLog()" class="textArea" type="text" name="username" placeholder="username" autocomplete="off" required><br>
@@ -94,10 +94,10 @@
                 </form>
             </div>
 
-
+<%--
             <div id="nuovoCliente">
-                <!-- bottone per aprire l'inserimento di un nuovo cliente -->
-               <%-- Non hai un account? <button id="BtnRegi">registrati</button>--%>
+            <!-- bottone per aprire l'inserimento di un nuovo cliente -->
+               &lt;%&ndash; Non hai un account? <button id="BtnRegi">registrati</button>&ndash;%&gt;
 
                 <!-- The Modal -->
                 <div id="myModal" class="modal">
@@ -140,7 +140,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div>--%>
 
         </div>
 
