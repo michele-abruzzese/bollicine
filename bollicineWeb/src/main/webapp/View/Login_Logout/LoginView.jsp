@@ -11,6 +11,11 @@
     <title>Login</title>
 </head>
 <body>
-
+<form>
+    Email:<br>
+    <input type="text"  required><br>
+    Password:<br>
+    <input type="password" required>
+</form>
 </body>
 </html>
