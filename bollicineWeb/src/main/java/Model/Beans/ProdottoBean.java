@@ -57,4 +57,8 @@ public class ProdottoBean {
 
         cart.deleteProduct(prod);
     }
+
+    public void updateQtProductFromCart(int id,int qt,CarrelloBean cart)throws SQLException{
+        cart.updateQ(id,qt);
+    }
 }

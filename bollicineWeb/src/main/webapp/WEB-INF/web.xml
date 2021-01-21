@@ -60,4 +60,13 @@
         <url-pattern>/DeleteFromCart</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>UpdateFromCartControl</servlet-name>
+        <servlet-class>Control.Product_Manager.UpdateFromCartControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateFromCartControl</servlet-name>
+        <url-pattern>/UpdateFromCart</url-pattern>
+    </servlet-mapping>
+
 </web-app>

@@ -34,6 +34,8 @@ public class DeteleFomCartControl extends HttpServlet {
             throwables.printStackTrace();
         }
 
+        req.removeAttribute("id");
+
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Carrello/CarrelloView.jsp");
         dispatcher.forward(req, resp);
     }

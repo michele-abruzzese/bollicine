@@ -42,11 +42,10 @@
 
 
                 <div id="quantitaCart">
-                    <form id="formQt" action="product">
+                    <form id="formQt" action="${pageContext.servletContext.contextPath}/UpdateFromCart">
 
-                        <input type="hidden" name="action" value="upCart">
                         <input type="hidden" name="id" value="<%=beancart.getIdProdotto()%>">
-                        <input id="qtCart" type="number" name="quantita" min="1" max="<%=beancart.getDisponibilità()%>" required placeholder="già nel carrello <%=cart.getQ(beancart)%> max <%=beancart.getDisponibilità()%>">
+                        <input id="qtCart" type="number" name="quantita" min="1" max="<%=beancart.getDisponibilità()%>"  placeholder="già nel carrello <%=cart.getQ(beancart)%> max <%=beancart.getDisponibilità()%>" required>
 
                         <button id="aggiornaQt"  class="buttonCart" type="submit"><i class="far fa-edit"></i> Quantità</button>
                     </form>

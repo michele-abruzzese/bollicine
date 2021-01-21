@@ -11,11 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-//servlet per aggiungere prodotti al carrello
-public class AddInCartControl extends HttpServlet {
+public class UpdateFromCartControl extends HttpServlet {
     static ProdottoBean bean= new ProdottoBean();
 
-    public AddInCartControl() {
+    public UpdateFromCartControl() {
         super();
     }
 
@@ -31,21 +30,14 @@ public class AddInCartControl extends HttpServlet {
         int quantita = Integer.parseInt(req.getParameter("quantita"));
 
         try {
-            //mando al bean l'id del prodotto, la quantità da aggiungere e il carrello
-            bean.addProductInCart(id,quantita,cart);
-
-            req.removeAttribute("products");
-            req.setAttribute("products",bean.doRetriveAll());
-            req.setAttribute("inserito",Boolean.TRUE);
+            bean.updateQtProductFromCart(id,quantita,cart);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
 
-        req.removeAttribute("id");
-        req.removeAttribute("quantita");
-
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Catalogo/CatalogoView.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Carrello/CarrelloView.jsp");
         dispatcher.forward(req, resp);
+
     }
 
     @Override
