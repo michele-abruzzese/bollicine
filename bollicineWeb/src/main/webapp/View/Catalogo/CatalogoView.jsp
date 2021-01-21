@@ -73,7 +73,7 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 				<%-- immagine del prodotto, cliccandoci sopra andiamo nella pagina del prodotto in dettaglio --%>
 				
 				<a href="./ProdottoSingolo?id=<%= bean.getIdProdotto() %>">
-					<img src="./GetImmagine?id=<%=bean.getIdProdotto() %>" onerror="this.src='../imgs/nophoto.png'">
+					<img src="./GetImmagine?id=<%=bean.getIdProdotto() %>" onerror="this.src='${pageContext.servletContext.contextPath}/imgs/nophoto.png'">
 				</a>		
 				<h2><%=bean.getNome() %></h2>
 				<h2><%=bean.getPrezzo() %> €</h2>
@@ -137,7 +137,7 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 
 		function addCart(idProd) {
 			var qt=document.getElementById("qtAddCart").value;
-			var url="product?action=addC&quantita="+qt+"&id="+idProd;
+			var url="AddInCart?quantita="+qt+"&id="+idProd;
 			var xhr = new XMLHttpRequest();
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState == 4 && xhr.status==200) {

@@ -2,8 +2,6 @@ package Control.Product_Manager;
 
 import Beans.CarrelloBean;
 import Beans.ProdottoBean;
-import Model.DAO.ProdottoDAO;
-import Model.DAO.ProdottoDAOIn;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,25 +11,32 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-
-public class ProdottoControl extends HttpServlet {
-
+//servlet per aggiungere prodotti al carrello
+public class AddInCartControl extends HttpServlet {
     static ProdottoBean bean= new ProdottoBean();
-    public ProdottoControl() {
+
+    public AddInCartControl() {
         super();
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         CarrelloBean cart = (CarrelloBean) req.getSession().getAttribute("cart");
         if(cart == null) {
             cart = new CarrelloBean();
             req.getSession().setAttribute("cart", cart);
         }
-        req.removeAttribute("products");
+
+        int id = Integer.parseInt(req.getParameter("id"));
+        int quantita = Integer.parseInt(req.getParameter("quantita"));
+
         try {
-            req.setAttribute("products", bean.doRetriveAll());
+            //mando al bean l'id del prodotto, la quantità da aggiungere e il carrello
+            bean.addProductInCart(id,quantita,cart);
+
+            req.removeAttribute("products");
+            req.setAttribute("products",bean.doRetriveAll());
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

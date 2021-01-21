@@ -42,4 +42,13 @@
         <url-pattern>/ProdottoSingolo</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddInCartControl</servlet-name>
+        <servlet-class>Control.Product_Manager.AddInCartControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddInCartControl</servlet-name>
+        <url-pattern>/AddInCart</url-pattern>
+    </servlet-mapping>
+
 </web-app>

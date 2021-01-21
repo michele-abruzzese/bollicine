@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class ProdottoBean {
-
     static ProdottoDAOIn model=new ProdottoDAO();
 
     public List<ProdottoDTO> doRetriveAll() throws SQLException {
@@ -42,5 +41,14 @@ public class ProdottoBean {
 
     public ProdottoDTO doRetriveById(int id) throws SQLException {
         return model.doRetriveById(id);
+    }
+
+    public void addProductInCart(int id, int qt, CarrelloBean cart) throws SQLException {
+        ProdottoDTO prod= model.doRetriveById(id);
+
+        if(cart.getIfExists(prod)){
+            cart.setQ(id,qt);
+        }else cart.addProduct(prod,qt);
+
     }
 }
