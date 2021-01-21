@@ -32,7 +32,7 @@
         <div id="elementCart">
 
             <div id="imgCart">
-                <img src="./GwtImmagine?<%=beancart.getIdProdotto()%>" onerror="this.src='../../imgs/nophoto.png'" style="width:100px">
+                <img src="./GetImmagine?id=<%=beancart.getIdProdotto() %>"  style="width: 100px">
             </div>
 
             <div id="nomeCart">
@@ -81,7 +81,7 @@
 
     <div id="noProductCart">
         <h1>Nessun prodotto nel carrello</h1>
-        <div id="imgNoProduct"><img src="../../imgs/cartempty.png"></div>
+        <div id="imgNoProduct"><img src="../../imgs/cartempty.jpg"></div>
     </div>
     <%
         }

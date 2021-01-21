@@ -14,7 +14,7 @@
 </head>
 <body onload="myFun()" onresize="myFun()">
 	<div id="header">
-		<img src="./imgs/bollicine%20logo.jpg">
+		<img src="${pageContext.servletContext.contextPath}/imgs/bollicine%20logo.jpg">
 
 		<div id="nav">
 			<button id="bars" onclick="myOpen()"><i class="fa fa-bars fa-2x" ></i></button>
@@ -25,7 +25,7 @@
 				//navbar per utente non registrato
 				if((Boolean) session.getAttribute("adminRoles")==null){
 			%>
-	  			<a class="navElement" href="${pageContext.servletContext.contextPath}/Catalogo/CatalogoView.jsp">Catalogo</a>
+	  			<a class="navElement" href="${pageContext.servletContext.contextPath}/View/Catalogo/CatalogoView.jsp">Catalogo</a>
 	  			
 	  			<div class="dropdownNav">
 	  				<a class="navElement">Categorie <i class="fas fa-caret-down"></i></a>

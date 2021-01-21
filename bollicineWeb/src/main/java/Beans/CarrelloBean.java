@@ -1,12 +1,16 @@
 package Beans;
 
+import Model.DAO.ProdottoDAO;
+import Model.DAO.ProdottoDAOIn;
 import Model.DAO.ProdottoDTO;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class CarrelloBean {
+    ProdottoDAOIn prodDao=new ProdottoDAO();
     private List<ProdottoDTO> products;
     int[] q;
 
@@ -46,8 +50,10 @@ public class CarrelloBean {
         return  products;
     }
 
-    public int getQ(int id) {
-        return q[id];
+    public int getQ(int id) throws SQLException {
+        if(getIfExists(prodDao.doRetriveById(id))) {
+            return q[id];
+        }else return 0;
     }
 
     public void updateQ(int id,int quantita) {

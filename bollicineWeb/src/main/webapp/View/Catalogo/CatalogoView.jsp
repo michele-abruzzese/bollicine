@@ -86,12 +86,23 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 									<!-- Modal content -->
 									<div class="modal-content">
 										<span class="close">&times;</span>
+
+										<%
+											//se nel carrello la quantità del prodotto è minore della disponibilità allora posso aggiugerne altri
+
+											if(cart.getQ(bean.getIdProdotto())<bean.getDisponibilità()) {
+										%>
 										<h3>Inserisci la quantità da aggiungere al carrello</h3>
-
 										<input type="hidden" name="id" value="<%=bean.getIdProdotto()%>">
-										<input id="qtAddCart" type="number" name="quantita" min="1" required max="<%=bean.getDisponibilità()%>" placeholder="max <%=bean.getDisponibilità()%>">
+										<input class="qtAddCart" type="number" name="quantita" min="1" required max="<%=bean.getDisponibilità()-cart.getQ(bean.getIdProdotto())%>" placeholder="max <%=bean.getDisponibilità()-cart.getQ(bean.getIdProdotto())%>">
 										<input id="buttonAddCartModal" onclick="addCart(<%=bean.getIdProdotto()%>)" type="submit" value="aggiungi al carrello">
-
+										<%
+											}else{
+										%>
+										<h3>Hai raggiunto la disponibilità massima!</h3>
+										<%
+											}
+										%>
 									</div>
 								</div>
 					</div>
@@ -112,9 +123,10 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 	
 
 	<script>
+		var num=0;
 		function myfunction(name) {
 			var a=name.replace(/[^\d]+/g, '');
-			var num=Number(a);
+			num=Number(a);
 
 			var modal = document.getElementsByClassName("modal")[num];
 
@@ -133,10 +145,13 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 					modal.style.display = "none";
 				}
 			}
-		}
 
+
+		}
 		function addCart(idProd) {
-			var qt=document.getElementById("qtAddCart").value;
+			var arr= document.getElementsByClassName("qtAddCart");
+			var qt = arr[num].value;
+
 			var url="AddInCart?quantita="+qt+"&id="+idProd;
 			var xhr = new XMLHttpRequest();
 			xhr.onreadystatechange = function() {
@@ -147,6 +162,8 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 			xhr.open('GET', url, true);
 			xhr.send(null);
 		}
+
+
 	</script>
 </body>
 </html>
