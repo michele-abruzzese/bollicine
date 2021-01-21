@@ -1,7 +1,7 @@
 package Control.Product_Manager;
 
-import Beans.CarrelloBean;
-import Beans.ProdottoBean;
+import Model.Beans.CarrelloBean;
+import Model.Beans.ProdottoBean;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -36,7 +36,7 @@ public class AddInCartControl extends HttpServlet {
 
             req.removeAttribute("products");
             req.setAttribute("products",bean.doRetriveAll());
-
+            req.setAttribute("inserito",Boolean.TRUE);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

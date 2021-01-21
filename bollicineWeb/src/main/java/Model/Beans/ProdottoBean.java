@@ -1,4 +1,4 @@
-package Beans;
+package Model.Beans;
 
 import Model.DAO.ProdottoDAO;
 import Model.DAO.ProdottoDAOIn;

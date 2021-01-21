@@ -3,12 +3,13 @@
 
 <%
     ProdottoDTO product= (ProdottoDTO) request.getAttribute("product");
+    CarrelloBean cart = (CarrelloBean) request.getSession().getAttribute("cart");
 %>
 
 
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,Model.DAO.ProdottoDTO"%>
+<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,Model.DAO.ProdottoDTO,Model.Beans.CarrelloBean"%>
 
 <head>
     <title>prodotto</title>
@@ -37,12 +38,24 @@
                 <!-- Modal content -->
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <h3>Inserisci la quantità da aggiungere al carrello</h3>
+                    <%
+                        //se nel carrello la quantità del prodotto è minore della disponibilità allora posso aggiugerne altro
+                        if(cart.getQ(product)<product.getDisponibilità()) {
+                    %>
+                        <h3>Inserisci la quantità da aggiungere al carrello</h3>
 
-                    <input type="hidden" name="id" value="<%=product.getIdProdotto()%>">
-                    <input id="qtAddCart" type="number" name="quantita" min="1" required max="<%=product.getDisponibilità()%>" placeholder="max <%=product.getDisponibilità()%>">
-                    <input id="buttonAddCartModal" onclick="addCart(<%=product.getIdProdotto()%>)" type="submit" value="aggiungi al carrello">
-
+                        <form action="./AddInCart">
+                            <input type="hidden" name="id" value="<%=product.getIdProdotto()%>">
+                            <input class="qtAddCart" type="number" name="quantita" min="1"  max="<%=product.getDisponibilità()-cart.getQ(product)%>" placeholder="max <%=(product.getDisponibilità()-cart.getQ(product))%>" required>
+                            <input id="buttonAddCartModal" type="submit" value="aggiungi al carrello">
+                        </form>
+                    <%
+                        }else{
+                    %>
+                    <h3>Hai raggiunto la disponibilità massima!</h3>
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </div>
@@ -81,19 +94,6 @@
         }
     }
 </script>
-<script>
-    function addCart(idProd) {
-        var qt=document.getElementById("qtAddCart").value;
-        var url="AddInCart?quantita="+qt+"&id="+idProd;
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && xhr.status==200) {
-                alert("prodotto aggiunto al carrello");
-            }
-        }
-        xhr.open('GET', url, true);
-        xhr.send(null);
-    }
-</script>
+
 </body>
 </html>

@@ -1,4 +1,4 @@
-package Beans;
+package Model.Beans;
 
 import Model.DAO.ProdottoDAO;
 import Model.DAO.ProdottoDAOIn;
@@ -50,9 +50,9 @@ public class CarrelloBean {
         return  products;
     }
 
-    public int getQ(int id) throws SQLException {
-        if(getIfExists(prodDao.doRetriveById(id))) {
-            return q[id];
+    public int getQ(ProdottoDTO prod) throws SQLException {
+        if(getIfExists(prod)) {
+            return q[prod.getIdProdotto()];
         }else return 0;
     }
 

@@ -8,7 +8,7 @@
 %>
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,Beans.CarrelloBean,Model.DAO.ProdottoDTO"%>
+<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,Model.Beans.CarrelloBean,Model.DAO.ProdottoDTO"%>
 
 
 <head>
@@ -32,7 +32,7 @@
         <div id="elementCart">
 
             <div id="imgCart">
-                <img src="./GetImmagine?id=<%=beancart.getIdProdotto() %>"  style="width: 100px">
+                <img src="${pageContext.servletContext.contextPath}/GetImmagine?id=<%=beancart.getIdProdotto() %>"  style="width: 100px">
             </div>
 
             <div id="nomeCart">
@@ -46,7 +46,7 @@
 
                         <input type="hidden" name="action" value="upCart">
                         <input type="hidden" name="id" value="<%=beancart.getIdProdotto()%>">
-                        <input id="qtCart" type="number" name="quantita" min="1" max="<%=beancart.getDisponibilità()%>" required placeholder="già nel carrello <%=cart.getQ(beancart.getIdProdotto())%> max <%=beancart.getDisponibilità()%>">
+                        <input id="qtCart" type="number" name="quantita" min="1" max="<%=beancart.getDisponibilità()%>" required placeholder="già nel carrello <%=cart.getQ(beancart)%> max <%=beancart.getDisponibilità()%>">
 
                         <button id="aggiornaQt"  class="buttonCart" type="submit"><i class="far fa-edit"></i> Quantità</button>
                     </form>
@@ -55,7 +55,7 @@
 
                 <div id="prezzoProdCart">
                     <%int i= beancart.getIdProdotto();%>
-                    <%=beancart.getPrezzo()*cart.getQ(i) %> €
+                    <%=beancart.getPrezzo()*cart.getQ(beancart) %> €
                 </div>
                 <div id="deleteCart">
                     <a href="product?action=deleteC&id=<%=beancart.getIdProdotto()%>"><i class="fas fa-trash"></i></a>

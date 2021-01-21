@@ -1,9 +1,7 @@
 package Control.Product_Manager;
 
-import Beans.CarrelloBean;
-import Beans.ProdottoBean;
-import Model.DAO.ProdottoDAO;
-import Model.DAO.ProdottoDAOIn;
+import Model.Beans.CarrelloBean;
+import Model.Beans.ProdottoBean;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

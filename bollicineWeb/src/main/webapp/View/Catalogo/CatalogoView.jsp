@@ -9,14 +9,13 @@ if(products == null) {
 	return;
 }
 
-ProdottoDTO product = (ProdottoDTO) request.getAttribute("product");
 
-CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
+CarrelloBean cart = (CarrelloBean) request.getSession().getAttribute("cart");
 %>
 
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,Model.DAO.ProdottoDTO,Beans.CarrelloBean"%>
+<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,Model.DAO.ProdottoDTO,Model.Beans.CarrelloBean"%>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -25,7 +24,7 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 	<title>Catalogo</title>
 </head>
 
-<body>
+<body onload="functionLoad()">
 	<%@ include file="../header.jsp" %>
 	<div id="Catalogo">
 		<%
@@ -88,14 +87,15 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 										<span class="close">&times;</span>
 
 										<%
-											//se nel carrello la quantità del prodotto è minore della disponibilità allora posso aggiugerne altri
-
-											if(cart.getQ(bean.getIdProdotto())<bean.getDisponibilità()) {
+											//se nel carrello la quantità del prodotto è minore della disponibilità allora posso aggiugerne altro
+											if(cart.getQ(bean)<bean.getDisponibilità()) {
 										%>
-										<h3>Inserisci la quantità da aggiungere al carrello</h3>
-										<input type="hidden" name="id" value="<%=bean.getIdProdotto()%>">
-										<input class="qtAddCart" type="number" name="quantita" min="1" required max="<%=bean.getDisponibilità()-cart.getQ(bean.getIdProdotto())%>" placeholder="max <%=bean.getDisponibilità()-cart.getQ(bean.getIdProdotto())%>">
-										<input id="buttonAddCartModal" onclick="addCart(<%=bean.getIdProdotto()%>)" type="submit" value="aggiungi al carrello">
+											<h3>Inserisci la quantità da aggiungere al carrello</h3>
+											<form action="./AddInCart">
+												<input type="hidden" name="id" value="<%=bean.getIdProdotto()%>">
+												<input class="qtAddCart" type="number" name="quantita" min="1"  max="<%=bean.getDisponibilità()-cart.getQ(bean)%>" placeholder="max <%=(bean.getDisponibilità()-cart.getQ(bean))%>" required>
+												<input id="buttonAddCartModal" type="submit" value="aggiungi al carrello">
+											</form>
 										<%
 											}else{
 										%>
@@ -148,21 +148,15 @@ CarrelloBean cart = (CarrelloBean) request.getAttribute("cart");
 
 
 		}
-		function addCart(idProd) {
-			var arr= document.getElementsByClassName("qtAddCart");
-			var qt = arr[num].value;
 
-			var url="AddInCart?quantita="+qt+"&id="+idProd;
-			var xhr = new XMLHttpRequest();
-			xhr.onreadystatechange = function() {
-				if (xhr.readyState == 4 && xhr.status==200) {
-					alert("prodotto aggiunto al carrello");
-				}
+		function functionLoad(){
+			var resp=<%=request.getAttribute("inserito")%>
+
+			if(resp!=null && resp){
+				alert("prodotto aggiunto al carrello");
+				<%request.removeAttribute("inserito");%>
 			}
-			xhr.open('GET', url, true);
-			xhr.send(null);
 		}
-
 
 	</script>
 </body>

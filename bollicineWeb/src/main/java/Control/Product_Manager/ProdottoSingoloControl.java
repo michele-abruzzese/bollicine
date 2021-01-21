@@ -1,6 +1,6 @@
 package Control.Product_Manager;
 
-import Beans.ProdottoBean;
+import Model.Beans.ProdottoBean;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
