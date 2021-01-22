@@ -466,6 +466,11 @@ div#Cart {
 #selectCart {
 	background-color:#c0c0c0;;	
 }
+
+a.buttonCart {
+	text-decoration: none;
+	padding: 5px;
+}
 .buttonCart {
 	background-color: #9c1a1a;
 	color:#fff;
@@ -539,7 +544,24 @@ div#cartIndirizzi h3 {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
+.selectCarte:hover .dropdown_carte {
+	display: block;
+}
+
+.selectCarte {
+	display: inline-block;
+	position:relative;
+	background-color:#c0c0c0;
+	width: 200px;
+	margin-bottom: 70px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
 #aliasIndirizzo {
+	color:#fff;
+}
+
+#aliasCarte {
 	color:#fff;
 }
 
@@ -551,8 +573,34 @@ div#cartIndirizzi h3 {
     width:200px
 }
 
+.dropdown_carte {
+	display: none;
+	position: absolute;
+	background-color: #c0c0c0;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	width:200px
+}
+
 /* The Modal (background) */
 #myBtn {
+	background-color: #9c1a1a;
+	color:#fff;
+	height:30px;
+	border:0px;
+	font-size:14px;
+	margin-bottom:20px;
+}
+#myBtnIn1 {
+	width: 165px;
+	background-color: #9c1a1a;
+	color:#fff;
+	height:30px;
+	border:0px;
+	font-size:14px;
+	margin-bottom:20px;
+}
+#myBtnCt1 {
+	width: 165px;
 	background-color: #9c1a1a;
 	color:#fff;
 	height:30px;
@@ -586,11 +634,11 @@ div#cartIndirizzi h3 {
   text-align: center;
 }
 
-#formModal {
+.formModal {
 	display:inline-grid;
 }
 
-#buttonFormModal {
+.buttonFormModal {
 	background-color: #9c1a1a;
 	color:#fff;
 	width:140px;
