@@ -20,4 +20,9 @@ public class AccountBean {
     public AccountDTO doRetriveById(int id) throws SQLException{
         return model.doRetriveById(id);
     }
+
+    public AccountDTO doRetriveByEmail(String email) throws SQLException{
+        return model.doRetriveByEmail(email);
+    }
+
 }

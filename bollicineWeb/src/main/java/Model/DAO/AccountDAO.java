@@ -6,7 +6,7 @@ import java.sql.*;
 
 public class AccountDAO implements AccountDAOIn{
     static Connection con = DatabaseConnection.getConnection();
-    private static final String TABLE_NAME = "account";
+    private static final String TABLE_NAME = "Account";
 
     @Override
     public synchronized int doSaveAcount(AccountDTO ac) throws SQLException {
@@ -61,4 +61,37 @@ public class AccountDAO implements AccountDAOIn{
 
         return ac;
     }
+
+    @Override
+    public synchronized AccountDTO doRetriveByEmail(String email) throws SQLException{
+        PreparedStatement ps = null;
+
+        AccountDTO ac =new AccountDTO();
+
+
+        String query="SELECT * " + "FROM "+AccountDAO.TABLE_NAME+ " WHERE Email=?";
+
+        ps= con.prepareStatement(query);
+
+
+        ps.setString(1,email);
+
+        ResultSet rs = ps.executeQuery();
+
+
+
+        while(rs.next()){
+            ac.setId(rs.getInt("idAccount"));
+            ac.setNome(rs.getString("Nome"));
+            ac.setCognome(rs.getString("Cognome"));
+            ac.setEmail(rs.getString("Email"));
+            ac.setPassword(rs.getString("Password"));
+            ac.setStato(rs.getString("Stato"));
+            ac.setTipo(rs.getString("Tipo"));
+
+        }
+
+        return ac;
+    }
+
 }

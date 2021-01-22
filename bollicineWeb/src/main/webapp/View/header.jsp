@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <%@ page contentType="text/html; charset=UTF-8" import="java.util.*"%>
+<%@ page import="Model.DAO.AccountDTO" %>
 <head>
 	<title>head</title>
 	<!-- per responsive -->
@@ -25,7 +26,7 @@
 				//navbar per utente non registrato
 				if((Boolean) session.getAttribute("adminRoles")==null){
 			%>
-	  			<a class="navElement" href="${pageContext.servletContext.contextPath}/View/Catalogo/CatalogoView.jsp">Catalogo</a>
+	  			<a class="navElement" href="View/Catalogo/CatalogoView.jsp">Catalogo</a>
 	  			
 	  			<div class="dropdownNav">
 	  				<a class="navElement">Categorie <i class="fas fa-caret-down"></i></a>
@@ -64,8 +65,9 @@
   				
   			<%
   				//navbar per utente registrato
-  				if(request.getSession().getAttribute("datiUtente")!=null){
+  				if(request.getSession().getAttribute("utente")!=null){
  					//Dati_anagraficiBean datiUtente=(Dati_anagraficiBean)request.getSession().getAttribute("datiUtente");
+					AccountDTO account=(AccountDTO) request.getSession().getAttribute("utente");
   			%>
 
 				<a class="navElement" href="./View/Catalogo/CatalogoView.jsp">Catalogo</a>
@@ -79,7 +81,7 @@
 					</div>
 				</div>
 	  			
-	  			<a class="navElement" href="login-form.jsp">Accedi</a>
+	  			<a class="navElement" href="LoginView.jsp">Accedi</a>
 	  			<a class="navElement" href="product?action=viewC"><i class="fas fa-shopping-cart"></i></a>
 	  			<div class="dropdown">
 	  				<a class="navElement"><i class="far fa-user"></i></a>

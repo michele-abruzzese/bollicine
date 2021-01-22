@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <%
-
+	System.out.println("Sei nel catalogo");
 List<ProdottoDTO> products = (List<ProdottoDTO>)  request.getAttribute("products");
 if(products == null) {
 	response.sendRedirect("./Prodotto");

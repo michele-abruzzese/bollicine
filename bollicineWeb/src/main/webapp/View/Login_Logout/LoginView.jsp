@@ -81,10 +81,10 @@
             %>
             <h2 class="intest">Hai già un account?</h2>
             <div id="form">
-                <form action="/Login" method="post">
+                <form action="${pageContext.servletContext.contextPath}/Login" method="post">
 
                     <h4 class="h4">Username</h4>
-                    <input id="usernameControlLog" onfocusout="controlUsernameLog()" class="textArea" type="text" name="username" placeholder="username" autocomplete="off" required><br>
+                    <input id="usernameControlLog" onfocusout="controlUsernameLog()" class="textArea" type="text" name="email" placeholder="username" autocomplete="off" required><br>
 
                     <h4 class="h4">Password</h4>
                     <input class="textArea" type="password" name="password" placeholder="password"  autocomplete="off" required><br>
