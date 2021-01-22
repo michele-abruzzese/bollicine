@@ -27,6 +27,8 @@ public class IndirizzoSpedDAO implements IndirizzoSpedDAOIn{
         ps.setString(7,indirizzo.getAlias());
         ps.setInt(8,indirizzo.getIdAccount());
 
+        ps.executeUpdate();
+
         ResultSet rs = ps.getGeneratedKeys();
         rs.next();
         int key= rs.getInt(1);

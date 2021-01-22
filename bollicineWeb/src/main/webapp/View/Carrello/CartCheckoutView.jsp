@@ -17,7 +17,7 @@
     <%
         //per provare
         AccountDTO ac=new AccountDTO();
-        ac.setId(231);
+        ac.setId(4);
         ac.setTipo("cliente");
         request.getSession().setAttribute("utente",ac);
 
@@ -35,14 +35,13 @@
         ct1.setNumero(23348888);
         */
         List <IndirizzoSpedDTO> indiri =new ArrayList<>();
-        indiri.add(in);
+        //indiri.add(in);
 
         List <CartaCreditoDTO> car=new ArrayList<>();
 
         request.getSession().setAttribute("indirizzi",indiri);
         request.getSession().setAttribute("carte",car);
 
-        request.setAttribute("insertFirstIndirizzo",Boolean.TRUE);
         //fine prova
 
         AccountDTO cliente=(AccountDTO) request.getSession().getAttribute("utente");
@@ -161,7 +160,7 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h3>Inserisci un nuovo indirizzo di spedizione</h3>
-                <form class="formModal" action="./InsertNewIndirizzo" method="post">
+                <form class="formModal" action="${pageContext.servletContext.contextPath}/AddNewIndirizzo" method="post">
                     <input type="hidden" name="idCliente" value="<%=cliente.getId()%>">
                     Nome<input type="text" name="nome" required>
                     Cognome<input type="text" name="cognome" required>

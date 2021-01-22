@@ -77,4 +77,13 @@
         <servlet-name>LoginControl</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddNewIndirizzoControl</servlet-name>
+        <servlet-class>Control.User_Manager.AddNewIndirizzoControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddNewIndirizzoControl</servlet-name>
+        <url-pattern>/AddNewIndirizzo</url-pattern>
+    </servlet-mapping>
 </web-app>

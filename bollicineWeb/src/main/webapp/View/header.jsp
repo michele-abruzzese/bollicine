@@ -26,7 +26,7 @@
 				//navbar per utente non registrato
 				if((Boolean) session.getAttribute("adminRoles")==null){
 			%>
-	  			<a class="navElement" href="View/Catalogo/CatalogoView.jsp">Catalogo</a>
+	  			<a class="navElement" href="${pageContext.servletContext.contextPath}/Prodotto">Catalogo</a>
 	  			
 	  			<div class="dropdownNav">
 	  				<a class="navElement">Categorie <i class="fas fa-caret-down"></i></a>

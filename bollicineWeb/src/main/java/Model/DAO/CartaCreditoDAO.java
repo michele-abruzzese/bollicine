@@ -25,6 +25,8 @@ public class CartaCreditoDAO implements CartaCreditoDAOIn{
         ps.setString(5,cc.getScandenza());
         ps.setInt(6,cc.getIdAccount());
 
+        ps.executeUpdate();
+
         ResultSet rs = ps.getGeneratedKeys();
         rs.next();
         int key= rs.getInt(1);

@@ -22,6 +22,8 @@ public class AccountDAO implements AccountDAOIn{
         ps.setString(5,ac.getStato());
         ps.setString(6,ac.getTipo());
 
+        ps.executeUpdate();
+
         ResultSet rs = ps.getGeneratedKeys();
         rs.next();
         int key= rs.getInt(1);
