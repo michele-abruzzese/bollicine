@@ -50,7 +50,7 @@ public class LoginControl extends HttpServlet {
                 }else{
                     request.getSession().setAttribute("adminRoles", new Boolean(false));
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Catalogo/CatalogoView.jsp");
-
+                    dispatcher.forward(request, response);
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Credenziali errate! Riprova","Exception",JOptionPane.INFORMATION_MESSAGE);
