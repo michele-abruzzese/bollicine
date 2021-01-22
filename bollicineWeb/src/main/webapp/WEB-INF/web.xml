@@ -86,4 +86,13 @@
         <servlet-name>AddNewIndirizzoControl</servlet-name>
         <url-pattern>/AddNewIndirizzo</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddNewCardControl</servlet-name>
+        <servlet-class>Control.User_Manager.AddNewCardControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddNewCardControl</servlet-name>
+        <url-pattern>/AddNewCard</url-pattern>
+    </servlet-mapping>
 </web-app>

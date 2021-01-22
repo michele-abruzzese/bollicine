@@ -20,7 +20,7 @@ public class CartaCreditoDAO implements CartaCreditoDAOIn{
 
         ps.setString(1,cc.getNome());
         ps.setString(2,cc.getCognome());
-        ps.setInt(3,cc.getNumero());
+        ps.setLong(3,cc.getNumero());
         ps.setInt(4,cc.getCcv());
         ps.setString(5,cc.getScandenza());
         ps.setInt(6,cc.getIdAccount());
@@ -53,7 +53,7 @@ public class CartaCreditoDAO implements CartaCreditoDAOIn{
             cc.setIdCartaCredito(rs.getInt("idCartaDiCredito"));
             cc.setNome(rs.getString("Nome"));
             cc.setCognome(rs.getString("Cognome"));
-            cc.setNumero(rs.getInt("Numero"));
+            cc.setNumero(rs.getLong("Numero"));
             cc.setCcv(rs.getInt("CCV"));
             cc.setScandenza(rs.getString("Scadenza"));
             cc.setIdAccount(rs.getInt("idAccount"));

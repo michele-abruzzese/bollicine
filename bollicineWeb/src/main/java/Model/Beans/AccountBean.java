@@ -12,6 +12,9 @@ public class AccountBean {
     //DAO indirizzi
     static IndirizzoSpedDAOIn modelInd = new IndirizzoSpedDAO();
 
+    //DAO carte
+    static CartaCreditoDAOIn modelCar = new CartaCreditoDAO();
+
     public int doSaveAcount(AccountDTO ac) throws SQLException {
         return model.doSaveAcount(ac);
     }
@@ -37,6 +40,19 @@ public class AccountBean {
             return 0;
         }else{
             modelInd.doSaveIndirizzo(indirizzo);
+            return 1;
+        }
+    }
+
+    public int doSaveCarta(CartaCreditoDTO carta, int idAccount) throws  SQLException{
+        List<CartaCreditoDTO> carte = modelCar.doRetriveByAccount(idAccount);
+
+        //se sto inserendo la prima carta
+        if (carte.size()==0){
+            modelCar.doSaveCartaCredito(carta);
+            return 0;
+        }else {
+            modelCar.doSaveCartaCredito(carta);
             return 1;
         }
     }

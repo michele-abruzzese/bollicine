@@ -188,7 +188,7 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h3>Inserisci una nuova carta di credito</h3>
-                <form class="formModal" action="./InsertNewIndirizzo" method="post">
+                <form class="formModal" action="${pageContext.servletContext.contextPath}/AddNewCard" method="post">
                     <input type="hidden" name="idCliente" value="<%=cliente.getId()%>">
                     Nome<input type="text" name="nome" required>
                     Cognome<input type="text" name="cognome" required>

@@ -4,7 +4,7 @@ public class CartaCreditoDTO {
     int idCartaCredito;
     String nome;
     String cognome;
-    int numero;
+    Long numero;
     int ccv;
     String scandenza;
     int idAccount;
@@ -36,11 +36,11 @@ public class CartaCreditoDTO {
         this.cognome = cognome;
     }
 
-    public int getNumero() {
+    public Long getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(Long numero) {
         this.numero = numero;
     }
 
