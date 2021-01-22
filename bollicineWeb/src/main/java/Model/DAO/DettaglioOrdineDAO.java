@@ -31,7 +31,7 @@ public class DettaglioOrdineDAO implements DettaglioOrdineDAOIn{
     }
 
     @Override
-    public List<DettaglioOrdineDTO> doRetruveByOrdine(int idOrdine)throws SQLException {
+    public List<DettaglioOrdineDTO> doRetriveByOrdine(int idOrdine)throws SQLException {
         List<DettaglioOrdineDTO> dettagli=new ArrayList<DettaglioOrdineDTO>();
 
         PreparedStatement ps=null;

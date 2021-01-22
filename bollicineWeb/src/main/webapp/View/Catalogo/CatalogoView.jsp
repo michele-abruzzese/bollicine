@@ -151,10 +151,16 @@ CarrelloBean cart = (CarrelloBean) request.getSession().getAttribute("cart");
 
 		function functionLoad(){
 			var resp=<%=request.getAttribute("inserito")%>
+			var ordine=<%=request.getAttribute("ordineOk")%>
 
 			if(resp!=null && resp){
 				alert("prodotto aggiunto al carrello");
 				<%request.removeAttribute("inserito");%>
+			}
+
+			if(ordine!=null && ordine){
+				alert("ordine effettuato con successo");
+				<%request.removeAttribute("ordine");%>
 			}
 		}
 

@@ -5,5 +5,5 @@ import java.util.List;
 
 public interface DettaglioOrdineDAOIn {
     public void doSaveDettaglioOrdine(DettaglioOrdineDTO dett)throws SQLException;
-    public List<DettaglioOrdineDTO> doRetruveByOrdine(int idOrdine)throws SQLException;
+    public List<DettaglioOrdineDTO> doRetriveByOrdine(int idOrdine)throws SQLException;
 }

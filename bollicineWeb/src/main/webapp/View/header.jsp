@@ -39,8 +39,8 @@
 	  			
 	  			
 
-	  			<a class="navElement" href="View/Login_Logout/LoginView.jsp">Accedi</a>
-	  			<a class="navElement" href="./View/Carrello/CarrelloView.jsp"><i class="fas fa-shopping-cart"></i></a>
+	  			<a class="navElement" href="${pageContext.servletContext.contextPath}/View/Login_Logout/LoginView.jsp">Accedi</a>
+	  			<a class="navElement" href="${pageContext.servletContext.contextPath}/View/Carrello/CarrelloView.jsp"><i class="fas fa-shopping-cart"></i></a>
 	  			
   			<%
 				}

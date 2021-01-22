@@ -144,4 +144,21 @@ public class ProdottoDAO implements ProdottoDAOIn{
 
         return prod;
     }
+
+    @Override
+    public void updateDispo(ProdottoDTO prodotto, int qt) throws SQLException {
+        int id=prodotto.getIdProdotto();
+
+        String query="UPDATE "+ProdottoDAO.TABLE_NAME+" SET Disponibilità=? WHERE idProdotto=?";
+
+        PreparedStatement st=con.prepareStatement(query);
+        st.setInt(1,qt);
+        st.setInt(2,id);
+
+        st.executeUpdate();
+
+
+    }
+
+
 }
