@@ -104,4 +104,13 @@
         <servlet-name>AddNewOrdineControl</servlet-name>
         <url-pattern>/AddNewOrdine</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VisualizzaProdottiControl</servlet-name>
+        <servlet-class>Control.Product_Manager.VisualizzaProdottiControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VisualizzaProdottiControl</servlet-name>
+        <url-pattern>/VisualizzaProdotti</url-pattern>
+    </servlet-mapping>
 </web-app>

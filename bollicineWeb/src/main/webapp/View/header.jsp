@@ -23,6 +23,8 @@
 			<div id="contentNav">
 			 
 			<%
+				//per provare
+				request.getSession().setAttribute("adminRoles",Boolean.TRUE);
 				//navbar per utente non registrato
 				if((Boolean) session.getAttribute("adminRoles")==null){
 			%>
@@ -47,14 +49,15 @@
   			%>
   				
   			<%
-				//navbar per amministratore
+				//per provare
+				request.getSession().setAttribute("adminRoles",Boolean.TRUE);
+				//navbar per gestore Catalogo
   				if (((Boolean) session.getAttribute("adminRoles")!=null)&&((Boolean) session.getAttribute("adminRoles"))){
   			%>
   				<div class="dropdown">
   					<a>administrator</a>
   					<div class="dropdown-content">
-						<a class="elementContent" href="./OrderAdmin">Ordini</a>
-						<a class="elementContent" href="./productAdmin">Prodotti</a>
+						<a class="elementContent" href="${pageContext.servletContext.contextPath}/VisualizzaProdotti">Prodotti</a>
 						<a class="elementContent" href="./Logout">Logout</a>
   					</div>
   				</div>

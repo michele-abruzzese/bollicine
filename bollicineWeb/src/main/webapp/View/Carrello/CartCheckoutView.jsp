@@ -15,7 +15,7 @@
 <%@ include file="../header.jsp" %>
 <div id="cartIndirizzi">
     <%
-        //per provare
+        /*per provare
         AccountDTO ac=new AccountDTO();
         ac.setId(4);
         ac.setTipo("cliente");
@@ -41,7 +41,8 @@
         request.getSession().setAttribute("indirizzi",indiri);
         request.getSession().setAttribute("carte",car);
 
-        //fine prova
+        fine prova
+        */
 
         AccountDTO cliente=(AccountDTO) request.getSession().getAttribute("utente");
         List <IndirizzoSpedDTO> indirizzi=(List <IndirizzoSpedDTO>) request.getSession().getAttribute("indirizzi");
