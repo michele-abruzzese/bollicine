@@ -67,4 +67,33 @@ public class IndirizzoSpedDAO implements IndirizzoSpedDAOIn{
 
         return indirizzi;
     }
+
+    @Override
+    public IndirizzoSpedDTO doRetriveById(int idIndirizzo) throws SQLException {
+        IndirizzoSpedDTO indirizzo= new IndirizzoSpedDTO();
+
+        String query="SELECT * FROM "+IndirizzoSpedDAO.TABLE_NAME+" WHERE idIndirizzoSpedizione=?";
+
+        PreparedStatement ps= con.prepareStatement(query);
+
+        ps.setInt(1,idIndirizzo);
+
+        ResultSet rs= ps.executeQuery();
+
+        while(rs.next()){
+            indirizzo.setIdIndirizzo(rs.getInt("idIndirizzoSpedizione"));
+            indirizzo.setNome(rs.getString("Nome"));
+            indirizzo.setCognome(rs.getString("Cognome"));
+            indirizzo.setIndirizzo(rs.getString("Indirizzo"));
+            indirizzo.setCap(rs.getInt("CAP"));
+            indirizzo.setCittà(rs.getString("Città"));
+            indirizzo.setProvincia(rs.getString("Provincia"));
+            indirizzo.setAlias(rs.getString("Alias"));
+            indirizzo.setIdAccount(rs.getInt("idAccount"));
+        }
+
+        return indirizzo;
+    }
+
+
 }

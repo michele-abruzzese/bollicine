@@ -19,6 +19,12 @@ public class OrdineBean {
     //DAO prodotto
     static  ProdottoDAOIn modelProd= new ProdottoDAO();
 
+    //DAO indirizzi
+    static  IndirizzoSpedDAOIn modelIndi  = new IndirizzoSpedDAO();
+
+    //DAO crate
+    static  CartaCreditoDAOIn modelCar = new CartaCreditoDAO();
+
     public void doSaveOrder(int idAccount,CarrelloBean cart,int idCarta,int idIndirizzo) throws SQLException, IOException {
 
         //prendo i prodotti dal carrello
@@ -66,5 +72,17 @@ public class OrdineBean {
         }
 
 
+    }
+
+    public List<OrdineDTO> doRetriveAll() throws SQLException{
+        return modelOrder.doRetriveAll();
+    }
+
+    public IndirizzoSpedDTO doRetriveIdirizzo(OrdineDTO ordine) throws SQLException {
+        return modelIndi.doRetriveById(ordine.getIdIndirizzo());
+    }
+
+    public CartaCreditoDTO doRetriveCarta(OrdineDTO ordine)throws  SQLException{
+        return modelCar.doRetriveById(ordine.getIdCarta());
     }
 }

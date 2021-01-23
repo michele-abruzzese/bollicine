@@ -122,4 +122,13 @@
         <servlet-name>InsertUpdateProductControl</servlet-name>
         <url-pattern>/InsertUpdateProduct</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VisualizzaOrdiniControl</servlet-name>
+        <servlet-class>Control.Order_Manager.VisualizzaOrdiniControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VisualizzaOrdiniControl</servlet-name>
+        <url-pattern>/VisualizzaOrdini</url-pattern>
+    </servlet-mapping>
 </web-app>

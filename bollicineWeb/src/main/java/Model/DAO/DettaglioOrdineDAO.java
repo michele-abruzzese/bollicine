@@ -57,4 +57,5 @@ public class DettaglioOrdineDAO implements DettaglioOrdineDAOIn{
 
         return dettagli;
     }
+
 }

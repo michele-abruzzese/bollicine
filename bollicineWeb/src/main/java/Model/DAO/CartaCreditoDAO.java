@@ -65,4 +65,31 @@ public class CartaCreditoDAO implements CartaCreditoDAOIn{
 
         return carte;
     }
+
+    @Override
+    public CartaCreditoDTO doRetriveById(int idCarta) throws SQLException {
+        CartaCreditoDTO carta= new CartaCreditoDTO();
+
+
+        String query="SELECT * FROM "+CartaCreditoDAO.TABLE_NAME+" WHERE idCartaDiCredito=?";
+
+        PreparedStatement st=con.prepareStatement(query);
+
+        st.setInt(1,idCarta);
+
+        ResultSet rs= st.executeQuery();
+
+        while (rs.next()){
+            carta.setIdCartaCredito(rs.getInt("idCartaDiCredito"));
+            carta.setNome(rs.getString("Nome"));
+            carta.setCognome(rs.getString("Cognome"));
+            carta.setNumero(rs.getLong("Numero"));
+            carta.setCcv(rs.getInt("CCV"));
+            carta.setScandenza(rs.getString("Scadenza"));
+            carta.setIdAccount(rs.getInt("idAccount"));
+        }
+
+
+        return carta;
+    }
 }

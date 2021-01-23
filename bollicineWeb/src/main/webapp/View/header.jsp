@@ -58,6 +58,7 @@
   					<a>administrator</a>
   					<div class="dropdown-content">
 						<a class="elementContent" href="${pageContext.servletContext.contextPath}/VisualizzaProdotti">Prodotti</a>
+						<a class="elementContent" href="${pageContext.servletContext.contextPath}/VisualizzaOrdini">Ordini</a>
 						<a class="elementContent" href="./Logout">Logout</a>
   					</div>
   				</div>
