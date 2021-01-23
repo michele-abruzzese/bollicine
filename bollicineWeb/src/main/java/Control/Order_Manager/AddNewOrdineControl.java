@@ -23,8 +23,8 @@ public class AddNewOrdineControl extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         AccountDTO cliente= (AccountDTO) req.getSession().getAttribute("utente");
         CarrelloBean carrello= (CarrelloBean) req.getSession().getAttribute("cart");
-        int idCarta = (int) req.getSession().getAttribute("idCarta");
-        int idIndirizzo= (int) req.getSession().getAttribute("idIndirizzo");
+        int idCarta = Integer.parseInt(req.getParameter("idCarta"));
+        int idIndirizzo= Integer.parseInt(req.getParameter("idIndirizzo"));
 
         try {
             bean.doSaveOrder(cliente.getId(),carrello,idCarta,idIndirizzo);
@@ -36,8 +36,8 @@ public class AddNewOrdineControl extends HttpServlet {
         req.getSession().removeAttribute("cart");
 
         //dico alla jsp che l'ordine è stato salvato
-        req.setAttribute("orderOk",Boolean.TRUE);
-
+        req.setAttribute("ordineOk",Boolean.TRUE);
+        System.out.println(req.getAttribute("ordineOk"));
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Catalogo/CatalogoView.jsp");
         dispatcher.forward(req, resp);
 

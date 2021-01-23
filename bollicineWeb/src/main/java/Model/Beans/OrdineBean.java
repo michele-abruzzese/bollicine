@@ -20,6 +20,7 @@ public class OrdineBean {
     static  ProdottoDAOIn modelProd= new ProdottoDAO();
 
     public void doSaveOrder(int idAccount,CarrelloBean cart,int idCarta,int idIndirizzo) throws SQLException, IOException {
+
         //prendo i prodotti dal carrello
         List<ProdottoDTO> prodotti = cart.getProducts();
 

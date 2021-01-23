@@ -25,19 +25,18 @@
         in.setAlias("casa");
         in.setNome("Michele");
         in.setCognome("Abruzzese");
+        in.setIdIndirizzo(1);
 
-        /*
         CartaCreditoDTO ct=new CartaCreditoDTO();
         ct.setCcv(233);
-        ct.setNumero(23348888);
-        CartaCreditoDTO ct1=new CartaCreditoDTO();
-        ct1.setCcv(233);
-        ct1.setNumero(23348888);
-        */
+        ct.setNumero(23348888L);
+        ct.setIdCartaCredito(1);
+
         List <IndirizzoSpedDTO> indiri =new ArrayList<>();
-        //indiri.add(in);
+        indiri.add(in);
 
         List <CartaCreditoDTO> car=new ArrayList<>();
+        car.add(ct);
 
         request.getSession().setAttribute("indirizzi",indiri);
         request.getSession().setAttribute("carte",car);
@@ -208,8 +207,7 @@
     %>
     <!-- select indirizzo e carta -->
     <h3>Scegli l'indirizzo per la spedizione e la carta per il pagamento</h3>
-    <form action="#servletOrdine">
-        <input type="hidden" name="action" value="Checkout">
+    <form action="${pageContext.servletContext.contextPath}/AddNewOrdine">
         <select name="idIndirizzo">
             <%
                 Iterator<?> indi=indirizzi.iterator();

@@ -95,4 +95,13 @@
         <servlet-name>AddNewCardControl</servlet-name>
         <url-pattern>/AddNewCard</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddNewOrdineControl</servlet-name>
+        <servlet-class>Control.Order_Manager.AddNewOrdineControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddNewOrdineControl</servlet-name>
+        <url-pattern>/AddNewOrdine</url-pattern>
+    </servlet-mapping>
 </web-app>

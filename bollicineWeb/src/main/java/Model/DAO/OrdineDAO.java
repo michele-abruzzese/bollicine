@@ -14,7 +14,7 @@ public class OrdineDAO implements OrdineDAOIn{
     public int doSaveOrdine(OrdineDTO ordine) throws SQLException {
         PreparedStatement st=null;
 
-        String query="INSERT INTO "+OrdineDAO.TABLE_NAME+" (TotaleOrdine,Data,MetodoPagamento,idCarta,idIndirizzo,idAccount) VALUES (?,?,?,?,?,?,?)";
+        String query="INSERT INTO "+OrdineDAO.TABLE_NAME+" (TotaleOrdine,Data,MetodoPagamento,idCarta,idIndirizzo,idAccount) VALUES (?,?,?,?,?,?)";
 
         st=con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
