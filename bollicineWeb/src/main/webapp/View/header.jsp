@@ -24,7 +24,7 @@
 			 
 			<%
 				//per provare
-				//request.getSession().setAttribute("adminRoles",Boolean.TRUE);
+				//request.getSession().setAttribute("adminRoles",Boolean.FALSE);
 				//navbar per utente non registrato
 				if((Boolean) session.getAttribute("adminRoles")==null){
 			%>
@@ -50,7 +50,7 @@
   				
   			<%
 				//per provare
-				request.getSession().setAttribute("adminRoles",Boolean.TRUE);
+				//request.getSession().setAttribute("adminRoles",Boolean.TRUE);
 				//navbar per gestore Catalogo
   				if (((Boolean) session.getAttribute("adminRoles")!=null)&&((Boolean) session.getAttribute("adminRoles"))){
   			%>

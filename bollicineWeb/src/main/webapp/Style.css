@@ -955,7 +955,6 @@ div#contenutoOrdiniAdm form{
 .buttonRegi{
 	background-color: #9c1a1a;
 	color:#fff;
-	width:40%;
 	height:30px;
 	border:0px;
 	font-size:16px;
@@ -963,7 +962,14 @@ div#contenutoOrdiniAdm form{
 }
 
 #nuovoCliente {
-	display:none;
+	display:block;
+	text-align: center;
+	padding-top: 15px;
+}
+#BtnRegi {
+	background:transparent;
+	border: 1px solid #fff;
+	color: #fff;
 }
 @media screen and (max-width: 1295px){
 	#createAccount {
@@ -986,18 +992,9 @@ div#contenutoOrdiniAdm form{
 	div#form {
 		width:100%;
 	}
+
 	
-	#nuovoCliente {
-		display:block;
-		text-align: center;
-		padding-top: 15px;
-	}
-	
-	#BtnRegi {
-		background:transparent;
-		border: 1px solid #fff;
-    	color: #fff;
-	}
+
 }
 #errorLogin {
 	color: #c02230;
@@ -1015,7 +1012,7 @@ div#contenutoOrdiniAdm form{
 
 #formLogin {
 	width:100%;
-	
+	padding-top: 55px;
 }
 
 #form {

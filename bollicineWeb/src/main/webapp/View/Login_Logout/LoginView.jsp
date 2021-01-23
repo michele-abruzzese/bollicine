@@ -83,21 +83,21 @@
             <div id="form">
                 <form action="${pageContext.servletContext.contextPath}/Login" method="post">
 
-                    <h4 class="h4">Username</h4>
-                    <input id="usernameControlLog" onfocusout="controlUsernameLog()" class="textArea" type="text" name="email" placeholder="username" autocomplete="off" required><br>
+                    <h4 class="h4">Email</h4>
+                    <input id="emailControl" onfocusout="controlUsernameLog()" class="textArea" type="text" name="email" placeholder="username" autocomplete="off" required><br>
 
                     <h4 class="h4">Password</h4>
                     <input class="textArea" type="password" name="password" placeholder="password"  autocomplete="off" required><br>
                     <input class="buttonLogin" type="submit" value="Login"/>
                     <input class="buttonLogin" type="reset" value="Reset"/><br>
-                    Non hai un account? <button>registrati</button>
+
                 </form>
             </div>
 
-<%--
+
             <div id="nuovoCliente">
             <!-- bottone per aprire l'inserimento di un nuovo cliente -->
-               &lt;%&ndash; Non hai un account? <button id="BtnRegi">registrati</button>&ndash;%&gt;
+               Non hai un account? <button id="BtnRegi">registrati</button>
 
                 <!-- The Modal -->
                 <div id="myModal" class="modal">
@@ -111,28 +111,15 @@
 
                             <h2>Dati anagrafici</h2>
 
-                            <label for="cognome">Cognome</label><br>
-                            <input name="cognome" type="text" required><br>
-                            <label for="nome">Nome</label><br>
+                            Cognome<br>
+                            <input id="emailControl" name="cognome" type="text" required><br>
+                            Nome<br>
                             <input  name="nome" type="text" required><br>
-                            <label for="telefono">Telefono</label><br>
-                            <input name="telefono" type="number" required><br>
-                            <label for="indirizzo">Indirizzo</label><br>
-                            <input name="indirizzo" type="text" required><br>
-                            <label for="citta">Città</label><br>
-                            <input name="citta" type="text" required><br>
-                            <label for="provincia">Provincia</label><br>
-                            <input name="provincia" type="text" required><br>
-                            <label for="cap">CAP</label><br>
-                            <input name="cap" type="number" required><br>
+                            Email<br>
+                            <input name="email" type="number" onfocusout="controlEmail()" required><br>
+                            Password<br>
+                            <input name="password" type="text" required><br>
 
-                            <h2>Dati login</h2>
-                            <label for="username">Username</label><br>
-                            <input id="usernameControl" onfocusout="controlUsername()" name="username" type="text" required placeholder="enter username"><br>
-                            <label for="email">E-mail</label><br>
-                            <input id="emailControl"  onfocusout="controlEmail()" name="email" type="text" required placeholder="enter email"><br>
-                            <label for="password">Password</label><br>
-                            <input id="pwd" name="password" type="password" required placeholder="enter password"><br>
                             <input id="showPwInModal" type="button" onclick="showPwd()" value="Mostra/nascondi password">
                             <input class="buttonRegi" type="submit" value="registrati">
 
@@ -140,7 +127,7 @@
 
                     </div>
                 </div>
-            </div>--%>
+            </div>
 
         </div>
 
