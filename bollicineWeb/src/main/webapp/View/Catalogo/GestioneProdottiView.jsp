@@ -194,7 +194,7 @@
                     <td data-title="Prezzo"><%=bean.getPrezzo() %> €</td>
                     <td data-title="Disponibilità"><%=bean.getDisponibilità()%></td>
 
-                    <td data-title="Elimina"><a href="#servlet per eliminare il prodotto &id=<%=bean.getIdProdotto()%>&cat=<%=bean.getCategoria()%>"><i class="fas fa-trash"></i></a><br></td>
+                    <td data-title="Elimina"><a href="${pageContext.servletContext.contextPath}/DeleteProduct?id=<%=bean.getIdProdotto()%>"><i class="fas fa-trash"></i></a><br></td>
 
                 </tr>
                 <%

@@ -71,4 +71,8 @@ public class ProdottoBean {
     public void updateProdotto(ProdottoDTO prod)throws SQLException, IOException {
         model.doUpdateProdotto(prod);
     }
+
+    public void deleteProductFromCatalog(int idProdotto)throws  SQLException {
+        model.updateDispo(model.doRetriveById(idProdotto),0 );
+    }
 }

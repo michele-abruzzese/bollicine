@@ -131,4 +131,13 @@
         <servlet-name>VisualizzaOrdiniControl</servlet-name>
         <url-pattern>/VisualizzaOrdini</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteProductControl</servlet-name>
+        <servlet-class>Control.Product_Manager.DeleteProductControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteProductControl</servlet-name>
+        <url-pattern>/DeleteProduct</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -24,7 +24,7 @@
 			 
 			<%
 				//per provare
-				request.getSession().setAttribute("adminRoles",Boolean.TRUE);
+				//request.getSession().setAttribute("adminRoles",Boolean.TRUE);
 				//navbar per utente non registrato
 				if((Boolean) session.getAttribute("adminRoles")==null){
 			%>
