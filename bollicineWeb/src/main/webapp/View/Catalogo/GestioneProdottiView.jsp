@@ -21,6 +21,7 @@
     /** in fase di modifica dei prodotti settiamo i campi
      come valori di default del prodotto selezionato**/
     ProdottoDTO up=(ProdottoDTO) request.getAttribute("up");
+
 %>
 
 <%@ page language="java" import="java.util.*,Model.DAO.ProdottoDTO" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -90,11 +91,11 @@
 
                 <h2 class="h2Form">Aggiorna prodotto</h2>
                 <%-- selezionare l'id del prodotto da modificare --%>
-                <form action="#servletperaggiornare" enctype="multipart/form-data"  method="post">
-                    <input type="hidden" name="action" value="updateP">
+                <form action="./InsertUpdateProduct" enctype="multipart/form-data"  method="post">
+                    <input type="hidden" name="action" value="selectP">
 
-                    <label for="idprodotto">Idprodotto:</label><br>
-                    <select id="idprodotto">
+                    Idprodotto:<br>
+                    <select name="idProdotto">
                         <%
                             if (products != null && products.size() != 0) {
                                 Iterator<?> it = products.iterator();
@@ -116,8 +117,8 @@
 
                 <%}else { %>
                 <h2 class="h2Form">Aggiorna prodotto</h2>
-                <form action="#servletperaggiornare" enctype="multipart/form-data"  method="post">
-                    <input type="hidden" name="action" value="update">
+                <form action="./InsertUpdateProduct" enctype="multipart/form-data"  method="post">
+                    <input type="hidden" name="action" value="updateP">
                     <input type="hidden" name="idProdotto" value="<%=up.getIdProdotto()%>">
 
                     Nome:<br>
@@ -132,7 +133,7 @@
                     </select><br>
 
                     Descrizione:<br>
-                    <textarea name="descrizione" maxlength="500" rows="3" required value="<%=up.getDescrizione()%>"></textarea><br>
+                    <textarea name="descrizione" maxlength="500" rows="3" required ><%=up.getDescrizione()%></textarea><br>
 
                     Tipo:<br>
                     <input name="tipo" type="text" maxlength="45" required value="<%=up.getTipo()%>" required><br>

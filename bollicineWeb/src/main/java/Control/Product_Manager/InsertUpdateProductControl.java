@@ -39,26 +39,8 @@ public class InsertUpdateProductControl extends HttpServlet {
             int annata= Integer.parseInt(req.getParameter("annata"));
             double prezzo= Double.parseDouble(req.getParameter("prezzo"));
             int disponibilità= Integer.parseInt(req.getParameter("disponibilita"));
-            String immagine=null;
-
-            //perendo il path dell'immagine
-            String appPath = req.getServletContext().getRealPath("");
-            String savePath = appPath + File.separator + SAVE_DIR;
-
-            File fileSaveDir = new File(savePath);
-            if (!fileSaveDir.exists()) {
-                fileSaveDir.mkdir();
-            }
-
-            for (Part part : req.getParts() ){
-                String fileName = extractFileName(part);
-                if (fileName != null && !fileName.equals("")){
-                    part.write(savePath + File.separator + fileName);
-
-                    immagine = ""+savePath + File.separator + fileName;
-
-                }
-            }
+            //prendo il path dell'immagine
+            String immagine=getPathImage(req);
 
             prod.setNome(nome);
             prod.setCategoria(categoria);
@@ -76,12 +58,59 @@ public class InsertUpdateProductControl extends HttpServlet {
                 throwables.printStackTrace();
             }
 
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Catalogo/GestioneProdottiView.jsp");
-            dispatcher.forward(req, resp);
+
 
         }else if(action.equalsIgnoreCase("selectP")){
+            int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
 
+            ProdottoDTO prod = new ProdottoDTO();
+
+            try {
+                prod=bean.doRetriveById(idProdotto);
+
+                //invio tutti i prodotti alla jsp, altrimenti va nella servllet di visualizzazione
+                req.removeAttribute("products");
+                req.setAttribute("products",bean.doRetriveAll());
+
+                //invio il prodotto da modificare alla jsp
+                req.setAttribute("up",prod);
+
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }else if(action.equalsIgnoreCase("updateP")){
+            ProdottoDTO prod = new ProdottoDTO();
+
+            int idProdotto= Integer.parseInt(req.getParameter("idProdotto"));
+            String nome=req.getParameter("nome");
+            String categoria=req.getParameter("categoria");
+            String descrizione=req.getParameter("descrizione");
+            String tipo=req.getParameter("tipo");
+            int annata= Integer.parseInt(req.getParameter("annata"));
+            double prezzo= Double.parseDouble(req.getParameter("prezzo"));
+            int disponibilità= Integer.parseInt(req.getParameter("disponibilita"));
+            //prendo il path dell'immagine
+            String immagine=getPathImage(req);
+
+            prod.setIdProdotto(idProdotto);
+            prod.setNome(nome);
+            prod.setCategoria(categoria);
+            prod.setDescrizione(descrizione);
+            prod.setTipo(tipo);
+            prod.setAnnata(annata);
+            prod.setPrezzo(prezzo);
+            prod.setDisponibilità(disponibilità);
+            prod.setImmagine(immagine);
+
+            try {
+                bean.updateProdotto(prod);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
+
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Catalogo/GestioneProdottiView.jsp");
+        dispatcher.forward(req, resp);
     }
 
     @Override
@@ -98,5 +127,29 @@ public class InsertUpdateProductControl extends HttpServlet {
             }
         }
         return "";
+    }
+
+    private String getPathImage(HttpServletRequest req) throws IOException, ServletException {
+        //perendo il path dell'immagine
+        String immagine=null;
+        String appPath = req.getServletContext().getRealPath("");
+        String savePath = appPath + File.separator + SAVE_DIR;
+
+        File fileSaveDir = new File(savePath);
+        if (!fileSaveDir.exists()) {
+            fileSaveDir.mkdir();
+        }
+
+        for (Part part : req.getParts() ){
+            String fileName = extractFileName(part);
+            if (fileName != null && !fileName.equals("")){
+                part.write(savePath + File.separator + fileName);
+
+                immagine = ""+savePath + File.separator + fileName;
+
+            }
+        }
+
+        return immagine;
     }
 }

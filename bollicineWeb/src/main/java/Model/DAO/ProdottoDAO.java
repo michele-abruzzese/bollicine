@@ -45,6 +45,33 @@ public class ProdottoDAO implements ProdottoDAOIn{
     }
 
     @Override
+    public void doUpdateProdotto(ProdottoDTO prod) throws SQLException, IOException {
+        String query="UPDATE "+ProdottoDAO.TABLE_NAME+" SET Nome=?, Categoria=?, Descrizione=?, Immagine=?, Tipo=?, Annata=?, Prezzo=?, Disponibilità=? WHERE idProdotto=?";
+
+        PreparedStatement st = con.prepareStatement(query);
+
+        st.setString(1,prod.getNome());
+        st.setString(2,prod.getCategoria());
+        st.setString(3,prod.getDescrizione());
+
+        //in immagine abbiamo il path mandato dalla servlet
+        File file = new File(prod.getImmagine());
+        FileInputStream fis = new FileInputStream(file);
+
+        st.setBinaryStream(4,fis,fis.available());
+
+        //continuo con altri campi
+        st.setString(5,prod.getTipo());
+        st.setInt(6, prod.getAnnata());
+        st.setDouble(7,prod.getPrezzo());
+        st.setInt(8,prod.getDisponibilità());
+        st.setInt(9,prod.getIdProdotto());
+
+        st.executeUpdate();
+
+    }
+
+    @Override
     public synchronized List<ProdottoDTO> doRetriveAll() throws SQLException {
         List<ProdottoDTO> prodotti = new ArrayList<ProdottoDTO>();
 

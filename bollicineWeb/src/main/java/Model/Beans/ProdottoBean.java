@@ -67,4 +67,8 @@ public class ProdottoBean {
     public void insertProdotto(ProdottoDTO prod) throws SQLException, IOException {
         model.doSaveProdotto(prod);
     }
+
+    public void updateProdotto(ProdottoDTO prod)throws SQLException, IOException {
+        model.doUpdateProdotto(prod);
+    }
 }
