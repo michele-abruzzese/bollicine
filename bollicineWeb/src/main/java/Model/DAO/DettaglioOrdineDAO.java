@@ -24,7 +24,7 @@ public class DettaglioOrdineDAO implements DettaglioOrdineDAOIn{
         ps.setInt(1,dett.getIdPodotto());
         ps.setInt(2,dett.getIdOrdine());
         ps.setInt(3,dett.getQuantità());
-        ps.setFloat(4,dett.getPrezzoUnit());
+        ps.setDouble(4,dett.getPrezzoUnit());
         ps.setInt(5,dett.getIva());
 
         ps.executeUpdate();

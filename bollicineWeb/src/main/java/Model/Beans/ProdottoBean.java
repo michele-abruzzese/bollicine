@@ -3,6 +3,8 @@ package Model.Beans;
 import Model.DAO.ProdottoDAO;
 import Model.DAO.ProdottoDAOIn;
 import Model.DAO.ProdottoDTO;
+
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -60,5 +62,9 @@ public class ProdottoBean {
 
     public void updateQtProductFromCart(int id,int qt,CarrelloBean cart)throws SQLException{
         cart.updateQ(id,qt);
+    }
+
+    public void insertProdotto(ProdottoDTO prod) throws SQLException, IOException {
+        model.doSaveProdotto(prod);
     }
 }

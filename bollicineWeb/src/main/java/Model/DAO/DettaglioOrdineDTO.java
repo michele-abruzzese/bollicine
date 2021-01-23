@@ -4,7 +4,7 @@ public class DettaglioOrdineDTO {
     int idPodotto;
     int idOrdine;
     int quantità;
-    float prezzoUnit;
+    double prezzoUnit;
     int iva;
 
     public DettaglioOrdineDTO() {
@@ -34,11 +34,11 @@ public class DettaglioOrdineDTO {
         this.quantità = quantità;
     }
 
-    public float getPrezzoUnit() {
+    public double getPrezzoUnit() {
         return prezzoUnit;
     }
 
-    public void setPrezzoUnit(float prezzoUnit) {
+    public void setPrezzoUnit(double prezzoUnit) {
         this.prezzoUnit = prezzoUnit;
     }
 

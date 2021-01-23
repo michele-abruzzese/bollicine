@@ -113,4 +113,13 @@
         <servlet-name>VisualizzaProdottiControl</servlet-name>
         <url-pattern>/VisualizzaProdotti</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InsertUpdateProductControl</servlet-name>
+        <servlet-class>Control.Product_Manager.InsertUpdateProductControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsertUpdateProductControl</servlet-name>
+        <url-pattern>/InsertUpdateProduct</url-pattern>
+    </servlet-mapping>
 </web-app>

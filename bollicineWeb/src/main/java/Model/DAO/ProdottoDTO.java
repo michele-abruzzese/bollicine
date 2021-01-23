@@ -9,7 +9,7 @@ public class ProdottoDTO {
     String immagine;
     String tipo;
     int annata;
-    float prezzo;
+    double prezzo;
     int disponibilità;
     //per leggere l'immagine in byte
     byte[] img=null;
@@ -81,11 +81,11 @@ public class ProdottoDTO {
         this.annata = annata;
     }
 
-    public float getPrezzo() {
+    public double getPrezzo() {
         return prezzo;
     }
 
-    public void setPrezzo(float prezzo) {
+    public void setPrezzo(double prezzo) {
         this.prezzo = prezzo;
     }
 

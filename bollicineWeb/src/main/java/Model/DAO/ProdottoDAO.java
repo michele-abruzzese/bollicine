@@ -27,7 +27,7 @@ public class ProdottoDAO implements ProdottoDAOIn{
 
         ps.setString(1,prod.getNome());
         ps.setString(2,prod.getCategoria());
-        ps.setString(3,prod.getCategoria());
+        ps.setString(3,prod.getDescrizione());
 
         //in immagine abbiamo il path mandato dalla servlet
         File file = new File(prod.getImmagine());
@@ -37,8 +37,8 @@ public class ProdottoDAO implements ProdottoDAOIn{
 
         //continuo con altri campi
         ps.setString(5,prod.getTipo());
-        ps.setInt(6,prod.getAnnata());
-        ps.setFloat(7,prod.getPrezzo());
+        ps.setInt(6, prod.getAnnata());
+        ps.setDouble(7,prod.getPrezzo());
         ps.setInt(8,prod.getDisponibilità());
 
         ps.executeUpdate();

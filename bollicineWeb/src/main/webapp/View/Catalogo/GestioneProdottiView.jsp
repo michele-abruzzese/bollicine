@@ -50,33 +50,33 @@
         <div id="InsertUpdate">
             <div id="formInsert">
                 <h2 class="h2Form">Inserisci prodotto</h2>
-                <form action="#sevletPerInserireProdotto" enctype="multipart/form-data"  method="post">
-                    <input type="hidden" name="action" value="insert">
+                <form action="./InsertUpdateProduct" enctype="multipart/form-data"  method="post">
+                    <input type="hidden" name="action" value="ins">
 
-                    <label for="nome">Nome:</label><br>
-                    <input id="nome" type="text" maxlength="45" required placeholder="enter name"><br>
+                    Nome:<br>
+                    <input name="nome" type="text" maxlength="45" required placeholder="enter name"><br>
 
-                    <label for="categoria"> Categoria </label><br>
-                    <select id="categoria">
+                    Categoria:<br>
+                    <select name="categoria">
                         <option value="bianchi">bianchi</option>
                         <option value="rossi">rossi</option>
                         <option value="spumanti">spumanti</option>
                     </select><br>
 
-                    <label for="descrizione">Descrizione:</label><br>
-                    <textarea id="descrizione" maxlength="500" rows="3" required placeholder="enter description"></textarea><br>
+                    Descrizione:<br>
+                    <textarea name="descrizione" maxlength="500" rows="3" required placeholder="enter description"></textarea><br>
 
-                    <label for="tipo">Nome:</label><br>
-                    <input id="tipo" type="text" maxlength="45" required placeholder="enter tipo"><br>
+                    Tipo:<br>
+                    <input name="tipo" type="text" maxlength="45" required placeholder="enter tipo" required><br>
 
-                    <label for="annata">Annata:</label><br>
-                    <input id="annata" type="number" min="0" value="annata"><br>
+                    Annata:<br>
+                    <input name="annata" type="number" min="0" max="4000" value="annata" required><br>
 
-                    <label for="prezzo">Prezzo:</label><br>
-                    <input id="prezzo" type="number" min="1" value="1" required><br>
+                    Prezzo:<br>
+                    <input name="prezzo" type="number" min="1" value="1" step="any" required><br>
 
-                    <label for="disponibilita">Disponibilità:</label><br>
-                    <input id="disponibilita" type="number" min="0" value="0"><br>
+                    Disponibilità:<br>
+                    <input name="disponibilita" type="number" min="0" value="0" required><br>
 
 
                     <input class="file" type="file" name="talkPhoto" value="" maxlength="255"><br>
@@ -120,32 +120,31 @@
                     <input type="hidden" name="action" value="update">
                     <input type="hidden" name="idProdotto" value="<%=up.getIdProdotto()%>">
 
-                    <label for="nomeUp">Nome:</label><br>
-                    <input id="nomeUp" type="text" maxlength="20" value="<%=up.getNome() %>" required><br>
+                    Nome:<br>
+                    <input name="nome" type="text" maxlength="45" required value="<%=up.getNome()%>"><br>
 
-
-                    <label for="categoriaUp"> Categoria </label><br>
-                    <select id="categoriaUp">
-                        <option value="bianchi">bianchi</option>
-                        <option value="rossi">rossi</option>
-                        <option value="spumanti">spumanti</option>
+                    <%String cat=up.getCategoria();%>
+                    Categoria:<br>
+                    <select name="categoria">
+                        <option value="bianchi" <%if(cat.equalsIgnoreCase("bianchi")){%> selected<%}%> >bianchi</option>
+                        <option value="rossi" <%if(cat.equalsIgnoreCase("rossi")){%> selected<%}%> >rossi</option>
+                        <option value="spumanti" <%if(cat.equalsIgnoreCase("spumanti")){%> selected<%}%> >spumanti</option>
                     </select><br>
 
+                    Descrizione:<br>
+                    <textarea name="descrizione" maxlength="500" rows="3" required value="<%=up.getDescrizione()%>"></textarea><br>
 
-                    <label for="descrizioneUp">Descrizione:</label><br>
-                    <textarea id="descrizioneUp" maxlength="500" rows="3" required placeholder="enter description"></textarea><br>
+                    Tipo:<br>
+                    <input name="tipo" type="text" maxlength="45" required value="<%=up.getTipo()%>" required><br>
 
-                    <label for="tipoUp">Nome:</label><br>
-                    <input id="tipoUp" type="text" maxlength="45" required placeholder="enter tipo"><br>
+                    Annata:<br>
+                    <input name="annata" type="number" min="0" max="4000" value="<%=up.getAnnata()%>" required><br>
 
-                    <label for="annataUp">Annata:</label><br>
-                    <input id="annataUp" type="number" min="0" value="annata"><br>
+                    Prezzo:<br>
+                    <input name="prezzo" type="number" min="1" value="<%=up.getPrezzo()%>" step="any" required><br>
 
-                    <label for="prezzoUp">Prezzo:</label><br>
-                    <input id="prezzoUp" type="number" min="1" value="1" required><br>
-
-                    <label for="disponibilitaUp">Disponibilità:</label><br>
-                    <input id="disponibilitaUp" type="number" min="0" value="0"><br>
+                    Disponibilità:<br>
+                    <input name="disponibilita" type="number" min="0" value="<%=up.getDisponibilità()%>" required><br>
 
 
                     <input class="file" type="file" name="talkPhoto" value="" maxlength="255"><br>
