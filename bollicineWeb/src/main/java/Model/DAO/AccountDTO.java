@@ -12,7 +12,15 @@ public class AccountDTO {
     public AccountDTO() {
     }
 
-
+    public AccountDTO(int id, String nome, String cognome, String email, String password, String stato, String tipo) {
+        this.id = id;
+        this.nome = nome;
+        this.cognome = cognome;
+        this.email = email;
+        this.password = password;
+        this.stato = stato;
+        this.tipo = tipo;
+    }
 
     public int getId() {
         return id;
@@ -69,16 +77,6 @@ public class AccountDTO {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-
-    @Override
-    public String toString() {
-        return "AccountDTO{" +
-                "nome='" + nome + '\'' +
-                ", cognome='" + cognome + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", stato='" + stato + '\'' +
-                ", tipo='" + tipo + '\'' +
-                '}';
-    }
 }
+
+
