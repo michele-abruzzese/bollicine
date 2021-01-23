@@ -150,17 +150,17 @@ CarrelloBean cart = (CarrelloBean) request.getSession().getAttribute("cart");
 		}
 
 		function functionLoad(){
-			var resp=<%=request.getAttribute("inserito")%>
-			var ordine=<%=request.getAttribute("ordineOk")%>
-			<% System.out.println(request.getAttribute("ordineOk"));%>
+			var resp=<%=request.getSession().getAttribute("addInCart")%>
+			var ordine=<%=request.getSession().getAttribute("ordineOk")%>
+
 			if(resp!=null && resp){
 				alert("prodotto aggiunto al carrello");
-				<%request.removeAttribute("inserito");%>
+				<%request.getSession().removeAttribute("addInCart");%>
 			}
 
 			if(ordine!=null && ordine){
 				alert("ordine effettuato con successo");
-				<%request.removeAttribute("ordine");%>
+				<%request.getSession().removeAttribute("ordineOk");%>
 			}
 		}
 

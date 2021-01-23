@@ -34,9 +34,9 @@ public class AddInCartControl extends HttpServlet {
             //mando al bean l'id del prodotto, la quantità da aggiungere e il carrello
             bean.addProductInCart(id,quantita,cart);
 
-            req.removeAttribute("products");
-            req.setAttribute("products",bean.doRetriveAll());
-            req.setAttribute("inserito",Boolean.TRUE);
+
+            req.getSession().setAttribute("addInCart",Boolean.TRUE);
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

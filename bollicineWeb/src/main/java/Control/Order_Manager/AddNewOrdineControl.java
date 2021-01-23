@@ -36,8 +36,9 @@ public class AddNewOrdineControl extends HttpServlet {
         req.getSession().removeAttribute("cart");
 
         //dico alla jsp che l'ordine è stato salvato
-        req.setAttribute("ordineOk",Boolean.TRUE);
-        System.out.println(req.getAttribute("ordineOk"));
+
+        req.getSession().setAttribute("ordineOk",Boolean.TRUE);
+
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Catalogo/CatalogoView.jsp");
         dispatcher.forward(req, resp);
 
