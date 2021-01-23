@@ -10,6 +10,14 @@ public class DettaglioOrdineDTO {
     public DettaglioOrdineDTO() {
     }
 
+    public DettaglioOrdineDTO(int idPodotto, int idOrdine, int quantità, double prezzoUnit, int iva) {
+        this.idPodotto = idPodotto;
+        this.idOrdine = idOrdine;
+        this.quantità = quantità;
+        this.prezzoUnit = prezzoUnit;
+        this.iva = iva;
+    }
+
     public int getIdPodotto() {
         return idPodotto;
     }

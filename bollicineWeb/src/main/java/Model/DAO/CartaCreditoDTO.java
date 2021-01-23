@@ -11,7 +11,17 @@ public class CartaCreditoDTO {
 
     public CartaCreditoDTO() {
     }
-    
+
+    public CartaCreditoDTO(int idCartaCredito, String nome, String cognome, Long numero, int ccv, String scandenza, int idAccount) {
+        this.idCartaCredito = idCartaCredito;
+        this.nome = nome;
+        this.cognome = cognome;
+        this.numero = numero;
+        this.ccv = ccv;
+        this.scandenza = scandenza;
+        this.idAccount = idAccount;
+    }
+
     public int getIdCartaCredito() {
         return idCartaCredito;
     }
@@ -68,16 +78,4 @@ public class CartaCreditoDTO {
         this.idAccount = idAccount;
     }
 
-    @Override
-    public String toString() {
-        return "CartaCreditoDTO{" +
-                "idCartaCredito=" + idCartaCredito +
-                ", nome='" + nome + '\'' +
-                ", cognome='" + cognome + '\'' +
-                ", numero='" + numero + '\'' +
-                ", ccv='" + ccv + '\'' +
-                ", scandenza='" + scandenza + '\'' +
-                ", idAccount=" + idAccount +
-                '}';
-    }
 }

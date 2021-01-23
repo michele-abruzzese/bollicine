@@ -12,6 +12,16 @@ public class OrdineDTO {
     public OrdineDTO() {
     }
 
+    public OrdineDTO(int idOrdine, float totOrdine, String data, String metodoPag, int idCarta, int idIndirizzo, int idAccount) {
+        this.idOrdine = idOrdine;
+        this.totOrdine = totOrdine;
+        this.data = data;
+        this.metodoPag = metodoPag;
+        this.idCarta = idCarta;
+        this.idIndirizzo = idIndirizzo;
+        this.idAccount = idAccount;
+    }
+
     public int getIdOrdine() {
         return idOrdine;
     }

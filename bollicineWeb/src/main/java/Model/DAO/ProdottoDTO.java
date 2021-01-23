@@ -17,6 +17,19 @@ public class ProdottoDTO {
     public ProdottoDTO() {
     }
 
+    public ProdottoDTO(int idProdotto, String nome, String categoria, String descrizione, String immagine, String tipo, int annata, double prezzo, int disponibilità, byte[] img) {
+        this.idProdotto = idProdotto;
+        this.nome = nome;
+        this.categoria = categoria;
+        this.descrizione = descrizione;
+        this.immagine = immagine;
+        this.tipo = tipo;
+        this.annata = annata;
+        this.prezzo = prezzo;
+        this.disponibilità = disponibilità;
+        this.img = img;
+    }
+
     public byte[] getImg() {
         return img;
     }

@@ -14,6 +14,18 @@ public class IndirizzoSpedDTO {
     public IndirizzoSpedDTO() {
     }
 
+    public IndirizzoSpedDTO(int idIndirizzo, String nome, String cognome, String indirizzo, int cap, String città, String provincia, String alias, int idAccount) {
+        this.idIndirizzo = idIndirizzo;
+        this.nome = nome;
+        this.cognome = cognome;
+        this.indirizzo = indirizzo;
+        this.cap = cap;
+        this.città = città;
+        this.provincia = provincia;
+        this.alias = alias;
+        this.idAccount = idAccount;
+    }
+
     public int getIdIndirizzo() {
         return idIndirizzo;
     }

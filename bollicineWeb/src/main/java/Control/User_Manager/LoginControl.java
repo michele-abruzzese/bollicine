@@ -66,9 +66,6 @@ public class LoginControl extends HttpServlet {
         AccountDTO accountDTO = new AccountDTO();
         accountDTO= bean.doRetriveByEmail(email);
 
-
-        System.out.println(accountDTO.getEmail()+" "+accountDTO.getPassword()+" "+accountDTO.getTipo());
-
         if (accountDTO.getEmail().equals(email) && accountDTO.getPassword().equals(password) && accountDTO.getTipo().equals("admin")) {
 
 
