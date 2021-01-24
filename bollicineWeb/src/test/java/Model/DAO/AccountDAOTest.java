@@ -15,12 +15,12 @@ class AccountDAOTest {
         AccountDAO ac= new AccountDAO();
 
         int id= ac.doSaveAcount(account);
-        System.out.println(id);
 
         AccountDTO ac1= ac.doRetriveByEmail("alfre@gmail.com");
-        System.out.println(ac1.getEmail()+" "+ac1.getId());
 
         assertEquals(id,ac1.getId());
+
+        ac.removeAccount(id);
 
     }
 
@@ -34,5 +34,13 @@ class AccountDAOTest {
 
     @Test
     void doRetriveByEmail() throws SQLException{
+        AccountDTO account = new AccountDTO(0,"Alfredo","Cornacchia","alfre@gmail.com","password","confermato","utente");
+        AccountDAO ac= new AccountDAO();
+
+        int id= ac.doSaveAcount(account);
+
+        AccountDTO ac1= ac.doRetriveByEmail("alfre@gmail.com");
+
+        assertEquals(id,ac1.getId());
     }
 }

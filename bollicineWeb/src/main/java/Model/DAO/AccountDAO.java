@@ -32,8 +32,17 @@ public class AccountDAO implements AccountDAOIn{
     }
 
     @Override
-    public void removeAccount(AccountDTO ac) throws SQLException {
+    public void removeAccount(int id) throws SQLException {
+        /*DELETE FROM `Bollicine`.`Account` WHERE (`idAccount` = '2');*/
 
+        PreparedStatement ps = null;
+
+        String query = "DELETE FROM "+AccountDAO.TABLE_NAME+" WHERE(idAccount = ?)";
+        ps=con.prepareStatement(query);
+
+        ps.setInt(1,id);
+
+        ps.executeUpdate();
     }
 
     @Override
