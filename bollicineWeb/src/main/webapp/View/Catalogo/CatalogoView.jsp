@@ -152,6 +152,7 @@ CarrelloBean cart = (CarrelloBean) request.getSession().getAttribute("cart");
 		function functionLoad(){
 			var resp=<%=request.getSession().getAttribute("addInCart")%>
 			var ordine=<%=request.getSession().getAttribute("ordineOk")%>
+			var email=<%=request.getSession().getAttribute("confermaEmail")%>
 
 			if(resp!=null && resp){
 				alert("prodotto aggiunto al carrello");
@@ -161,6 +162,11 @@ CarrelloBean cart = (CarrelloBean) request.getSession().getAttribute("cart");
 			if(ordine!=null && ordine){
 				alert("ordine effettuato con successo");
 				<%request.getSession().removeAttribute("ordineOk");%>
+			}
+
+			if(email!=null && email){
+				alert("abbiamo inviato l'email al tuo account, vai a confermare");
+				<%request.getSession().removeAttribute("confermaEmail");%>
 			}
 		}
 

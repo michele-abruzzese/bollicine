@@ -158,4 +158,13 @@
         <servlet-name>LogoutControl</servlet-name>
         <url-pattern>/Logout</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddNewClientControl</servlet-name>
+        <servlet-class>Control.User_Manager.AddNewClientControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddNewClientControl</servlet-name>
+        <url-pattern>/AddNewClient</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -27,48 +27,6 @@
 
     <div id="contentLogin">
 
-        <%--<div id="createAccount">
-            <h2 class="intest">Se non sei registrato crea un account</h2>
-            <div id="registrazione">
-
-                <form action="ClientRegistrationForm"  method="post" class="dati_anagrafici1" >
-
-
-
-                    <div id="datiAnagrafici">
-                        <h2>Dati anagrafici</h2>
-
-                        <label for="cognome">Cognome</label><br>
-                        <input class="inputTranspar" name="cognome" type="text" required><br>
-                        <label for="nome">Nome</label><br>
-                        <input class="inputTranspar" name="nome" type="text" required><br>
-                        <label for="telefono">Telefono</label><br>
-                        <input class="inputTranspar" name="telefono" type="number" required><br>
-                        <label for="indirizzo">Indirizzo</label><br>
-                        <input class="inputTranspar" name="indirizzo" type="text" required><br>
-                        <label for="citta">Città</label><br>
-                        <input class="inputTranspar" name="citta" type="text" required><br>
-                        <label for="provincia">Provincia</label><br>
-                        <input class="inputTranspar" name="provincia" type="text" required><br>
-                        <label for="cap">CAP</label><br>
-                        <input class="inputTranspar" name="cap" type="number" required><br>
-                    </div>
-                    <div id="datiLogin">
-                        <h2>Dati login</h2>
-                        <label for="username">Username</label><br>
-                        <input id="usernameControl" onfocusout="controlUsername()" class="inputTranspar" name="username" type="text" required placeholder="enter username"><br>
-                        <label for="email">E-mail</label><br>
-                        <input id="emailControl"  onfocusout="controlEmail()"  class="inputTranspar" name="email" type="text" required placeholder="enter email"><br>
-                        <label for="password">Password</label><br>
-                        <input id="pwd" class="inputTranspar" name="password" type="password" required placeholder="enter password"><br>
-                        <input id="showPw" type="button" onclick="showPwd()" value="Mostra/nascondi password">
-                        <input class="buttonRegi" type="submit" value="registrati">
-                    </div>
-
-                </form>
-            </div>
-        </div>--%>
-
         <div id="formLogin">
 
             <%
@@ -107,7 +65,7 @@
 
                         <h2>Se non sei registrato crea un account</h2>
 
-                        <form action="ClientRegistrationForm"  method="post" class="dati_anagrafici2">
+                        <form action="${pageContext.servletContext.contextPath}/AddNewClient?action=0"  method="post" class="dati_anagrafici2">
 
                             <h2>I tuoi dati</h2>
 
@@ -118,7 +76,7 @@
                             Email<br>
                             <input id="emailControl" name="email" type="text" onfocusout="controlEmail()" required><br>
                             Password<br>
-                            <input name="password" type="text" required><br>
+                            <input name="password" type="password" required><br>
 
                             <input id="showPwInModal" type="button" onclick="showPwd()" value="Mostra/nascondi password">
                             <input class="buttonRegi" type="submit" value="registrati">
