@@ -20,6 +20,8 @@ class AccountDAOTest {
 
         assertEquals(id,ac1.getId());
 
+        ac.removeAccount(id);
+
     }
 
     @Test
@@ -32,5 +34,13 @@ class AccountDAOTest {
 
     @Test
     void doRetriveByEmail() throws SQLException{
+        AccountDTO account = new AccountDTO(0,"Alfredo","Cornacchia","alfre@gmail.com","password","confermato","utente");
+        AccountDAO ac= new AccountDAO();
+
+        int id= ac.doSaveAcount(account);
+
+        AccountDTO ac1= ac.doRetriveByEmail("alfre@gmail.com");
+
+        assertEquals(id,ac1.getId());
     }
 }

@@ -20,8 +20,8 @@ public class AccountBean {
         return model.doSaveAcount(ac);
     }
 
-    public void removeAccount(AccountDTO ac) throws SQLException{
-        model.removeAccount(ac);
+    public void removeAccount(int id) throws SQLException{
+        model.removeAccount(id);
     }
 
     public AccountDTO doRetriveById(int id) throws SQLException{
