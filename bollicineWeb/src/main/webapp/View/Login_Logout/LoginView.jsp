@@ -84,7 +84,7 @@
                 <form action="${pageContext.servletContext.contextPath}/Login" method="post">
 
                     <h4 class="h4">Email</h4>
-                    <input id="emailControl" onfocusout="controlUsernameLog()" class="textArea" type="text" name="email" placeholder="username" autocomplete="off" required><br>
+                    <input id="emailControlLog" onfocusout="controlEmailLog()" class="textArea" type="text" name="email" placeholder="email" autocomplete="off" required><br>
 
                     <h4 class="h4">Password</h4>
                     <input class="textArea" type="password" name="password" placeholder="password"  autocomplete="off" required><br>
@@ -109,14 +109,14 @@
 
                         <form action="ClientRegistrationForm"  method="post" class="dati_anagrafici2">
 
-                            <h2>Dati anagrafici</h2>
+                            <h2>I tuoi dati</h2>
 
                             Cognome<br>
-                            <input id="emailControl" name="cognome" type="text" required><br>
+                            <input  name="cognome" type="text" required><br>
                             Nome<br>
                             <input  name="nome" type="text" required><br>
                             Email<br>
-                            <input name="email" type="number" onfocusout="controlEmail()" required><br>
+                            <input id="emailControl" name="email" type="text" onfocusout="controlEmail()" required><br>
                             Password<br>
                             <input name="password" type="text" required><br>
 
@@ -138,40 +138,9 @@
 <script>
 
     $().ready(function(){
-        $(".dati_anagrafici1").validate({
-            rules:{
-
-                'username':{
-                    minlength:3
-                },
-                'email':{
-                    email:true
-                },
-                'password':{
-                    minlength:4
-                },
-                reuired : true
-            },
-            messages:{
-
-                'username':{
-                    minlength:'<br><b>Almeno 3 lettere</b>'
-                },
-                'email':{
-                    email:'<br><b>Indirizzo email non valido!</b>'
-                },
-                'password':{
-                    minlength:'<br><b>Almeno 4 caratteri</b>'
-                },
-            },
-
-        });
         $(".dati_anagrafici2").validate({
             rules:{
 
-                'username':{
-                    minlength:3
-                },
                 'email':{
                     email:true
                 },
@@ -180,9 +149,7 @@
                 }
             },
             messages:{
-                'username':{
-                    minlength:'<br><b>Almeno 3 lettere</b>'
-                },
+
                 'email':{
                     email:'<br><b>Indirizzo email non valido!</b>'
                 },
@@ -231,36 +198,13 @@
         }
     }
 
-    function controlUsername(){
-        var username=document.getElementById("usernameControl");
-        var valueUsername=username.value;
 
-        var url="ControlLogin?user="+valueUsername;
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && xhr.status==200) {
-                var data=String(xhr.responseText);
-
-                if(data!=0){
-                    username.style.borderColor="#C02230";
-                    alert("username già esistente!");
-                    username.value="";
-                }else {
-                    username.style.borderColor="#fff";
-                }
-            }
-        }
-        xhr.open('GET', url, true);
-        xhr.send(null);
-
-    }
 
     function controlEmail(){
         var email=document.getElementById("emailControl");
         var valueEmail=email.value;
 
-        var myJson=JSON.stringify(valueEmail);
-        var url="ControlLogin?email="+valueEmail;
+        var url="${pageContext.servletContext.contextPath}/ValidateEmail?email="+valueEmail;
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4 && xhr.status==200) {
@@ -268,7 +212,7 @@
 
                 if(data!=0){
                     email.style.borderColor="#c02230";
-                    alert("email già esistente!");
+                    alert("Email già in uso!");
                     email.value="";
                 }else {
                     email.style.borderColor="#fff";
@@ -280,23 +224,22 @@
 
     }
 
-    function controlUsernameLog(){
-        var username=document.getElementById("usernameControlLog");
-        var valueUsername=username.value;
+    function controlEmailLog(){
+        var email=document.getElementById("emailControlLog");
+        var valueEmail=email.value;
 
-        var myJson=JSON.stringify(valueUsername);
-        var url="ControlLogin?user="+valueUsername;
+        var url="${pageContext.servletContext.contextPath}/ValidateEmail?email="+valueEmail;
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4 && xhr.status==200) {
                 var data=String(xhr.responseText);
 
                 if(data==0){
-                    username.style.borderColor="#C02230";
-                    alert("username invalido!");
-                    username.value="";
+                    email.style.borderColor="#C02230";
+                    alert("Email non valida!");
+                    email.value="";
                 }else {
-                    username.style.borderColor="#fff";
+                    email.style.borderColor="#fff";
                 }
             }
         }

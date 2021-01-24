@@ -96,4 +96,23 @@ public class AccountDAO implements AccountDAOIn{
         return ac;
     }
 
+    @Override
+    public int controlEmail(String email) throws SQLException {
+
+        String query="SELECT * FROM "+AccountDAO.TABLE_NAME+" WHERE  Email like ?";
+
+        PreparedStatement st=con.prepareStatement(query);
+
+        st.setString(1,email);
+
+        ResultSet rs= st.executeQuery();
+
+        //se la query non produce risultati allora non ci sono email uguali
+        if(!rs.next()){
+            return 0;
+        }
+
+        return 1;
+    }
+
 }

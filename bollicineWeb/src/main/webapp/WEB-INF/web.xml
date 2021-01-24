@@ -140,4 +140,13 @@
         <servlet-name>DeleteProductControl</servlet-name>
         <url-pattern>/DeleteProduct</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ValidateEmailControl</servlet-name>
+        <servlet-class>Control.User_Manager.ValidateEmailControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ValidateEmailControl</servlet-name>
+        <url-pattern>/ValidateEmail</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -14,28 +14,13 @@ class ProdottoDTOTest {
 
     @Test
     void ProdottoConstructor() {
-        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3,null);
+        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3);
         assertNotNull(prod);
     }
 
     @Test
-    void getImg() {
-        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3,null);
-
-        assertEquals(null,prod.getImg());
-    }
-
-    @Test
-    void setImg() {
-        ProdottoDTO prod = new ProdottoDTO();
-        prod.setImg(null);
-
-        assertEquals(null,prod.getImg());
-    }
-
-    @Test
     void getIdProdotto() {
-        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3,null);
+        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3);
         assertEquals(1,prod.getIdProdotto());
     }
 
@@ -49,7 +34,7 @@ class ProdottoDTOTest {
 
     @Test
     void getNome() {
-        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3,null);
+        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3);
         assertEquals("Tavernello",prod.getNome());
 
     }
@@ -64,7 +49,7 @@ class ProdottoDTOTest {
 
     @Test
     void getCategoria() {
-        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3,null);
+        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3);
         assertEquals("Vino",prod.getCategoria());
 
     }
@@ -79,7 +64,7 @@ class ProdottoDTOTest {
 
     @Test
     void getDescrizione() {
-        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3,null);
+        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3);
         assertEquals("Vino",prod.getDescrizione());
 
     }
@@ -94,7 +79,7 @@ class ProdottoDTOTest {
 
     @Test
     void getImmagine() {
-        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3,null);
+        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3);
         assertEquals("img",prod.getImmagine());
     }
 
@@ -108,7 +93,7 @@ class ProdottoDTOTest {
 
     @Test
     void getTipo() {
-        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3,null);
+        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3);
         assertEquals("Bianco",prod.getTipo());
     }
 
@@ -122,7 +107,7 @@ class ProdottoDTOTest {
 
     @Test
     void getAnnata() {
-        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3,null);
+        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3);
         assertEquals(2020,prod.getAnnata());
     }
 
@@ -136,7 +121,7 @@ class ProdottoDTOTest {
 
     @Test
     void getPrezzo() {
-        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3,null);
+        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3);
         assertEquals(12.2,prod.getPrezzo());
     }
 
@@ -150,7 +135,7 @@ class ProdottoDTOTest {
 
     @Test
     void getDisponibilità() {
-        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3,null);
+        ProdottoDTO prod = new ProdottoDTO(1,"Tavernello","Vino","Vino","img","Bianco",2020,12.2,3);
         assertEquals(3,prod.getDisponibilità());
     }
 

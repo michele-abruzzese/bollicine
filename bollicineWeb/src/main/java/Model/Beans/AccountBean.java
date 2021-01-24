@@ -56,4 +56,9 @@ public class AccountBean {
             return 1;
         }
     }
+
+    public int controlEmail(String email)throws SQLException{
+
+        return model.controlEmail(email);
+    }
 }

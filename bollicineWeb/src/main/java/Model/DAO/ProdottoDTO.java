@@ -11,13 +11,11 @@ public class ProdottoDTO {
     int annata;
     double prezzo;
     int disponibilità;
-    //per leggere l'immagine in byte
-    byte[] img=null;
 
     public ProdottoDTO() {
     }
 
-    public ProdottoDTO(int idProdotto, String nome, String categoria, String descrizione, String immagine, String tipo, int annata, double prezzo, int disponibilità, byte[] img) {
+    public ProdottoDTO(int idProdotto, String nome, String categoria, String descrizione, String immagine, String tipo, int annata, double prezzo, int disponibilità) {
         this.idProdotto = idProdotto;
         this.nome = nome;
         this.categoria = categoria;
@@ -27,15 +25,6 @@ public class ProdottoDTO {
         this.annata = annata;
         this.prezzo = prezzo;
         this.disponibilità = disponibilità;
-        this.img = img;
-    }
-
-    public byte[] getImg() {
-        return img;
-    }
-
-    public void setImg(byte[] img) {
-        this.img = img;
     }
 
     public int getIdProdotto() {
