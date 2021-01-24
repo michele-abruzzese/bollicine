@@ -95,8 +95,6 @@ public class CartaCreditoDAO implements CartaCreditoDAOIn{
 
     public void doDelete(int id) throws SQLException{
 
-        /*DELETE FROM `Bollicine`.`CartaDiCredito` WHERE (`idCartaDiCredito` = '1');*/
-
         String query = "DELETE FROM "+CartaCreditoDAO.TABLE_NAME+" WHERE (idCartaDiCredito=?)";
 
         PreparedStatement ps = null;
