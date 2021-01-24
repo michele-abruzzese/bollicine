@@ -153,6 +153,7 @@ CarrelloBean cart = (CarrelloBean) request.getSession().getAttribute("cart");
 			var resp=<%=request.getSession().getAttribute("addInCart")%>
 			var ordine=<%=request.getSession().getAttribute("ordineOk")%>
 
+
 			if(resp!=null && resp){
 				alert("prodotto aggiunto al carrello");
 				<%request.getSession().removeAttribute("addInCart");%>
@@ -162,6 +163,8 @@ CarrelloBean cart = (CarrelloBean) request.getSession().getAttribute("cart");
 				alert("ordine effettuato con successo");
 				<%request.getSession().removeAttribute("ordineOk");%>
 			}
+
+
 		}
 
 	</script>
