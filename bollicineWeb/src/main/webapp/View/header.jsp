@@ -23,10 +23,9 @@
 			<div id="contentNav">
 			 
 			<%
-				//per provare
-				//request.getSession().setAttribute("adminRoles",Boolean.FALSE);
+
 				//navbar per utente non registrato
-				if((Boolean) session.getAttribute("adminRoles")==null){
+				if(session.getAttribute("adminRoles")==null){
 			%>
 	  			<a class="navElement" href="${pageContext.servletContext.contextPath}/Prodotto">Catalogo</a>
 	  			
@@ -49,16 +48,14 @@
   			%>
   				
   			<%
-				//per provare
-				//request.getSession().setAttribute("adminRoles",Boolean.TRUE);
+
 				//navbar per gestore Catalogo
-  				if (((Boolean) session.getAttribute("adminRoles")!=null)&&((Boolean) session.getAttribute("adminRoles"))){
+  				if ((session.getAttribute("adminRoles")!=null)&&(session.getAttribute("adminRoles").equals("gestCat"))){
   			%>
   				<div class="dropdown">
   					<a>administrator</a>
   					<div class="dropdown-content">
 						<a class="elementContent" href="${pageContext.servletContext.contextPath}/VisualizzaProdotti">Prodotti</a>
-						<a class="elementContent" href="${pageContext.servletContext.contextPath}/VisualizzaOrdini">Ordini</a>
 						<a class="elementContent" href="./Logout">Logout</a>
   					</div>
   				</div>
@@ -66,32 +63,33 @@
 	  		<%
   				}
   			%>
+				<%
+
+					//navbar per gestore ordini
+					if ((session.getAttribute("adminRoles")!=null)&&(session.getAttribute("adminRoles").equals("gestOrd"))){
+				%>
+				<div class="dropdown">
+					<a>administrator</a>
+					<div class="dropdown-content">
+						<a class="elementContent" href="${pageContext.servletContext.contextPath}/VisualizzaOrdini">Ordini</a>
+						<a class="elementContent" href="./Logout">Logout</a>
+					</div>
+				</div>
+
+				<%
+					}
+				%>
   				
   			<%
   				//navbar per utente registrato
   				if(request.getSession().getAttribute("utente")!=null){
- 					//Dati_anagraficiBean datiUtente=(Dati_anagraficiBean)request.getSession().getAttribute("datiUtente");
 					AccountDTO account=(AccountDTO) request.getSession().getAttribute("utente");
   			%>
 
-				<a class="navElement" href="./View/Catalogo/CatalogoView.jsp">Catalogo</a>
-
-				<div class="dropdownNav">
-					<a class="navElement">Categorie <i class="fas fa-caret-down"></i></a>
-					<div class="dropdown-contentNav">
-						<a class="elementContentNav" href="./Categorie?cat=bi" >Bianchi</a>
-						<a class="elementContentNav" href="./Categorie?cat=ro">Rossi</a>
-						<a class="elementContentNav" href="./Categorie?cat=spu">Spumanti</a>
-					</div>
-				</div>
-	  			
-	  			<a class="navElement" href="LoginView.jsp">Accedi</a>
-	  			<a class="navElement" href="product?action=viewC"><i class="fas fa-shopping-cart"></i></a>
 	  			<div class="dropdown">
-	  				<a class="navElement"><i class="far fa-user"></i></a>
+	  				<a class="navElement"><%=account.getNome()%><i class="far fa-user"></i></a>
 	  				<div class="dropdown-content">
-						<a class="elementContent" href="./Logout">logout</a> 
-						<a class="elementContent" href="./OrdiniCliente">I miei ordini</a>
+						<a class="elementContent" href="./Logout">logout</a>
 	  				</div>
 	  			</div>
   			<%

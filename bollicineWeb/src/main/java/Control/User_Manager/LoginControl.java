@@ -1,14 +1,19 @@
 package Control.User_Manager;
 import Model.Beans.AccountBean;
 import Model.DAO.AccountDTO;
+import Model.DAO.CartaCreditoDTO;
+import Model.DAO.IndirizzoSpedDTO;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.smartcardio.CardTerminal;
 import javax.swing.*;
 
 /*
@@ -27,13 +32,14 @@ public class LoginControl extends HttpServlet {
 
     static AccountBean bean = new AccountBean();
 
-    /*static ClientModel model = new ClientModelDM();
-    static Dati_anagraficiModel modelDati=new Dati_anagraficiModelDM();
-    static IndirizzoSpedModel modelIndirizzi= new IndirizzoSpedModelDM();*/
+    private static final long serialVersionUID = 1L;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        {
+    public LoginControl() {
+        super();
+    }
+
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
             String email = request.getParameter("email");
             String password = request.getParameter("password");
@@ -41,64 +47,84 @@ public class LoginControl extends HttpServlet {
             String redirectedPage;
 
             try {
-                //se l'utente � amministratore
-                if(checkLogin(email, password,request)) {
-                    request.getSession().setAttribute("adminRoles", new Boolean(true));
-                    redirectedPage = "/protected.jsp";
+                //se l'utente è un admin
+                if(checkLogin(email, password,request).equals("admin")) {
+                    request.getSession().setAttribute("adminRoles", "admin");
+                    redirectedPage = "#paginaAdmin";
                     response.sendRedirect(request.getContextPath() + redirectedPage);
 
-                }else{
-                    request.getSession().setAttribute("adminRoles", new Boolean(false));
-                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Catalogo/CatalogoView.jsp");
-                    dispatcher.forward(request, response);
+                }else if(checkLogin(email, password,request).equals("utente")){
+                    //se l'utente è un cliente
+                    redirectedPage = "/Prodotto";
+                    response.sendRedirect(request.getContextPath() + redirectedPage);
+
+                }else if(checkLogin(email, password,request).equals("gestCat")){
+                    //se l'utente è un gestore catalogo
+
+                    request.getSession().setAttribute("adminRoles", "gestCat");
+                    redirectedPage = "/VisualizzaProdotti";
+                    response.sendRedirect(request.getContextPath() + redirectedPage);
+
+                }else if(checkLogin(email, password,request).equals("gestOrd")){
+                    //se l'utente è un gestore ordine
+
+                    request.getSession().setAttribute("adminRoles", "gestOrd");
+                    redirectedPage = "/VisualizzaOrdini";
+                    response.sendRedirect(request.getContextPath() + redirectedPage);
+
                 }
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Credenziali errate! Riprova","Exception",JOptionPane.INFORMATION_MESSAGE);
                 request.setAttribute("invalidAccess", "true");
                 RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/View/Login_Logout/LoginView.jsp");
                 dispatcher.forward(request, response);
             }
 
-        }
     }
 
-    private boolean checkLogin(String email, String password,HttpServletRequest request) throws Exception {
+    private String checkLogin(String email, String password,HttpServletRequest request) throws Exception {
         AccountDTO accountDTO = new AccountDTO();
         accountDTO= bean.doRetriveByEmail(email);
 
         if (accountDTO.getEmail().equals(email) && accountDTO.getPassword().equals(password) && accountDTO.getTipo().equals("admin")) {
 
-
-
             request.getSession().invalidate();
-            return true;
+            return "admin";
 
 
         } else if(accountDTO.getEmail().equals(email) && accountDTO.getPassword().equals(password) && accountDTO.getTipo().equals("utente")){
 
-            /*Dati_anagraficiBean datiCliente=new Dati_anagraficiBean();*/
+            //indirizzi di spedizione
+            List<IndirizzoSpedDTO> indirizzi = new ArrayList<>();
+            indirizzi= bean.doRetriveIndirizzi(accountDTO.getId());
 
-
-            /*datiCliente=modelDati.doRetriveByCliente(bean.getIdcliente());*/
-
+            //carte di credito
+            List<CartaCreditoDTO> carte = new ArrayList<>();
+            carte= bean.doRetriveCarte(accountDTO.getId());
 
             request.getSession().invalidate();
-            request.getSession().setAttribute("utente",bean.doRetriveByEmail(email));
-            /*request.getSession().setAttribute("datiUtente",datiCliente);
-            request.getSession().setAttribute("indirizzi", modelIndirizzi.doRetriveByCliente(bean.getIdcliente()));
-*/
+            request.getSession().setAttribute("utente",accountDTO);
+            request.getSession().setAttribute("indirizzi",indirizzi);
+            request.getSession().setAttribute("carte",carte);
 
-            return false;
+
+            return "utente";
+
+        }else if(accountDTO.getEmail().equals(email) && accountDTO.getPassword().equals(password) && accountDTO.getTipo().equalsIgnoreCase("gestore catalogo")){
+
+            request.getSession().invalidate();
+            return "gestCat";
+
+        }else if(accountDTO.getEmail().equals(email) && accountDTO.getPassword().equals(password) && accountDTO.getTipo().equalsIgnoreCase("gestore ordini")){
+
+            request.getSession().invalidate();
+            return "gestOrd";
         }
+
         throw new Exception("Invalid login and password");
 
     }
 
-    private static final long serialVersionUID = 1L;
 
-    public LoginControl() {
-        super();
-    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

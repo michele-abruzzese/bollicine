@@ -3,6 +3,7 @@ package Model.Beans;
 import Model.DAO.*;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AccountBean {
@@ -60,5 +61,21 @@ public class AccountBean {
     public int controlEmail(String email)throws SQLException{
 
         return model.controlEmail(email);
+    }
+
+    public List<IndirizzoSpedDTO> doRetriveIndirizzi(int idAccount) throws SQLException {
+        List<IndirizzoSpedDTO> indirizzi = new ArrayList<>();
+
+        indirizzi=modelInd.doRetriveByAcount(idAccount);
+
+        return indirizzi;
+    }
+
+    public List<CartaCreditoDTO> doRetriveCarte(int idAccount) throws SQLException {
+        List<CartaCreditoDTO> carte= new ArrayList<>();
+
+        carte=modelCar.doRetriveByAccount(idAccount);
+
+        return carte;
     }
 }

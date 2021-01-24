@@ -1,9 +1,9 @@
 <%
     //Check user credentials
-    Boolean adminRoles = (Boolean) session.getAttribute("adminRoles");
-    if ((adminRoles == null) || (!adminRoles.booleanValue()))
+    String adminRoles = (String) session.getAttribute("adminRoles");
+    if ((adminRoles == null) || (!adminRoles.equalsIgnoreCase("gestCat")))
     {
-        response.sendRedirect("./login-form.jsp");
+        response.sendRedirect("${pageContext.servletContext.contextPath}/View/Login_Logout/LoginView.jsp");
         return;
     }
 

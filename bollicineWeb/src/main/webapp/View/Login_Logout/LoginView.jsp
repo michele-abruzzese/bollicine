@@ -75,7 +75,7 @@
                 String errore=(String)request.getAttribute("invalidAccess");
                 if(errore!=null && errore.equalsIgnoreCase("true")){
             %>
-            <div id="errorLogin"><p>Username o password errati!</p></div>
+                <div id="errorLogin"><p>Username o password errati!</p></div>
             <%
                 }
             %>
