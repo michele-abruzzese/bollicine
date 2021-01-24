@@ -92,4 +92,18 @@ public class CartaCreditoDAO implements CartaCreditoDAOIn{
 
         return carta;
     }
+
+    public void doDelete(int id) throws SQLException{
+
+        /*DELETE FROM `Bollicine`.`CartaDiCredito` WHERE (`idCartaDiCredito` = '1');*/
+
+        String query = "DELETE FROM "+CartaCreditoDAO.TABLE_NAME+" WHERE (idCartaDiCredito=?)";
+
+        PreparedStatement ps = null;
+        ps= con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+
+        ps.setInt(1,id);
+
+        ps.executeUpdate();
+    }
 }
