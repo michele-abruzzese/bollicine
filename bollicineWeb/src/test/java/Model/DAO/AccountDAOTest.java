@@ -15,10 +15,8 @@ class AccountDAOTest {
         AccountDAO ac= new AccountDAO();
 
         int id= ac.doSaveAcount(account);
-        System.out.println(id);
 
         AccountDTO ac1= ac.doRetriveByEmail("alfre@gmail.com");
-        System.out.println(ac1.getEmail()+" "+ac1.getId());
 
         assertEquals(id,ac1.getId());
 
