@@ -154,6 +154,12 @@
             document.getElementById("nav").style.textAlign="center";
             document.getElementById("closeMenu").style.display="none";
         }
+
+        var email=<%=request.getSession().getAttribute("confermaEmail")%>
+        if(email!=null && email){
+            alert("abbiamo inviato l'email al tuo account, vai a confermare");
+            <%request.getSession().removeAttribute("confermaEmail");%>
+        }
     }
 
 

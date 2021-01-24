@@ -43,7 +43,7 @@ public class AddNewClientControl extends HttpServlet {
                 bean.sandEmail(email, "http://localhost:8080/bollicineSito_war_exploded/AddNewClient?action=1");
 
                 req.getSession().setAttribute("confermaEmail",Boolean.TRUE);
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Catalogo/CatalogoView.jsp");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Login_Logout/LoginView.jsp");
                 dispatcher.forward(req, resp);
             } catch (MessagingException e) {
                 e.printStackTrace();
@@ -55,7 +55,7 @@ public class AddNewClientControl extends HttpServlet {
             account.setStato("confermato");
 
             System.out.println("accountunt dopo dell'email: "+account);
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Catalogo/CatalogoView.jsp");
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Login_Logout/LoginView.jsp");
             dispatcher.forward(req, resp);
 
         }
