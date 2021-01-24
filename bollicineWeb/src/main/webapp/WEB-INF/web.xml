@@ -149,4 +149,13 @@
         <servlet-name>ValidateEmailControl</servlet-name>
         <url-pattern>/ValidateEmail</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutControl</servlet-name>
+        <servlet-class>Control.User_Manager.LogoutControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutControl</servlet-name>
+        <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
 </web-app>

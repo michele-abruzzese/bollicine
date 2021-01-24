@@ -56,7 +56,7 @@
   					<a>administrator</a>
   					<div class="dropdown-content">
 						<a class="elementContent" href="${pageContext.servletContext.contextPath}/VisualizzaProdotti">Prodotti</a>
-						<a class="elementContent" href="./Logout">Logout</a>
+						<a class="elementContent" href="${pageContext.servletContext.contextPath}/Logout">Logout</a>
   					</div>
   				</div>
   			
@@ -72,7 +72,7 @@
 					<a>administrator</a>
 					<div class="dropdown-content">
 						<a class="elementContent" href="${pageContext.servletContext.contextPath}/VisualizzaOrdini">Ordini</a>
-						<a class="elementContent" href="./Logout">Logout</a>
+						<a class="elementContent" href="${pageContext.servletContext.contextPath}/Logout">Logout</a>
 					</div>
 				</div>
 
@@ -89,7 +89,7 @@
 	  			<div class="dropdown">
 	  				<a class="navElement"><%=account.getNome()%><i class="far fa-user"></i></a>
 	  				<div class="dropdown-content">
-						<a class="elementContent" href="./Logout">logout</a>
+						<a class="elementContent" href="${pageContext.servletContext.contextPath}/Logout">logout</a>
 	  				</div>
 	  			</div>
   			<%

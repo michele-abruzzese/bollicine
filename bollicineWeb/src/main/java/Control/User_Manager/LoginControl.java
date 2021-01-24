@@ -1,5 +1,6 @@
 package Control.User_Manager;
 import Model.Beans.AccountBean;
+import Model.Beans.CarrelloBean;
 import Model.DAO.AccountDTO;
 import Model.DAO.CartaCreditoDTO;
 import Model.DAO.IndirizzoSpedDTO;
@@ -92,6 +93,8 @@ public class LoginControl extends HttpServlet {
 
 
         } else if(accountDTO.getEmail().equals(email) && accountDTO.getPassword().equals(password) && accountDTO.getTipo().equals("utente")){
+            //prendo il carrello dalla sessione
+            CarrelloBean carrello= (CarrelloBean) request.getSession().getAttribute("cart");
 
             //indirizzi di spedizione
             List<IndirizzoSpedDTO> indirizzi = new ArrayList<>();
@@ -102,6 +105,7 @@ public class LoginControl extends HttpServlet {
             carte= bean.doRetriveCarte(accountDTO.getId());
 
             request.getSession().invalidate();
+            request.getSession().setAttribute("cart",carrello);
             request.getSession().setAttribute("utente",accountDTO);
             request.getSession().setAttribute("indirizzi",indirizzi);
             request.getSession().setAttribute("carte",carte);
@@ -111,7 +115,9 @@ public class LoginControl extends HttpServlet {
 
         }else if(accountDTO.getEmail().equals(email) && accountDTO.getPassword().equals(password) && accountDTO.getTipo().equalsIgnoreCase("gestore catalogo")){
 
+
             request.getSession().invalidate();
+
             return "gestCat";
 
         }else if(accountDTO.getEmail().equals(email) && accountDTO.getPassword().equals(password) && accountDTO.getTipo().equalsIgnoreCase("gestore ordini")){

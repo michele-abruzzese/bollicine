@@ -15,36 +15,13 @@
 <%@ include file="../header.jsp" %>
 <div id="cartIndirizzi">
     <%
-        /*per provare
-        AccountDTO ac=new AccountDTO();
-        ac.setId(4);
-        ac.setTipo("cliente");
-        request.getSession().setAttribute("utente",ac);
-
-        IndirizzoSpedDTO in=new IndirizzoSpedDTO();
-        in.setAlias("casa");
-        in.setNome("Michele");
-        in.setCognome("Abruzzese");
-        in.setIdIndirizzo(1);
-
-        CartaCreditoDTO ct=new CartaCreditoDTO();
-        ct.setCcv(233);
-        ct.setNumero(23348888L);
-        ct.setIdCartaCredito(1);
-
-        List <IndirizzoSpedDTO> indiri =new ArrayList<>();
-        indiri.add(in);
-
-        List <CartaCreditoDTO> car=new ArrayList<>();
-        car.add(ct);
-
-        request.getSession().setAttribute("indirizzi",indiri);
-        request.getSession().setAttribute("carte",car);
-
-        fine prova
-        */
 
         AccountDTO cliente=(AccountDTO) request.getSession().getAttribute("utente");
+
+        if(cliente==null){
+            response.sendRedirect("../Login_Logout/LoginView.jsp");
+            return;
+        }
         List <IndirizzoSpedDTO> indirizzi=(List <IndirizzoSpedDTO>) request.getSession().getAttribute("indirizzi");
         List <CartaCreditoDTO> carte=(List <CartaCreditoDTO>) request.getSession().getAttribute("carte");
 
