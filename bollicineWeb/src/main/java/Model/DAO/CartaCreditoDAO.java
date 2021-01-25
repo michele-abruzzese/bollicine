@@ -6,11 +6,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CartaCreditoDAO implements CartaCreditoDAOIn{
+public class CartaCreditoDAO {
     static Connection con = DatabaseConnection.getConnection();
     private static final String TABLE_NAME = "cartadicredito";
 
-    @Override
+
     public synchronized int doSaveCartaCredito(CartaCreditoDTO cc)throws SQLException {
         PreparedStatement ps = null;
 
@@ -34,7 +34,7 @@ public class CartaCreditoDAO implements CartaCreditoDAOIn{
         return key;
     }
 
-    @Override
+
     public synchronized List<CartaCreditoDTO> doRetriveByAccount(int idAccount)throws SQLException {
         List <CartaCreditoDTO> carte=new ArrayList<CartaCreditoDTO>();
 
@@ -66,7 +66,7 @@ public class CartaCreditoDAO implements CartaCreditoDAOIn{
         return carte;
     }
 
-    @Override
+
     public CartaCreditoDTO doRetriveById(int idCarta) throws SQLException {
         CartaCreditoDTO carta= new CartaCreditoDTO();
 

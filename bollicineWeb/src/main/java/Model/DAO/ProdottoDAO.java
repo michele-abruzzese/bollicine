@@ -13,11 +13,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProdottoDAO implements ProdottoDAOIn{
+public class ProdottoDAO {
     static Connection con = DatabaseConnection.getConnection();
     private static final String TABLE_NAME = "prodotto";
 
-    @Override
+
     public synchronized void doSaveProdotto(ProdottoDTO prod) throws SQLException, IOException {
 
         String query="INSERT INTO "+ProdottoDAO.TABLE_NAME+" (Nome,Categoria,Descrizione,Immagine,Tipo,Annata,Prezzo,Disponibilità) VALUES (?,?,?,?,?,?,?,?)";
@@ -44,7 +44,7 @@ public class ProdottoDAO implements ProdottoDAOIn{
         ps.executeUpdate();
     }
 
-    @Override
+
     public void doUpdateProdotto(ProdottoDTO prod) throws SQLException, IOException {
         String query="UPDATE "+ProdottoDAO.TABLE_NAME+" SET Nome=?, Categoria=?, Descrizione=?, Immagine=?, Tipo=?, Annata=?, Prezzo=?, Disponibilità=? WHERE idProdotto=?";
 
@@ -71,7 +71,7 @@ public class ProdottoDAO implements ProdottoDAOIn{
 
     }
 
-    @Override
+
     public synchronized List<ProdottoDTO> doRetriveAll() throws SQLException {
         List<ProdottoDTO> prodotti = new ArrayList<ProdottoDTO>();
 
@@ -98,7 +98,7 @@ public class ProdottoDAO implements ProdottoDAOIn{
         return prodotti;
     }
 
-    @Override
+
     public synchronized List<ProdottoDTO> doRetriveByCat(String cat) throws SQLException {
         List<ProdottoDTO> prodotti = new ArrayList<ProdottoDTO>();
 
@@ -129,7 +129,7 @@ public class ProdottoDAO implements ProdottoDAOIn{
         return prodotti;
     }
 
-    @Override
+
     public synchronized byte[] doRetriveImgById(int id) throws SQLException {
 
         byte[] bt=null;
@@ -147,7 +147,7 @@ public class ProdottoDAO implements ProdottoDAOIn{
         return bt;
     }
 
-    @Override
+
     public ProdottoDTO doRetriveById(int id) throws SQLException {
         ProdottoDTO prod=new ProdottoDTO();
 
@@ -172,7 +172,7 @@ public class ProdottoDAO implements ProdottoDAOIn{
         return prod;
     }
 
-    @Override
+
     public void updateDispo(ProdottoDTO prodotto, int qt) throws SQLException {
         int id=prodotto.getIdProdotto();
 

@@ -1,7 +1,6 @@
 package Model.Beans;
 
 import Model.DAO.ProdottoDAO;
-import Model.DAO.ProdottoDAOIn;
 import Model.DAO.ProdottoDTO;
 
 import java.sql.SQLException;
@@ -10,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CarrelloBean {
-    ProdottoDAOIn prodDao=new ProdottoDAO();
+    ProdottoDAO prodDao=new ProdottoDAO();
     private List<ProdottoDTO> products;
     int[] q;
 

@@ -13,13 +13,13 @@ import java.util.Properties;
 
 public class AccountBean {
     //DAO account
-    static AccountDAOIn model = new AccountDAO();
+    static AccountDAO model = new AccountDAO();
 
     //DAO indirizzi
-    static IndirizzoSpedDAOIn modelInd = new IndirizzoSpedDAO();
+    static IndirizzoSpedDAO modelInd = new IndirizzoSpedDAO();
 
     //DAO carte
-    static CartaCreditoDAOIn modelCar = new CartaCreditoDAO();
+    static CartaCreditoDAO modelCar = new CartaCreditoDAO();
 
     public int doSaveAcount(AccountDTO ac) throws SQLException {
         return model.doSaveAcount(ac);

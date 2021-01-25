@@ -4,11 +4,11 @@ import Model.DatabaseConnection;
 
 import java.sql.*;
 
-public class AccountDAO implements AccountDAOIn{
+public class AccountDAO {
     static Connection con = DatabaseConnection.getConnection();
     private static final String TABLE_NAME = "Account";
 
-    @Override
+
     public synchronized int doSaveAcount(AccountDTO ac) throws SQLException {
         PreparedStatement ps = null;
 
@@ -31,7 +31,7 @@ public class AccountDAO implements AccountDAOIn{
         return key;
     }
 
-    @Override
+
     public void removeAccount(int id) throws SQLException {
         /*DELETE FROM `Bollicine`.`Account` WHERE (`idAccount` = '2');*/
 
@@ -45,7 +45,7 @@ public class AccountDAO implements AccountDAOIn{
         ps.executeUpdate();
     }
 
-    @Override
+
     public synchronized AccountDTO doRetriveById(int id) throws SQLException {
         PreparedStatement ps = null;
 
@@ -73,7 +73,7 @@ public class AccountDAO implements AccountDAOIn{
         return ac;
     }
 
-    @Override
+
     public synchronized AccountDTO doRetriveByEmail(String email) throws SQLException{
         PreparedStatement ps = null;
 
@@ -105,7 +105,7 @@ public class AccountDAO implements AccountDAOIn{
         return ac;
     }
 
-    @Override
+
     public int controlEmail(String email) throws SQLException {
 
         String query="SELECT * FROM "+AccountDAO.TABLE_NAME+" WHERE  Email like ?";
