@@ -1,4 +1,4 @@
-package Control;
+package Control.Product_Manager;
 
 import Model.Beans.ProdottoBean;
 
