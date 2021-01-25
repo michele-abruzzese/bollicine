@@ -156,10 +156,24 @@
         }
 
         var email=<%=request.getSession().getAttribute("confermaEmail")%>
+        var confermato=<%=request.getSession().getAttribute("confermato")%>
+        var nonConfermato=<%=request.getSession().getAttribute("nonConfermato")%>
+
         if(email!=null && email){
-            alert("abbiamo inviato l'email al tuo account, vai a confermare");
+            alert("abbiamo inviato l'email al tuo account, vai a confermare entro 10 minuti");
             <%request.getSession().removeAttribute("confermaEmail");%>
         }
+
+        if(confermato!=null && confermato){
+            alert("L'account è stato confermato! accedi per acquistare");
+            <%request.getSession().removeAttribute("confermato");%>
+        }
+
+        if(nonConfermato!=null && nonConfermato){
+            alert("Il tempo per confermare é scaduto! registrati di nuovo");
+            <%request.getSession().removeAttribute("nonConfermato");%>
+        }
+
     }
 
 
