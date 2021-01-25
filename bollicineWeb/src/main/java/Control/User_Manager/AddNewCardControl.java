@@ -1,7 +1,7 @@
 package Control.User_Manager;
 
 import Model.Beans.AccountBean;
-import Model.DAO.CartaCreditoDTO;
+import Model.DTO.CartaCreditoDTO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

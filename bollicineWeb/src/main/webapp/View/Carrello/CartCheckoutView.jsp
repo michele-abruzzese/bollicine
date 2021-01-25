@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=UTF-8" import="Model.DAO.AccountDTO,Model.DAO.IndirizzoSpedDTO,Model.DAO.CartaCreditoDTO" %>
+<%@ page contentType="text/html; charset=UTF-8" import="Model.DTO.AccountDTO,Model.DTO.IndirizzoSpedDTO,Model.DTO.CartaCreditoDTO" %>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

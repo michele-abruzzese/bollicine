@@ -15,7 +15,7 @@ CarrelloBean cart = (CarrelloBean) request.getSession().getAttribute("cart");
 
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,Model.DAO.ProdottoDTO,Model.Beans.CarrelloBean"%>
+<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,Model.DTO.ProdottoDTO,Model.Beans.CarrelloBean"%>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

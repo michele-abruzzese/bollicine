@@ -24,7 +24,7 @@
 
 %>
 
-<%@ page language="java" import="java.util.*,Model.DAO.ProdottoDTO" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*,Model.DTO.ProdottoDTO" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 
 <!DOCTYPE html>

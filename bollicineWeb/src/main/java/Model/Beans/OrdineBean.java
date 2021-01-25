@@ -1,8 +1,8 @@
 package Model.Beans;
 
 import Model.DAO.*;
+import Model.DTO.*;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -11,19 +11,19 @@ import java.util.List;
 
 public class OrdineBean {
     //DAO ordine
-    static OrdineDAOIn modelOrder= new OrdineDAO();
+    static OrdineDAO modelOrder= new OrdineDAO();
 
     //DAO dettaglio ordine
-    static DettaglioOrdineDAOIn modelDett = new DettaglioOrdineDAO();
+    static DettaglioOrdineDAO modelDett = new DettaglioOrdineDAO();
 
     //DAO prodotto
-    static  ProdottoDAOIn modelProd= new ProdottoDAO();
+    static  ProdottoDAO modelProd= new ProdottoDAO();
 
     //DAO indirizzi
-    static  IndirizzoSpedDAOIn modelIndi  = new IndirizzoSpedDAO();
+    static  IndirizzoSpedDAO modelIndi  = new IndirizzoSpedDAO();
 
     //DAO crate
-    static  CartaCreditoDAOIn modelCar = new CartaCreditoDAO();
+    static  CartaCreditoDAO modelCar = new CartaCreditoDAO();
 
     public void doSaveOrder(int idAccount,CarrelloBean cart,int idCarta,int idIndirizzo) throws SQLException, IOException {
 

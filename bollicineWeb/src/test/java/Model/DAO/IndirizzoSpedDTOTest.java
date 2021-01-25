@@ -1,5 +1,6 @@
 package Model.DAO;
 
+import Model.DTO.IndirizzoSpedDTO;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

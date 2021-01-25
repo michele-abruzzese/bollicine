@@ -1,4 +1,4 @@
-package Model.DAO;
+package Model.DTO;
 
 public class OrdineDTO {
     int idOrdine;

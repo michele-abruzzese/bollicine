@@ -1,16 +1,17 @@
 package Model.DAO;
 
+import Model.DTO.IndirizzoSpedDTO;
 import Model.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IndirizzoSpedDAO implements IndirizzoSpedDAOIn{
+public class IndirizzoSpedDAO {
     static Connection con = DatabaseConnection.getConnection();
     private static final String TABLE_NAME = "indirizzospedizione";
 
-    @Override
+
     public synchronized int doSaveIndirizzo(IndirizzoSpedDTO indirizzo) throws SQLException {
         PreparedStatement ps=null;
 
@@ -36,7 +37,7 @@ public class IndirizzoSpedDAO implements IndirizzoSpedDAOIn{
         return key;
     }
 
-    @Override
+
     public synchronized List<IndirizzoSpedDTO> doRetriveByAcount(int idAccount) throws SQLException {
         List<IndirizzoSpedDTO> indirizzi=new ArrayList<IndirizzoSpedDTO>();
 
@@ -68,7 +69,7 @@ public class IndirizzoSpedDAO implements IndirizzoSpedDAOIn{
         return indirizzi;
     }
 
-    @Override
+
     public IndirizzoSpedDTO doRetriveById(int idIndirizzo) throws SQLException {
         IndirizzoSpedDTO indirizzo= new IndirizzoSpedDTO();
 

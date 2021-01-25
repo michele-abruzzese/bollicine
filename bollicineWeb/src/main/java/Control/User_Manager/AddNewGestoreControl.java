@@ -1,7 +1,7 @@
 package Control.User_Manager;
 
 import Model.Beans.AccountBean;
-import Model.DAO.AccountDTO;
+import Model.DTO.AccountDTO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -1,5 +1,6 @@
 package Model.DAO;
 
+import Model.DTO.OrdineDTO;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

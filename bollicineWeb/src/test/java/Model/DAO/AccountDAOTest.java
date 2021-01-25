@@ -1,6 +1,6 @@
 package Model.DAO;
 
-import Model.Beans.AccountBean;
+import Model.DTO.AccountDTO;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;

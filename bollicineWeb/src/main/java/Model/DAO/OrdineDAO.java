@@ -1,16 +1,17 @@
 package Model.DAO;
 
+import Model.DTO.OrdineDTO;
 import Model.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrdineDAO implements OrdineDAOIn{
+public class OrdineDAO {
     static Connection con = DatabaseConnection.getConnection();
     private static final String TABLE_NAME = "ordine";
 
-    @Override
+
     public int doSaveOrdine(OrdineDTO ordine) throws SQLException {
         PreparedStatement st=null;
 
@@ -34,7 +35,7 @@ public class OrdineDAO implements OrdineDAOIn{
         return key;
     }
 
-    @Override
+
     public List<OrdineDTO> doRetriveAllByAccount(int idAccount) throws SQLException {
         List<OrdineDTO> ordini=new ArrayList<OrdineDTO>();
 
@@ -59,7 +60,7 @@ public class OrdineDAO implements OrdineDAOIn{
         return ordini;
     }
 
-    @Override
+
     public List<OrdineDTO> doRetriveAll() throws SQLException {
         List<OrdineDTO> ordini=new ArrayList<OrdineDTO>();
 

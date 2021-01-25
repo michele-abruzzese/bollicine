@@ -1,7 +1,7 @@
 package Control.Product_Manager;
 
 import Model.Beans.ProdottoBean;
-import Model.DAO.ProdottoDTO;
+import Model.DTO.ProdottoDTO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -1,16 +1,17 @@
 package Model.DAO;
 
+import Model.DTO.DettaglioOrdineDTO;
 import Model.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DettaglioOrdineDAO implements DettaglioOrdineDAOIn{
+public class DettaglioOrdineDAO {
     static Connection con = DatabaseConnection.getConnection();
     private static final String TABLE_NAME = "dettaglioordine";
 
-    @Override
+
     public int doSaveDettaglioOrdine(DettaglioOrdineDTO dett)throws SQLException {
         PreparedStatement ps = null;
 
@@ -33,7 +34,7 @@ public class DettaglioOrdineDAO implements DettaglioOrdineDAOIn{
         return key;
     }
 
-    @Override
+
     public List<DettaglioOrdineDTO> doRetriveByOrdine(int idOrdine)throws SQLException {
         List<DettaglioOrdineDTO> dettagli=new ArrayList<DettaglioOrdineDTO>();
 

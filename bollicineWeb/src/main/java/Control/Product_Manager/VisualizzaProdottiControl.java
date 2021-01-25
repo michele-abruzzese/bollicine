@@ -1,7 +1,6 @@
 package Control.Product_Manager;
 
 import Model.DAO.ProdottoDAO;
-import Model.DAO.ProdottoDAOIn;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +11,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class VisualizzaProdottiControl extends HttpServlet {
-    ProdottoDAOIn bean= new ProdottoDAO();
+    ProdottoDAO bean= new ProdottoDAO();
     public VisualizzaProdottiControl() {
         super();
     }

@@ -1,15 +1,14 @@
 package Model.Beans;
 
 import Model.DAO.ProdottoDAO;
-import Model.DAO.ProdottoDAOIn;
-import Model.DAO.ProdottoDTO;
+import Model.DTO.ProdottoDTO;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
 public class ProdottoBean {
-    static ProdottoDAOIn model=new ProdottoDAO();
+    static ProdottoDAO model=new ProdottoDAO();
 
     public List<ProdottoDTO> doRetriveAll() throws SQLException {
         return model.doRetriveAll();
