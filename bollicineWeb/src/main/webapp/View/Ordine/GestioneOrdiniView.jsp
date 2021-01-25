@@ -11,12 +11,8 @@
 <%
 
     List<OrdineDTO> order = (List<OrdineDTO>) request.getAttribute("ordini");
-    List<OrdineDTO> indirizzi = (List<OrdineDTO>) request.getAttribute("indirizzi");
-    List<OrdineDTO> carte = (List<OrdineDTO>) request.getAttribute("carte");
-    if(order==null && indirizzi==null && carte==null){
-        response.sendRedirect("./OrderAdmin");
-        return;
-    }
+    List<IndirizzoSpedDTO> indirizzi = (List<IndirizzoSpedDTO>) request.getAttribute("indirizzi");
+    List<CartaCreditoDTO> carte = (List<CartaCreditoDTO>) request.getAttribute("carte");
 
 %>
 
