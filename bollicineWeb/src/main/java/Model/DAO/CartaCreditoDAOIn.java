@@ -7,4 +7,5 @@ public interface CartaCreditoDAOIn {
     public int doSaveCartaCredito(CartaCreditoDTO cc)throws SQLException;
     public List<CartaCreditoDTO> doRetriveByAccount(int idAccount)throws SQLException;
     public CartaCreditoDTO doRetriveById(int idCarta)throws SQLException;
+    public void doDelete(int id)throws SQLException;
 }

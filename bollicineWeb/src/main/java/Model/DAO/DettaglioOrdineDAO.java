@@ -2,10 +2,7 @@ package Model.DAO;
 
 import Model.DatabaseConnection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,12 +11,12 @@ public class DettaglioOrdineDAO implements DettaglioOrdineDAOIn{
     private static final String TABLE_NAME = "dettaglioordine";
 
     @Override
-    public void doSaveDettaglioOrdine(DettaglioOrdineDTO dett)throws SQLException {
+    public int doSaveDettaglioOrdine(DettaglioOrdineDTO dett)throws SQLException {
         PreparedStatement ps = null;
 
         String query="INSERT INTO "+DettaglioOrdineDAO.TABLE_NAME+" (idProdotto,idOrdine,Quantità,PrezzoUnitario,IVA) VALUES (?,?,?,?,?)";
 
-        ps=con.prepareStatement(query);
+        ps=con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
         ps.setInt(1,dett.getIdPodotto());
         ps.setInt(2,dett.getIdOrdine());
@@ -28,6 +25,12 @@ public class DettaglioOrdineDAO implements DettaglioOrdineDAOIn{
         ps.setInt(5,dett.getIva());
 
         ps.executeUpdate();
+
+        ResultSet rs = ps.getGeneratedKeys();
+        rs.next();
+        int key= rs.getInt(1);
+
+        return key;
     }
 
     @Override
