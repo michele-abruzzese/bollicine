@@ -1,5 +1,6 @@
 package Model.DAO;
 
+import Model.DTO.IndirizzoSpedDTO;
 import Model.DatabaseConnection;
 
 import java.sql.*;

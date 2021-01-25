@@ -1,5 +1,6 @@
 package Model.DAO;
 
+import Model.DTO.CartaCreditoDTO;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;

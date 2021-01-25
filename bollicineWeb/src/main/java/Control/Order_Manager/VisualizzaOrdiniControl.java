@@ -1,9 +1,9 @@
 package Control.Order_Manager;
 
 import Model.Beans.OrdineBean;
-import Model.DAO.CartaCreditoDTO;
-import Model.DAO.IndirizzoSpedDTO;
-import Model.DAO.OrdineDTO;
+import Model.DTO.CartaCreditoDTO;
+import Model.DTO.IndirizzoSpedDTO;
+import Model.DTO.OrdineDTO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

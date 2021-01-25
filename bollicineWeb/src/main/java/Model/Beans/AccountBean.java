@@ -1,10 +1,13 @@
 package Model.Beans;
 
 import Model.DAO.*;
+import Model.DTO.AccountDTO;
+import Model.DTO.CartaCreditoDTO;
+import Model.DTO.IndirizzoSpedDTO;
+
 import javax.mail.*;
 import javax.mail.internet.*;
 import java.io.UnsupportedEncodingException;
-import java.util.*;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

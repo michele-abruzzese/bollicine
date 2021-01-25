@@ -1,5 +1,6 @@
 package Model.DAO;
 
+import Model.DTO.CartaCreditoDTO;
 import Model.DatabaseConnection;
 
 import java.sql.*;

@@ -8,7 +8,7 @@
 %>
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,Model.Beans.CarrelloBean,Model.DAO.ProdottoDTO"%>
+<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,Model.Beans.CarrelloBean,Model.DTO.ProdottoDTO"%>
 
 
 <head>

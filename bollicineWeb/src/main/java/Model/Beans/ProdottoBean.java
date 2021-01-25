@@ -1,7 +1,7 @@
 package Model.Beans;
 
 import Model.DAO.ProdottoDAO;
-import Model.DAO.ProdottoDTO;
+import Model.DTO.ProdottoDTO;
 
 import java.io.IOException;
 import java.sql.SQLException;

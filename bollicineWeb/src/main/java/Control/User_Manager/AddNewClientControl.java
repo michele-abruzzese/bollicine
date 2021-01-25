@@ -1,7 +1,7 @@
 package Control.User_Manager;
 
 import Model.Beans.AccountBean;
-import Model.DAO.AccountDTO;
+import Model.DTO.AccountDTO;
 
 import javax.mail.MessagingException;
 import javax.servlet.RequestDispatcher;
@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalUnit;
 
 public class AddNewClientControl extends HttpServlet {
 

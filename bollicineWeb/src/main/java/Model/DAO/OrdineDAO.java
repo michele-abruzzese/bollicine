@@ -1,5 +1,6 @@
 package Model.DAO;
 
+import Model.DTO.OrdineDTO;
 import Model.DatabaseConnection;
 
 import java.sql.*;

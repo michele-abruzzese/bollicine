@@ -21,8 +21,10 @@
 %>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="Model.DAO.OrdineDTO" %>
+<%@ page import="Model.DTO.OrdineDTO" %>
 <%@ page import="Model.DAO.*" %>
+<%@ page import="Model.DTO.CartaCreditoDTO" %>
+<%@ page import="Model.DTO.IndirizzoSpedDTO" %>
 <!DOCTYPE html>
 <html>
 <head>

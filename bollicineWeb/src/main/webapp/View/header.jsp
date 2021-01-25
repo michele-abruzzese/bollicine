@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <%@ page contentType="text/html; charset=UTF-8" import="java.util.*"%>
-<%@ page import="Model.DAO.AccountDTO" %>
+<%@ page import="Model.DTO.AccountDTO" %>
 <head>
 	<title>head</title>
 	<!-- per responsive -->

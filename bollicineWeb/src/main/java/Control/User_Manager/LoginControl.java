@@ -1,9 +1,9 @@
 package Control.User_Manager;
 import Model.Beans.AccountBean;
 import Model.Beans.CarrelloBean;
-import Model.DAO.AccountDTO;
-import Model.DAO.CartaCreditoDTO;
-import Model.DAO.IndirizzoSpedDTO;
+import Model.DTO.AccountDTO;
+import Model.DTO.CartaCreditoDTO;
+import Model.DTO.IndirizzoSpedDTO;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,8 +14,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.smartcardio.CardTerminal;
-import javax.swing.*;
 
 /*
 
