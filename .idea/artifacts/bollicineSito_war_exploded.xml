@@ -14,9 +14,9 @@
           <element id="module-output" name="bollicineSito" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="gson-2.8.2" />
           <element id="library" level="project" name="javax.mail-1.6.2" />
           <element id="library" level="project" name="activation" />
+          <element id="library" level="project" name="gson-2.8.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">
