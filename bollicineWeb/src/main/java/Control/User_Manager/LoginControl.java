@@ -51,8 +51,8 @@ public class LoginControl extends HttpServlet {
                 //se l'utente è un admin
                 if(checkLogin(email, password,request).equals("admin")) {
                     request.getSession().setAttribute("adminRoles", "admin");
-                    redirectedPage = "#paginaAdmin";
-                    response.sendRedirect(request.getContextPath() + redirectedPage);
+                    RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/View/Login_Logout/RegistrazioneGestoriView.jsp");
+                    dispatcher.forward(request, response);
 
                 }else if(checkLogin(email, password,request).equals("utente")){
                     //se l'utente è un cliente

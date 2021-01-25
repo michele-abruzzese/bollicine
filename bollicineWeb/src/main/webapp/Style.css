@@ -924,7 +924,7 @@ div#contenutoOrdiniAdm form{
   	color:#fff;
 }
 
-#showPwInModal {
+.showPwInModal {
 	background: none;
     border: 0;
     margin-bottom: 15px;
@@ -961,7 +961,7 @@ div#contenutoOrdiniAdm form{
 	margin-top:12px;
 }
 
-#nuovoCliente {
+.nuovoCliente {
 	display:block;
 	text-align: center;
 	padding-top: 15px;

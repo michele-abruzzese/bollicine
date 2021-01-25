@@ -167,4 +167,13 @@
         <servlet-name>AddNewClientControl</servlet-name>
         <url-pattern>/AddNewClient</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddNewGestoreControl</servlet-name>
+        <servlet-class>Control.User_Manager.AddNewGestoreControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddNewGestoreControl</servlet-name>
+        <url-pattern>/AddNewGestore</url-pattern>
+    </servlet-mapping>
 </web-app>

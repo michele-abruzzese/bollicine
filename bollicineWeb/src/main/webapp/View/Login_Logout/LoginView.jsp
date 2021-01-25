@@ -53,7 +53,7 @@
             </div>
 
 
-            <div id="nuovoCliente">
+            <div class="nuovoCliente">
             <!-- bottone per aprire l'inserimento di un nuovo cliente -->
                Non hai un account? <button id="BtnRegi">registrati</button>
 
@@ -76,9 +76,9 @@
                             Email<br>
                             <input id="emailControl" name="email" type="text" onfocusout="controlEmail()" required><br>
                             Password<br>
-                            <input name="password" type="password" required><br>
+                            <input id="pwd" name="password" type="password" required><br>
 
-                            <input id="showPwInModal" type="button" onclick="showPwd()" value="Mostra/nascondi password">
+                            <input class="showPwInModal" type="button" onclick="showPwd()" value="Mostra/nascondi password">
                             <input class="buttonRegi" type="submit" value="registrati">
 
                         </form>

@@ -65,6 +65,21 @@
   			%>
 				<%
 
+					//navbar per admin
+					if ((session.getAttribute("adminRoles")!=null)&&(session.getAttribute("adminRoles").equals("admin"))){
+				%>
+				<div class="dropdown">
+					<a>administrator</a>
+					<div class="dropdown-content">
+						<a class="elementContent" href="${pageContext.servletContext.contextPath}/Logout">Logout</a>
+					</div>
+				</div>
+
+				<%
+					}
+				%>
+				<%
+
 					//navbar per gestore ordini
 					if ((session.getAttribute("adminRoles")!=null)&&(session.getAttribute("adminRoles").equals("gestOrd"))){
 				%>
@@ -79,6 +94,7 @@
 				<%
 					}
 				%>
+
   				
   			<%
   				//navbar per utente registrato
