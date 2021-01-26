@@ -3,7 +3,7 @@
     String adminRoles = (String) session.getAttribute("adminRoles");
     if ((adminRoles == null) || (!adminRoles.equalsIgnoreCase("gestCat")))
     {
-        response.sendRedirect("${pageContext.servletContext.contextPath}/View/Login_Logout/LoginView.jsp");
+        response.sendRedirect("../Login_Logout/LoginView.jsp");
         return;
     }
 
