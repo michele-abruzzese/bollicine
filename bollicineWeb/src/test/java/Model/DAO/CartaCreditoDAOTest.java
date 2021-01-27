@@ -12,7 +12,7 @@ class CartaCreditoDAOTest {
 
     @Test
     void doSaveCartaCredito() throws SQLException{
-        CartaCreditoDTO card = new CartaCreditoDTO(0,"Alfredo","Cornacchia",123456L,123,"01/01/2020",1);
+        CartaCreditoDTO card = new CartaCreditoDTO(0,"Alfredo","Cornacchia",123456L,123,"2020-01-01",6);
         CartaCreditoDAO c = new CartaCreditoDAO();
 
         int id=c.doSaveCartaCredito(card);
@@ -27,21 +27,21 @@ class CartaCreditoDAOTest {
 
     @Test
     void doRetriveByAccount() throws SQLException{
-        CartaCreditoDTO card = new CartaCreditoDTO(0,"Alfredo","Cornacchia",123456L,123,"01/01/2020",1);
+        CartaCreditoDTO card = new CartaCreditoDTO(0,"Alfredo","Cornacchia",123456L,123,"2020-01-01",6);
         CartaCreditoDAO c = new CartaCreditoDAO();
 
         int id=c.doSaveCartaCredito(card);
 
         List<CartaCreditoDTO> carte=c.doRetriveByAccount(card.getIdAccount());
 
-        assertEquals(1,carte.get(0).getIdAccount());
+        assertEquals(6,carte.get(0).getIdAccount());
 
         c.doDelete(id);
     }
 
     @Test
     void doRetriveById() throws SQLException{
-        CartaCreditoDTO card = new CartaCreditoDTO(0,"Alfredo","Cornacchia",123456L,123,"01/01/2020",1);
+        CartaCreditoDTO card = new CartaCreditoDTO(0,"Alfredo","Cornacchia",123456L,123,"2020-01-01",6);
         CartaCreditoDAO c = new CartaCreditoDAO();
 
         int id=c.doSaveCartaCredito(card);
@@ -56,7 +56,7 @@ class CartaCreditoDAOTest {
 
     @Test
     void doDelete() throws SQLException {
-        CartaCreditoDTO card = new CartaCreditoDTO(0,"Alfredo","Cornacchia",123456L,123,"01/01/2020",1);
+        CartaCreditoDTO card = new CartaCreditoDTO(0,"Alfredo","Cornacchia",123456L,123,"2020-01-01",6);
         CartaCreditoDAO c = new CartaCreditoDAO();
 
         int id=c.doSaveCartaCredito(card);
