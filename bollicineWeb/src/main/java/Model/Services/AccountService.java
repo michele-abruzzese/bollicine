@@ -51,6 +51,7 @@ public class AccountService {
     public int salvaIndirizzo(String nome,String cognome,String indirizzo,int cap,String città,String provincia,String alias, int idAccount) throws SQLException{
         IndirizzoSpedDTO indirizzoSped = new IndirizzoSpedDTO();
 
+        indirizzoSped.setIndirizzo(indirizzo);
         indirizzoSped.setNome(nome);
         indirizzoSped.setCognome(cognome);
         indirizzoSped.setCap(cap);
