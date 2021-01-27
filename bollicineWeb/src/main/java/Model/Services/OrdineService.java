@@ -26,7 +26,7 @@ public class OrdineService {
     //DAO crate
     static  CartaCreditoDAO cartaCreditoDAO = new CartaCreditoDAO();
 
-    public void salvaOdine(int idAccount, CarrelloService cart, int idCarta, int idIndirizzo) throws SQLException, IOException {
+    public int salvaOdine(int idAccount, CarrelloService cart, int idCarta, int idIndirizzo) throws SQLException, IOException {
 
         //prendo i prodotti dal carrello
         List<ProdottoDTO> prodotti = cart.getProducts();
@@ -72,6 +72,7 @@ public class OrdineService {
             prodottoDAO.updateDispo(prod,(prod.getDisponibilità()-cart.getQ(prod)));
         }
 
+        return idOrdine;
 
     }
 
