@@ -6,64 +6,70 @@ import Model.DTO.ProdottoDTO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class CarrelloService {
     ProdottoDAO prodDao=new ProdottoDAO();
-    private List<ProdottoDTO> products;
-    int[] q;
+
+    private HashMap<Integer,Integer> map;
 
 
 
     public CarrelloService() {
-        products = new ArrayList<ProdottoDTO>();
-        q= new int[200];
+        map= new HashMap<Integer,Integer>();
+
     }
 
     public void addProduct(ProdottoDTO product, int quantita) {
-        products.add(product);
-        int i=product.getIdProdotto();
-        q[i]=quantita;
+        map.put(product.getIdProdotto(),quantita);
+
     }
 
     public void deleteProduct(ProdottoDTO product) {
-        for(ProdottoDTO prod : products) {
-            if(prod.getIdProdotto() == product.getIdProdotto()) {
-                products.remove(prod);
-                break;
-            }
-        }
+        map.remove(product.getIdProdotto());
     }
 
     public boolean getIfExists(ProdottoDTO product) {
         boolean flag = false;
-        for(ProdottoDTO prod : products) {
-            if(product.getIdProdotto()==prod.getIdProdotto()) {
-                flag=true;
-            }
+
+        if(map.containsKey(product.getIdProdotto())){
+            flag=true;
         }
+
         return flag;//se true allora presente
     }
 
     public List<ProdottoDTO> getProducts() {
-        return  products;
+        List<Integer> chiavi=new ArrayList<>(map.keySet());
+        List<ProdottoDTO> prodotti= new ArrayList<>();
+
+        for (Integer id: chiavi){
+            try {
+                prodotti.add(prodDao.doRetriveById(id));
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+        return  prodotti;
     }
 
-    public int getQ(ProdottoDTO prod) throws SQLException {
+    public int getQ(ProdottoDTO prod) {
+
         if(getIfExists(prod)) {
-            return q[prod.getIdProdotto()];
+            return map.get(prod.getIdProdotto());
         }else return 0;
     }
 
     public void updateQ(int id,int quantita) {
-        q[id]=quantita;
+        map.replace(id,quantita);
+
     }
 
-    public void setQ(int id,int quantita) {
-        for(ProdottoDTO prod : products) {
-            if(prod.getIdProdotto()==id && prod.getDisponibilità()>=q[id]+quantita) {
-                q[id]=q[id]+quantita;
-            }
+    public void setQ(int id,int quantita) throws SQLException {
+
+        if (map.get(id)+quantita<=prodDao.doRetriveById(id).getDisponibilità()){
+            map.replace(id,map.get(id)+quantita);
         }
 
     }
@@ -71,20 +77,18 @@ public class CarrelloService {
     public double getTotal() {
 
         double total=0;
-        for(ProdottoDTO prod : products) {
-            total+=prod.getPrezzo()*q[prod.getIdProdotto()];
+        List<ProdottoDTO> prodotti = getProducts();
+
+        for(ProdottoDTO prod : prodotti) {
+            total+=prod.getPrezzo()*map.get(prod.getIdProdotto());
         }
 
         return total;
     }
 
-    @Override
-    public String toString() {
-        return "Cart [products=" + products + ", q=" + Arrays.toString(q) + "]";
-    }
 
     public boolean noProduct() {
-        if(products.isEmpty()) {
+        if(map.isEmpty()) {
             return true;
         }
         return false;
