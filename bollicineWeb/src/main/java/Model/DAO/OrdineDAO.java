@@ -19,7 +19,7 @@ public class OrdineDAO {
 
         st=con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
-        st.setFloat(1,ordine.getTotOrdine());
+        st.setDouble(1,ordine.getTotOrdine());
         st.setString(2,ordine.getData());
         st.setString(3,ordine.getMetodoPag());
         st.setInt(4,ordine.getIdCarta());
