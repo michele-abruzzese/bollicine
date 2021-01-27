@@ -1,4 +1,4 @@
-package Model.Beans;
+package Model.Services;
 
 import Model.DAO.*;
 import Model.DTO.AccountDTO;
@@ -14,67 +14,94 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class AccountBean {
+public class AccountService {
     //DAO account
-    static AccountDAO model = new AccountDAO();
+    static AccountDAO accountDao = new AccountDAO();
 
     //DAO indirizzi
-    static IndirizzoSpedDAO modelInd = new IndirizzoSpedDAO();
+    static IndirizzoSpedDAO indirizzoDao = new IndirizzoSpedDAO();
 
     //DAO carte
-    static CartaCreditoDAO modelCar = new CartaCreditoDAO();
+    static CartaCreditoDAO cartaDao = new CartaCreditoDAO();
 
-    public int doSaveAcount(AccountDTO ac) throws SQLException {
-        return model.doSaveAcount(ac);
+    public int registraAccount(String nome, String cognome, String email, String password, String stato, String tipo) throws SQLException {
+        AccountDTO account = new AccountDTO();
+        account.setCognome(cognome);
+        account.setNome(nome);
+        account.setEmail(email);
+        account.setPassword(password);
+        account.setStato(stato);
+        account.setTipo(tipo);
+
+        return accountDao.doSaveAcount(account);
     }
 
     public void removeAccount(int id) throws SQLException{
-        model.removeAccount(id);
+        accountDao.removeAccount(id);
     }
 
     public AccountDTO doRetriveById(int id) throws SQLException{
-        return model.doRetriveById(id);
+        return accountDao.doRetriveById(id);
     }
 
     public AccountDTO doRetriveByEmail(String email) throws SQLException{
-        return model.doRetriveByEmail(email);
+        return accountDao.doRetriveByEmail(email);
     }
 
-    public int doSaveIndirizzo(IndirizzoSpedDTO indirizzo, int idAccount) throws SQLException{
-        List<IndirizzoSpedDTO> indirizzi= modelInd.doRetriveByAcount(idAccount);
+    public int salvaIndirizzo(String nome,String cognome,String indirizzo,int cap,String città,String provincia,String alias, int idAccount) throws SQLException{
+        IndirizzoSpedDTO indirizzoSped = new IndirizzoSpedDTO();
+
+        indirizzoSped.setNome(nome);
+        indirizzoSped.setCognome(cognome);
+        indirizzoSped.setCap(cap);
+        indirizzoSped.setCittà(città);
+        indirizzoSped.setProvincia(provincia);
+        indirizzoSped.setAlias(alias);
+        indirizzoSped.setIdAccount(idAccount);
+
+        List<IndirizzoSpedDTO> indirizzi= indirizzoDao.doRetriveByAcount(idAccount);
 
         //se sto inserendo il primo indirizzo
         if(indirizzi.size()==0){
-            modelInd.doSaveIndirizzo(indirizzo);
+            indirizzoDao.doSaveIndirizzo(indirizzoSped);
             return 0;
         }else{
-            modelInd.doSaveIndirizzo(indirizzo);
+            indirizzoDao.doSaveIndirizzo(indirizzoSped);
             return 1;
         }
     }
 
-    public int doSaveCarta(CartaCreditoDTO carta, int idAccount) throws  SQLException{
-        List<CartaCreditoDTO> carte = modelCar.doRetriveByAccount(idAccount);
+    public int salvaCarta(String nome,String cognome,Long numero,int ccv,String scadenza, int idAccount) throws  SQLException{
+        CartaCreditoDTO carta = new CartaCreditoDTO();
+
+        carta.setNome(nome);
+        carta.setCognome(cognome);
+        carta.setNumero(numero);
+        carta.setCcv(ccv);
+        carta.setScandenza(scadenza);
+        carta.setIdAccount(idAccount);
+
+        List<CartaCreditoDTO> carte = cartaDao.doRetriveByAccount(idAccount);
 
         //se sto inserendo la prima carta
         if (carte.size()==0){
-            modelCar.doSaveCartaCredito(carta);
+            cartaDao.doSaveCartaCredito(carta);
             return 0;
         }else {
-            modelCar.doSaveCartaCredito(carta);
+            cartaDao.doSaveCartaCredito(carta);
             return 1;
         }
     }
 
     public int controlEmail(String email)throws SQLException{
 
-        return model.controlEmail(email);
+        return accountDao.controlEmail(email);
     }
 
     public List<IndirizzoSpedDTO> doRetriveIndirizzi(int idAccount) throws SQLException {
         List<IndirizzoSpedDTO> indirizzi = new ArrayList<>();
 
-        indirizzi=modelInd.doRetriveByAcount(idAccount);
+        indirizzi= indirizzoDao.doRetriveByAcount(idAccount);
 
         return indirizzi;
     }
@@ -82,9 +109,25 @@ public class AccountBean {
     public List<CartaCreditoDTO> doRetriveCarte(int idAccount) throws SQLException {
         List<CartaCreditoDTO> carte= new ArrayList<>();
 
-        carte=modelCar.doRetriveByAccount(idAccount);
+        carte= cartaDao.doRetriveByAccount(idAccount);
 
         return carte;
+    }
+
+    public AccountDTO creaAccountDaConfermare(String nome, String cognome, String email, String password,String stato,String tipo) {
+        AccountDTO account = new AccountDTO();
+        account.setCognome(cognome);
+        account.setNome(nome);
+        account.setEmail(email);
+        account.setPassword(password);
+        account.setStato(stato);
+        account.setTipo(tipo);
+
+        return account;
+    }
+
+    public void confermaAccount(AccountDTO account){
+        account.setStato("confermato");
     }
 
     public void sandEmail(String dest,String testo) throws MessagingException, UnsupportedEncodingException {

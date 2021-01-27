@@ -1,6 +1,6 @@
 package Control.User_Manager;
-import Model.Beans.AccountBean;
-import Model.Beans.CarrelloBean;
+import Model.Services.AccountService;
+import Model.Services.CarrelloService;
 import Model.DTO.AccountDTO;
 import Model.DTO.CartaCreditoDTO;
 import Model.DTO.IndirizzoSpedDTO;
@@ -29,7 +29,7 @@ import indirizzo_spedizione.IndirizzoSpedModelDM;
 
 public class LoginControl extends HttpServlet {
 
-    static AccountBean bean = new AccountBean();
+    static AccountService bean = new AccountService();
 
     private static final long serialVersionUID = 1L;
 
@@ -92,7 +92,7 @@ public class LoginControl extends HttpServlet {
 
         } else if(accountDTO.getEmail().equals(email) && accountDTO.getPassword().equals(password) && accountDTO.getTipo().equals("utente")){
             //prendo il carrello dalla sessione
-            CarrelloBean carrello= (CarrelloBean) request.getSession().getAttribute("cart");
+            CarrelloService carrello= (CarrelloService) request.getSession().getAttribute("cart");
 
             //indirizzi di spedizione
             List<IndirizzoSpedDTO> indirizzi = new ArrayList<>();

@@ -1,6 +1,6 @@
 package Control.Product_Manager;
 
-import Model.Beans.ProdottoBean;
+import Model.Services.ProdottoService;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class GetImmagineControl extends HttpServlet {
-    static ProdottoBean bean=new ProdottoBean();
+    static ProdottoService bean=new ProdottoService();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -22,7 +22,7 @@ public class GetImmagineControl extends HttpServlet {
 
             byte[] bt=null;
             try {
-                bt = bean.doRetriveImgById(id);
+                bt = bean.immaginePerId(id);
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }

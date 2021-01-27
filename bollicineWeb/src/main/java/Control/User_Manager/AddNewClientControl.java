@@ -1,6 +1,6 @@
 package Control.User_Manager;
 
-import Model.Beans.AccountBean;
+import Model.Services.AccountService;
 import Model.DTO.AccountDTO;
 
 import javax.mail.MessagingException;
@@ -16,7 +16,7 @@ import java.time.temporal.ChronoUnit;
 
 public class AddNewClientControl extends HttpServlet {
 
-    static AccountBean bean=new AccountBean();
+    static AccountService bean=new AccountService();
     public AddNewClientControl() {
         super();
     }
@@ -32,16 +32,9 @@ public class AddNewClientControl extends HttpServlet {
             String stato = "non confermato";
             String tipo = "utente";
 
-            AccountDTO account = new AccountDTO();
-            account.setCognome(cognome);
-            account.setNome(nome);
-            account.setEmail(email);
-            account.setPassword(password);
-            account.setStato(stato);
-            account.setTipo(tipo);
 
             //metto l'account creato nella sessione con stato non confermato
-            req.getSession().setAttribute("account", account);
+            req.getSession().setAttribute("account", bean.creaAccountDaConfermare(nome,cognome,email,password,stato,tipo));
 
 
             try {
@@ -68,17 +61,23 @@ public class AddNewClientControl extends HttpServlet {
             //prendo l'orario attuale
             LocalDateTime oraAtt=LocalDateTime.now();
 
-            //se non è trrascorso il tempo massimo
+            //se non è trascorso il tempo massimo
             if(oraAtt.isBefore(oraMax)) {
 
-                AccountDTO account = new AccountDTO();
-                account = (AccountDTO) req.getSession().getAttribute("account");
 
-                account.setStato("confermato");
+                bean.confermaAccount((AccountDTO) req.getSession().getAttribute("account"));
+
+                //setto i campi da mandare al service per salvare l'account
+                String cognome = ((AccountDTO) req.getSession().getAttribute("account")).getCognome();
+                String nome = ((AccountDTO) req.getSession().getAttribute("account")).getNome();
+                String email = ((AccountDTO) req.getSession().getAttribute("account")).getEmail();
+                String password = ((AccountDTO) req.getSession().getAttribute("account")).getPassword();
+                String stato = ((AccountDTO) req.getSession().getAttribute("account")).getStato();
+                String tipo = ((AccountDTO) req.getSession().getAttribute("account")).getTipo();
 
                 try {
                     //salvo l'account nel db
-                    bean.doSaveAcount(account);
+                    bean.registraAccount(nome,cognome,email,password,stato,tipo);
 
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();

@@ -1,7 +1,6 @@
 package Control.Product_Manager;
 
-import Model.Beans.ProdottoBean;
-import Model.DAO.ProdottoDAO;
+import Model.Services.ProdottoService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +11,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class VisualizzaProdottiControl extends HttpServlet {
-    static ProdottoBean bean= new ProdottoBean();
+    static ProdottoService bean= new ProdottoService();
     public VisualizzaProdottiControl() {
         super();
     }
@@ -22,7 +21,7 @@ public class VisualizzaProdottiControl extends HttpServlet {
 
         req.removeAttribute("products");
         try {
-            req.setAttribute("products", bean.doRetriveAll());
+            req.setAttribute("products", bean.tuttiIProdotti());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

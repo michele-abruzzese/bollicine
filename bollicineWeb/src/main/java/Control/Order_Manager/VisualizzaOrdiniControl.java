@@ -1,9 +1,7 @@
 package Control.Order_Manager;
 
-import Model.Beans.OrdineBean;
-import Model.DTO.CartaCreditoDTO;
-import Model.DTO.IndirizzoSpedDTO;
-import Model.DTO.OrdineDTO;
+import Model.Services.OrdineService;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,11 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class VisualizzaOrdiniControl extends HttpServlet {
-    static OrdineBean bean = new OrdineBean();
+    static OrdineService bean = new OrdineService();
 
     public VisualizzaOrdiniControl() {
         super();
@@ -24,21 +21,13 @@ public class VisualizzaOrdiniControl extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<OrdineDTO> ordini = new ArrayList<>();
-        List<IndirizzoSpedDTO> indirizzi= new ArrayList<>();
-        List<CartaCreditoDTO> carte = new ArrayList<>();
+
 
         try {
-            ordini=bean.doRetriveAll();
 
-            for(OrdineDTO ordine : ordini){
-                indirizzi.add(bean.doRetriveIdirizzo(ordine));
-                carte.add(bean.doRetriveCarta(ordine));
-            }
-
-            req.setAttribute("ordini",ordini);
-            req.setAttribute("indirizzi",indirizzi);
-            req.setAttribute("carte",carte);
+            req.setAttribute("ordini",bean.tuttiGliOrdini());
+            req.setAttribute("indirizzi",bean.indirizziDegliOrdini());
+            req.setAttribute("carte",bean.carteDegliOrdini());
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

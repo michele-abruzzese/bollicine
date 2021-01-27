@@ -1,7 +1,7 @@
 package Control.Product_Manager;
 
-import Model.Beans.CarrelloBean;
-import Model.Beans.ProdottoBean;
+import Model.Services.CarrelloService;
+import Model.Services.ProdottoService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class DeteleFomCartControl extends HttpServlet {
-    static ProdottoBean bean= new ProdottoBean();
+    static ProdottoService bean= new ProdottoService();
 
     public DeteleFomCartControl() {
         super();
@@ -20,16 +20,16 @@ public class DeteleFomCartControl extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        CarrelloBean cart = (CarrelloBean) req.getSession().getAttribute("cart");
+        CarrelloService cart = (CarrelloService) req.getSession().getAttribute("cart");
         if(cart == null) {
-            cart = new CarrelloBean();
+            cart = new CarrelloService();
             req.getSession().setAttribute("cart", cart);
         }
 
         int id = Integer.parseInt(req.getParameter("id"));
 
         try {
-            bean.deleteProductFromCart(id,cart);
+            bean.rimuoviProdottoDalCarrello(id,cart);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

@@ -1,6 +1,6 @@
 package Control.Product_Manager;
 
-import Model.Beans.ProdottoBean;
+import Model.Services.ProdottoService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public class CategorieConrol extends HttpServlet {
 
-    static ProdottoBean bean= new ProdottoBean();
+    static ProdottoService bean= new ProdottoService();
 
     public CategorieConrol() {
         super();
@@ -25,7 +25,7 @@ public class CategorieConrol extends HttpServlet {
         if(cat!=null) {
             req.removeAttribute("products");
             try {
-                req.setAttribute("products", bean.doRetriveByCat(cat));
+                req.setAttribute("products", bean.prodottiPerCategoria(cat));
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }

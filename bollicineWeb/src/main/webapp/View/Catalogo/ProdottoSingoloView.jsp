@@ -3,13 +3,13 @@
 
 <%
     ProdottoDTO product= (ProdottoDTO) request.getAttribute("product");
-    CarrelloBean cart = (CarrelloBean) request.getSession().getAttribute("cart");
+    CarrelloService cart = (CarrelloService) request.getSession().getAttribute("cart");
 %>
 
 
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,Model.DTO.ProdottoDTO,Model.Beans.CarrelloBean"%>
+<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,Model.DTO.ProdottoDTO,Model.Services.CarrelloService"%>
 
 <head>
     <title>prodotto</title>

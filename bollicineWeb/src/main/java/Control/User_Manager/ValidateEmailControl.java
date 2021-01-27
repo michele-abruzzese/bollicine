@@ -1,6 +1,6 @@
 package Control.User_Manager;
 
-import Model.Beans.AccountBean;
+import Model.Services.AccountService;
 import com.google.gson.*;
 
 import javax.servlet.ServletException;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class ValidateEmailControl extends HttpServlet {
-    static AccountBean bean = new AccountBean();
+    static AccountService bean = new AccountService();
     public ValidateEmailControl() {
         super();
     }

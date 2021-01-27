@@ -1,6 +1,6 @@
 package Control.Product_Manager;
 
-import Model.Beans.ProdottoBean;
+import Model.Services.ProdottoService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class DeleteProductControl extends HttpServlet {
-    static ProdottoBean bean = new ProdottoBean();
+    static ProdottoService bean = new ProdottoService();
 
     public DeleteProductControl() {
         super();
@@ -21,10 +21,8 @@ public class DeleteProductControl extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int idPrduct= Integer.parseInt(req.getParameter("id"));
 
-
-
         try {
-            bean.deleteProductFromCatalog(idPrduct);
+            bean.rimuoviProdottoDalCatalogo(idPrduct);
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

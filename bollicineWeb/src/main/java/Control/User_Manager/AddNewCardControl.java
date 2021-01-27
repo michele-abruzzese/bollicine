@@ -1,6 +1,6 @@
 package Control.User_Manager;
 
-import Model.Beans.AccountBean;
+import Model.Services.AccountService;
 import Model.DTO.CartaCreditoDTO;
 
 import javax.servlet.RequestDispatcher;
@@ -13,8 +13,7 @@ import java.sql.SQLException;
 
 public class AddNewCardControl extends HttpServlet {
 
-    AccountBean account = new AccountBean();
-    CartaCreditoDTO carta = new CartaCreditoDTO();
+    AccountService account = new AccountService();
 
     public AddNewCardControl() {
         super();
@@ -25,16 +24,15 @@ public class AddNewCardControl extends HttpServlet {
         int idAccount = Integer.parseInt(req.getParameter("idCliente"));
 
         //dati della carta
-        carta.setNome(req.getParameter("nome"));
-        carta.setCognome(req.getParameter("cognome"));
-        carta.setNumero(Long.valueOf(req.getParameter("numero")));
-        carta.setCcv(Integer.parseInt(req.getParameter("ccv")));
-        carta.setScandenza(req.getParameter("scadenza"));
-        carta.setIdAccount(idAccount);
+        String nome=(req.getParameter("nome"));
+        String cognome=(req.getParameter("cognome"));
+        Long numero=(Long.valueOf(req.getParameter("numero")));
+        int ccv=(Integer.parseInt(req.getParameter("ccv")));
+        String scadenza=(req.getParameter("scadenza"));
 
         try {
             //se stosalvando la prima carta
-            if(account.doSaveCarta(carta,idAccount)==0){
+            if(account.salvaCarta(nome,cognome,numero,ccv,scadenza,idAccount)==0){
 
                 //dico alla jsp che ho inserito la prima carta
                 req.setAttribute("insertFirstCarta",Boolean.TRUE);

@@ -1,7 +1,7 @@
 package Control.Product_Manager;
 
-import Model.Beans.CarrelloBean;
-import Model.Beans.ProdottoBean;
+import Model.Services.CarrelloService;
+import Model.Services.ProdottoService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 //servlet per aggiungere prodotti al carrello
 public class AddInCartControl extends HttpServlet {
-    static ProdottoBean bean= new ProdottoBean();
+    static ProdottoService bean= new ProdottoService();
 
     public AddInCartControl() {
         super();
@@ -21,9 +21,9 @@ public class AddInCartControl extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        CarrelloBean cart = (CarrelloBean) req.getSession().getAttribute("cart");
+        CarrelloService cart = (CarrelloService) req.getSession().getAttribute("cart");
         if(cart == null) {
-            cart = new CarrelloBean();
+            cart = new CarrelloService();
             req.getSession().setAttribute("cart", cart);
         }
 
@@ -32,7 +32,7 @@ public class AddInCartControl extends HttpServlet {
 
         try {
             //mando al bean l'id del prodotto, la quantità da aggiungere e il carrello
-            bean.addProductInCart(id,quantita,cart);
+            bean.aggiungiProdottoAlCarrello(id,quantita,cart);
 
 
             req.getSession().setAttribute("addInCart",Boolean.TRUE);

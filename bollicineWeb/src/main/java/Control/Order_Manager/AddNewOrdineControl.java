@@ -1,8 +1,8 @@
 package Control.Order_Manager;
 
-import Model.Beans.CarrelloBean;
-import Model.Beans.OrdineBean;
 import Model.DTO.AccountDTO;
+import Model.Services.CarrelloService;
+import Model.Services.OrdineService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class AddNewOrdineControl extends HttpServlet {
-    static OrdineBean bean = new OrdineBean();
+    static OrdineService bean = new OrdineService();
 
     public AddNewOrdineControl() {
         super();
@@ -21,13 +21,12 @@ public class AddNewOrdineControl extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        AccountDTO cliente= (AccountDTO) req.getSession().getAttribute("utente");
-        CarrelloBean carrello= (CarrelloBean) req.getSession().getAttribute("cart");
+        CarrelloService carrello= (CarrelloService) req.getSession().getAttribute("cart");
         int idCarta = Integer.parseInt(req.getParameter("idCarta"));
         int idIndirizzo= Integer.parseInt(req.getParameter("idIndirizzo"));
 
         try {
-            bean.doSaveOrder(cliente.getId(),carrello,idCarta,idIndirizzo);
+            bean.salvaOdine(((AccountDTO) req.getSession().getAttribute("utente")).getId(),carrello,idCarta,idIndirizzo);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

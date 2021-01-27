@@ -3,12 +3,12 @@
 
 <%
 
-    CarrelloBean cart = (CarrelloBean) request.getSession().getAttribute("cart");
+    CarrelloService cart = (CarrelloService) request.getSession().getAttribute("cart");
 
 %>
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,Model.Beans.CarrelloBean,Model.DTO.ProdottoDTO"%>
+<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,Model.Services.CarrelloService,Model.DTO.ProdottoDTO"%>
 
 
 <head>

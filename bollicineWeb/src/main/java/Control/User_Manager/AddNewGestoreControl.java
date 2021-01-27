@@ -1,7 +1,6 @@
 package Control.User_Manager;
 
-import Model.Beans.AccountBean;
-import Model.DTO.AccountDTO;
+import Model.Services.AccountService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +11,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class AddNewGestoreControl extends HttpServlet {
-    static AccountBean bean=new AccountBean();
+    static AccountService bean=new AccountService();
 
     public AddNewGestoreControl() {
         super();
@@ -27,16 +26,9 @@ public class AddNewGestoreControl extends HttpServlet {
         String stato = "confermato";
         String tipo = req.getParameter("tipo");
 
-        AccountDTO account = new AccountDTO();
-        account.setCognome(cognome);
-        account.setNome(nome);
-        account.setEmail(email);
-        account.setPassword(password);
-        account.setStato(stato);
-        account.setTipo(tipo);
 
         try {
-            bean.doSaveAcount(account);
+            bean.registraAccount(nome,cognome,email,password,stato,tipo);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

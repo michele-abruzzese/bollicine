@@ -1,6 +1,6 @@
 package Control.Product_Manager;
 
-import Model.Beans.ProdottoBean;
+import Model.Services.ProdottoService;
 import Model.DTO.ProdottoDTO;
 
 import javax.servlet.RequestDispatcher;
@@ -19,7 +19,7 @@ import javax.servlet.http.Part;
         maxFileSize=1024*1024*10,      // 10MB
         maxRequestSize=1024*1024*50)   // 50MB
 public class InsertUpdateProductControl extends HttpServlet {
-    static ProdottoBean bean = new ProdottoBean();
+    static ProdottoService bean = new ProdottoService();
     static String SAVE_DIR ="/uploadTemp";
 
     public InsertUpdateProductControl() {
@@ -30,7 +30,7 @@ public class InsertUpdateProductControl extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action=req.getParameter("action");
         if (action!=null && action.equalsIgnoreCase("ins")){
-            ProdottoDTO prod = new ProdottoDTO();
+
 
             String nome=req.getParameter("nome");
             String categoria=req.getParameter("categoria");
@@ -42,18 +42,9 @@ public class InsertUpdateProductControl extends HttpServlet {
             //prendo il path dell'immagine
             String immagine=getPathImage(req);
 
-            prod.setNome(nome);
-            prod.setCategoria(categoria);
-            prod.setDescrizione(descrizione);
-            prod.setTipo(tipo);
-            prod.setAnnata(annata);
-            prod.setPrezzo(prezzo);
-            prod.setDisponibilità(disponibilità);
-            prod.setImmagine(immagine);
-
 
             try {
-                bean.insertProdotto(prod);
+                bean.inserisciProdottoNelCatalogo(nome,categoria,descrizione,immagine,tipo,annata,prezzo,disponibilità);
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
@@ -63,23 +54,20 @@ public class InsertUpdateProductControl extends HttpServlet {
         }else if(action.equalsIgnoreCase("selectP")){
             int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
 
-            ProdottoDTO prod = new ProdottoDTO();
-
             try {
-                prod=bean.doRetriveById(idProdotto);
+                ;
 
                 //invio tutti i prodotti alla jsp, altrimenti va nella servllet di visualizzazione
                 req.removeAttribute("products");
-                req.setAttribute("products",bean.doRetriveAll());
+                req.setAttribute("products",bean.tuttiIProdotti());
 
                 //invio il prodotto da modificare alla jsp
-                req.setAttribute("up",prod);
+                req.setAttribute("up",bean.prodottoPerId(idProdotto));
 
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         }else if(action.equalsIgnoreCase("updateP")){
-            ProdottoDTO prod = new ProdottoDTO();
 
             int idProdotto= Integer.parseInt(req.getParameter("idProdotto"));
             String nome=req.getParameter("nome");
@@ -92,18 +80,8 @@ public class InsertUpdateProductControl extends HttpServlet {
             //prendo il path dell'immagine
             String immagine=getPathImage(req);
 
-            prod.setIdProdotto(idProdotto);
-            prod.setNome(nome);
-            prod.setCategoria(categoria);
-            prod.setDescrizione(descrizione);
-            prod.setTipo(tipo);
-            prod.setAnnata(annata);
-            prod.setPrezzo(prezzo);
-            prod.setDisponibilità(disponibilità);
-            prod.setImmagine(immagine);
-
             try {
-                bean.updateProdotto(prod);
+                bean.aggiornaProdotto(idProdotto,nome,categoria,descrizione,immagine,tipo,annata,prezzo,disponibilità);
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }

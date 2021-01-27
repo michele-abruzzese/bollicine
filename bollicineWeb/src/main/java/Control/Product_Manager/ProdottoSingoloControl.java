@@ -1,6 +1,6 @@
 package Control.Product_Manager;
 
-import Model.Beans.ProdottoBean;
+import Model.Services.ProdottoService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public class ProdottoSingoloControl extends HttpServlet {
 
-    static ProdottoBean bean= new ProdottoBean();
+    static ProdottoService bean= new ProdottoService();
 
     public ProdottoSingoloControl() {
         super();
@@ -24,7 +24,7 @@ public class ProdottoSingoloControl extends HttpServlet {
         int id=Integer.parseInt(req.getParameter("id"));
 
         try {
-            req.setAttribute("product",bean.doRetriveById(id));
+            req.setAttribute("product",bean.prodottoPerId(id));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

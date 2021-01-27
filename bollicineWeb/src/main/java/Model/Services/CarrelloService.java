@@ -1,4 +1,4 @@
-package Model.Beans;
+package Model.Services;
 
 import Model.DAO.ProdottoDAO;
 import Model.DTO.ProdottoDTO;
@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CarrelloBean {
+public class CarrelloService {
     ProdottoDAO prodDao=new ProdottoDAO();
     private List<ProdottoDTO> products;
     int[] q;
 
 
 
-    public CarrelloBean() {
+    public CarrelloService() {
         products = new ArrayList<ProdottoDTO>();
         q= new int[200];
     }
