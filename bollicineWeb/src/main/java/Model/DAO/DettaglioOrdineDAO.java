@@ -34,32 +34,4 @@ public class DettaglioOrdineDAO {
         return key;
     }
 
-
-    public List<DettaglioOrdineDTO> doRetriveByOrdine(int idOrdine)throws SQLException {
-        List<DettaglioOrdineDTO> dettagli=new ArrayList<DettaglioOrdineDTO>();
-
-        PreparedStatement ps=null;
-
-        String query="SELECT * FROM "+DettaglioOrdineDAO.TABLE_NAME+" WHERE idOrdine=?";
-
-        ps=con.prepareStatement(query);
-
-        ps.setInt(1,idOrdine);
-
-        ResultSet rs= ps.executeQuery();
-
-        while(rs.next()){
-            DettaglioOrdineDTO dettaglio=new DettaglioOrdineDTO();
-            dettaglio.setIdPodotto(rs.getInt("idProdotto"));
-            dettaglio.setIdOrdine(rs.getInt("idOrdine"));
-            dettaglio.setQuantità(rs.getInt("Quantità"));
-            dettaglio.setPrezzoUnit(rs.getFloat("PrezzoUnitario"));
-            dettaglio.setIva(rs.getInt("IVA"));
-
-            dettagli.add(dettaglio);
-        }
-
-        return dettagli;
-    }
-
 }
