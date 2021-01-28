@@ -43,5 +43,6 @@
     <orderEntry type="library" name="spring-jcl-5.3.3" level="project" />
     <orderEntry type="library" name="junit-vintage-engine-5.7.0" level="project" />
     <orderEntry type="library" name="spring-jdbc-5.1.4.RELEASE" level="project" />
+    <orderEntry type="library" name="mockito-core-3.7.7 (2)" level="project" />
   </component>
 </module>
