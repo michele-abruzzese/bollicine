@@ -1,0 +1,39 @@
+<component name="libraryTable">
+  <library name="spring-beans-5.1.4.RELEASE-sources">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-beans-5.1.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-context-5.1.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-context-indexer-5.1.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-context-support-5.1.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-jcl-5.1.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-jdbc-5.1.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-jms-5.1.4.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-beans-5.1.4.RELEASE-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-context-5.1.4.RELEASE-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-context-indexer-5.1.4.RELEASE-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-context-support-5.1.4.RELEASE-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-jcl-5.1.4.RELEASE-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-jdbc-5.1.4.RELEASE-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-jms-5.1.4.RELEASE-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-test-5.1.4.RELEASE-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-webmvc-5.1.4.RELEASE-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-beans-5.1.4.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-beans-5.1.4.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-context-5.1.4.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-context-5.1.4.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-context-indexer-5.1.4.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-context-support-5.1.4.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-jcl-5.1.4.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-jdbc-5.1.4.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-jdbc-5.1.4.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-jms-5.1.4.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-test-5.1.4.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-test-5.1.4.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-webmvc-5.1.4.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

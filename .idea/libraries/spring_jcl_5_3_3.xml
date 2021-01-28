@@ -1,8 +1,7 @@
 <component name="libraryTable">
   <library name="spring-jcl-5.3.3">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/jar_files/spring-jcl-5.3.3.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/jar_files/spring-core-5.3.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-jcl-5.3.3.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="spring-context-indexer-5.1.4.RELEASE-javadoc">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/bollicineWeb/src/main/webapp/WEB-INF/lib/spring-context-indexer-5.1.4.RELEASE-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
