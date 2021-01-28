@@ -36,31 +36,6 @@ public class OrdineDAO {
     }
 
 
-    public List<OrdineDTO> doRetriveAllByAccount(int idAccount) throws SQLException {
-        List<OrdineDTO> ordini=new ArrayList<OrdineDTO>();
-
-        String query="SELECT * FROM "+OrdineDAO.TABLE_NAME+" WHERE idAccount=?";
-
-        PreparedStatement st=con.prepareStatement(query);
-        st.setInt(1,idAccount);
-
-        ResultSet rs=st.executeQuery();
-
-        while(rs.next()){
-            OrdineDTO ordine = new OrdineDTO();
-            ordine.setIdOrdine(rs.getInt("idOrdine"));
-            ordine.setTotOrdine(rs.getFloat("TotaleOrdine"));
-            ordine.setData(rs.getString("Data"));
-            ordine.setIdCarta(rs.getInt("idCarta"));
-            ordine.setIdIndirizzo(rs.getInt("idIndirizzo"));
-            ordine.setIdAccount(rs.getInt("idAccount"));
-
-            ordini.add(ordine);
-        }
-        return ordini;
-    }
-
-
     public List<OrdineDTO> doRetriveAll() throws SQLException {
         List<OrdineDTO> ordini=new ArrayList<OrdineDTO>();
 
