@@ -61,5 +61,6 @@
     <orderEntry type="library" name="spring-jms-5.1.4.RELEASE-javadoc" level="project" />
     <orderEntry type="library" name="spring-jms-5.1.4.RELEASE-sources" level="project" />
     <orderEntry type="library" name="spring-test-5.3.3" level="project" />
+    <orderEntry type="library" name="spring-test-5.3.3" level="project" />
   </component>
 </module>
