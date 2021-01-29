@@ -139,13 +139,13 @@
                 <h3>Inserisci un nuovo indirizzo di spedizione</h3>
                 <form class="formModal" action="${pageContext.servletContext.contextPath}/AddNewIndirizzo" method="post">
                     <input type="hidden" name="idCliente" value="<%=cliente.getId()%>">
-                    Nome<input type="text" name="nome" required>
-                    Cognome<input type="text" name="cognome" required>
-                    Indirizzo<input type="text" name="indirizzo" required>
-                    Città<input type="text" name="citta" required>
-                    Cap<input type="number" name="cap" required>
-                    Provincia<input type="text" name="provincia" required>
-                    Alias<input type="text" name="alias" required placeholder="es. casa, lavoro ecc">
+                    Nome<input type="text" name="nome" minlength="2" maxlength="30" required>
+                    Cognome<input type="text" name="cognome" minlength="2" maxlength="30" required>
+                    Indirizzo<input type="text" name="indirizzo" minlength="2" maxlength="50" required>
+                    Città<input type="text" name="citta" minlength="2" maxlength="50" required>
+                    Cap<input type="number" name="cap" max="99999" required>
+                    Provincia<input type="text" name="provincia" minlength="2" maxlength="50" required>
+                    Alias<input type="text" name="alias" required minlength="2" maxlength="30" placeholder="es. casa, lavoro ecc">
                     <input class="buttonFormModal" type="submit" value="salva">
                 </form>
             </div>

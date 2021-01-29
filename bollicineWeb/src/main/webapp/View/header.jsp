@@ -32,9 +32,9 @@
 	  			<div class="dropdownNav">
 	  				<a class="navElement">Categorie <i class="fas fa-caret-down"></i></a>
 	  				<div class="dropdown-contentNav">
-						<a class="elementContentNav" href="./Categorie?cat=bi" >Bianchi</a>
-						<a class="elementContentNav" href="./Categorie?cat=ro">Rossi</a>
-						<a class="elementContentNav" href="./Categorie?cat=spu">Spumanti</a>
+						<a class="elementContentNav" href="${pageContext.servletContext.contextPath}/Categorie?cat=bi" >Bianchi</a>
+						<a class="elementContentNav" href="${pageContext.servletContext.contextPath}/Categorie?cat=ro">Rossi</a>
+						<a class="elementContentNav" href="${pageContext.servletContext.contextPath}/Categorie?cat=spu">Spumanti</a>
   					</div>
 	  			</div>
 	  			

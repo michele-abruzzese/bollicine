@@ -26,6 +26,8 @@
     <div id="descrizioneProd">
         <h1><%=product.getNome() %></h1>
         <h1 id="prezzo"><%=product.getPrezzo() %> €</h1>
+        <p>Tipo:<%=product.getTipo()%></p>
+        <p>Annata:<%=product.getAnnata()%></p>
         <p> <%=product.getDescrizione() %> </p>
 
         <div id="adProductInCart">

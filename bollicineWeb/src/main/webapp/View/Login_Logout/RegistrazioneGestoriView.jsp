@@ -44,11 +44,11 @@
                         <form action="${pageContext.servletContext.contextPath}/AddNewGestore"  method="post" class="dati_anagrafici2">
                             <input type="hidden" name="tipo" value="gestore catalogo">
                             Cognome<br>
-                            <input  name="cognome" type="text" required><br>
+                            <input  name="cognome" type="text" minlength="2" maxlength="30" required><br>
                             Nome<br>
-                            <input  name="nome" type="text" required><br>
+                            <input  name="nome" type="text" minlength="2" maxlength="30" required><br>
                             Email<br>
-                            <input id="emailControl" name="email" type="text" onfocusout="controlEmail()" required><br>
+                            <input id="emailControl" name="email" type="text" onfocusout="controlEmail()" maxlength="256" required><br>
                             Password<br>
                             <input id="pw" name="password" type="password" required><br>
 
@@ -76,13 +76,13 @@
                         <form action="${pageContext.servletContext.contextPath}/AddNewGestore"  method="post" class="dati_anagrafici2">
                             <input type="hidden" name="tipo" value="gestore ordini">
                             Cognome<br>
-                            <input  name="cognome" type="text" required><br>
+                            <input  name="cognome" type="text" minlength="2" maxlength="30" required><br>
                             Nome<br>
-                            <input  name="nome" type="text" required><br>
+                            <input  name="nome" type="text" minlength="2" maxlength="30" required><br>
                             Email<br>
-                            <input id="emailControl1" name="email" type="text" onfocusout="controlEmail()" required><br>
+                            <input id="emailControl1" name="email" type="text" onfocusout="controlEmail()" maxlength="256" required><br>
                             Password<br>
-                            <input id="pw1" name="password" type="password" required><br>
+                            <input id="pw1" name="password" type="password" maxlength="15" required><br>
 
                             <input class="showPwInModal" id="showPwInModal1" type="button" onclick="showPwd1()" value="Mostra/nascondi password">
                             <input class="buttonRegi" type="submit" value="registrati">

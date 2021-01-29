@@ -80,7 +80,7 @@
                     <input name="disponibilita" type="number" min="0" value="0" required><br>
 
 
-                    <input class="file" type="file" name="talkPhoto" value="" maxlength="255"><br>
+                    <input class="file" type="file" name="talkPhoto" value="" maxlength="255" required><br>
 
                     <input class="buttonProtected" type="submit" value="Add"> <input class="buttonProtected" type="reset" value="Reset">
                 </form>
@@ -148,7 +148,7 @@
                     <input name="disponibilita" type="number" min="0" value="<%=up.getDisponibilità()%>" required><br>
 
 
-                    <input class="file" type="file" name="talkPhoto" value="" maxlength="255"><br>
+                    <input class="file" type="file" name="talkPhoto" value="" maxlength="255" required><br>
 
                     <input class="buttonProtected" type="submit" value="Update"> <input class="buttonProtected" type="reset" value="Reset">
                 </form>

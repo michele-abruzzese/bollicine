@@ -70,13 +70,13 @@
                             <h2>I tuoi dati</h2>
 
                             Cognome<br>
-                            <input  name="cognome" type="text" required><br>
+                            <input  name="cognome" type="text" minlength="2" maxlength="30" required><br>
                             Nome<br>
-                            <input  name="nome" type="text" required><br>
+                            <input  name="nome" type="text" minlength="2" maxlength="30" required><br>
                             Email<br>
-                            <input id="emailControl" name="email" type="text" onfocusout="controlEmail()" required><br>
+                            <input id="emailControl" name="email" type="text" onfocusout="controlEmail()" maxlength="256" required><br>
                             Password<br>
-                            <input id="pwd" name="password" type="password" required><br>
+                            <input id="pwd" name="password" type="password" maxlength="15" required><br>
 
                             <input class="showPwInModal" type="button" onclick="showPwd()" value="Mostra/nascondi password">
                             <input class="buttonRegi" type="submit" value="registrati">
