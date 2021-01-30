@@ -33,12 +33,19 @@ public class AddNewCardControl extends HttpServlet {
         try {
             //se stosalvando la prima carta
             if(account.salvaCarta(nome,cognome,numero,ccv,scadenza,idAccount)==0){
+                //reimposto la lista di carte nella sessione
+                req.getSession().removeAttribute("carte");
+                req.getSession().setAttribute("carte",account.doRetriveCarte(idAccount));
 
                 //dico alla jsp che ho inserito la prima carta
                 req.setAttribute("insertFirstCarta",Boolean.TRUE);
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Carrello/CartCheckoutView.jsp");
                 dispatcher.forward(req, resp);
             }else{
+                //reimposto la lista di carte nella sessione
+                req.getSession().removeAttribute("carte");
+                req.getSession().setAttribute("carte",account.doRetriveCarte(idAccount));
+
                 //se l'utente ha altre carte
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Carrello/CartCheckoutView.jsp");
                 dispatcher.forward(req, resp);

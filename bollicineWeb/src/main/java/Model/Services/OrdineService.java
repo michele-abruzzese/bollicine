@@ -28,6 +28,12 @@ public class OrdineService {
 
     public int salvaOdine(int idAccount, CarrelloService cart, int idCarta, int idIndirizzo) throws SQLException, IOException {
 
+        LocalDate dataScadenza= LocalDate.parse(cartaCreditoDAO.doRetriveById(idCarta).getScandenza());
+        //se è scaduta la carta
+        if(dataScadenza.isBefore(LocalDate.now()) || dataScadenza.isEqual(LocalDate.now())) {
+            return 0;
+        }
+
         //prendo i prodotti dal carrello
         List<ProdottoDTO> prodotti = cart.getProducts();
 
@@ -72,7 +78,7 @@ public class OrdineService {
             prodottoDAO.updateDispo(prod,(prod.getDisponibilità()-cart.getQ(prod)));
         }
 
-        return idOrdine;
+        return 1;
 
     }
 

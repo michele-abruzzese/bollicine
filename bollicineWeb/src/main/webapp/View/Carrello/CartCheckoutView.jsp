@@ -4,6 +4,10 @@
 <!DOCTYPE html>
 <html>
 <%@ page contentType="text/html; charset=UTF-8" import="Model.DTO.AccountDTO,Model.DTO.IndirizzoSpedDTO,Model.DTO.CartaCreditoDTO" %>
+<%@ page import="javax.xml.crypto.Data" %>
+<%@ page import="java.time.LocalDate" %>
+<%@ page import="java.time.temporal.TemporalUnit" %>
+<%@ page import="java.time.temporal.ChronoUnit" %>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -167,11 +171,11 @@
                 <h3>Inserisci una nuova carta di credito</h3>
                 <form class="formModal" action="${pageContext.servletContext.contextPath}/AddNewCard" method="post">
                     <input type="hidden" name="idCliente" value="<%=cliente.getId()%>">
-                    Nome<input type="text" name="nome" required>
-                    Cognome<input type="text" name="cognome" required>
-                    Numero<input type="number" name="numero" required>
-                    CCV<input type="number" name="ccv" required>
-                    Scadenza<input type="date" name="scadenza" required>
+                    Nome<input type="text" name="nome" minlength="2" maxlength="30" required>
+                    Cognome<input type="text" name="cognome" minlength="2" maxlength="30"  required>
+                    Numero<input type="text" name="numero" pattern="^[0-9]{13,16}$" placeholder="da 13 a 16 cifre" required>
+                    CCV<input type="text" name="ccv" pattern="^[0-9]{3}$" placeholder="3 cifre" required>
+                    Scadenza<input type="date" name="scadenza" min="<%=LocalDate.now().plus(1,ChronoUnit.DAYS)%>" required>
                     <input class="buttonFormModal" type="submit" value="salva">
                 </form>
             </div>

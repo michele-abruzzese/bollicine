@@ -12,7 +12,7 @@ public class DettaglioOrdineDAO {
     private static final String TABLE_NAME = "dettaglioordine";
 
 
-    public int doSaveDettaglioOrdine(DettaglioOrdineDTO dett)throws SQLException {
+    public void doSaveDettaglioOrdine(DettaglioOrdineDTO dett)throws SQLException {
         PreparedStatement ps = null;
 
         String query="INSERT INTO "+DettaglioOrdineDAO.TABLE_NAME+" (idProdotto,idOrdine,Quantità,PrezzoUnitario,IVA) VALUES (?,?,?,?,?)";
@@ -27,11 +27,6 @@ public class DettaglioOrdineDAO {
 
         ps.executeUpdate();
 
-        ResultSet rs = ps.getGeneratedKeys();
-        rs.next();
-        int key= rs.getInt(1);
-
-        return key;
     }
 
 }

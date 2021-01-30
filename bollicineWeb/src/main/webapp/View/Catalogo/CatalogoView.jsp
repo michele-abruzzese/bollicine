@@ -152,7 +152,7 @@ CarrelloService cart = (CarrelloService) request.getSession().getAttribute("cart
 		function functionLoad(){
 			var resp=<%=request.getSession().getAttribute("addInCart")%>
 			var ordine=<%=request.getSession().getAttribute("ordineOk")%>
-
+			var ordineNone=<%=request.getSession().getAttribute("ordineNone")%>
 
 			if(resp!=null && resp){
 				alert("prodotto aggiunto al carrello");
@@ -164,6 +164,10 @@ CarrelloService cart = (CarrelloService) request.getSession().getAttribute("cart
 				<%request.getSession().removeAttribute("ordineOk");%>
 			}
 
+			if(ordineNone!=null && ordineNone){
+				alert("ordine non effettuato, Carta di credito scaduta!");
+				<%request.getSession().removeAttribute("ordineNone");%>
+			}
 
 		}
 

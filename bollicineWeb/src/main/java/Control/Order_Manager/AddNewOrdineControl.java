@@ -24,23 +24,31 @@ public class AddNewOrdineControl extends HttpServlet {
         CarrelloService carrello= (CarrelloService) req.getSession().getAttribute("cart");
         int idCarta = Integer.parseInt(req.getParameter("idCarta"));
         int idIndirizzo= Integer.parseInt(req.getParameter("idIndirizzo"));
-
+        int result=-1;
         try {
-            bean.salvaOdine(((AccountDTO) req.getSession().getAttribute("utente")).getId(),carrello,idCarta,idIndirizzo);
+            result=bean.salvaOdine(((AccountDTO) req.getSession().getAttribute("utente")).getId(),carrello,idCarta,idIndirizzo);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
 
-        //rimuovo il carrello dalla sessione
-        req.getSession().removeAttribute("cart");
+        if(result==1) {
+            //rimuovo il carrello dalla sessione
+            req.getSession().removeAttribute("cart");
 
-        //dico alla jsp che l'ordine è stato salvato
+            //dico alla jsp che l'ordine è stato salvato
 
-        req.getSession().setAttribute("ordineOk",Boolean.TRUE);
+            req.getSession().setAttribute("ordineOk", Boolean.TRUE);
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Catalogo/CatalogoView.jsp");
-        dispatcher.forward(req, resp);
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Catalogo/CatalogoView.jsp");
+            dispatcher.forward(req, resp);
+        }else if(result==0) {
 
+            //dico alla jsp che l'ordine non è stato salvato
+            req.getSession().setAttribute("ordineNone", Boolean.TRUE);
+
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Catalogo/CatalogoView.jsp");
+            dispatcher.forward(req, resp);
+        }
     }
 
     @Override

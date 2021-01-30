@@ -42,10 +42,10 @@
                 <form action="${pageContext.servletContext.contextPath}/Login" method="post">
 
                     <h4 class="h4">Email</h4>
-                    <input id="emailControlLog" onfocusout="controlEmailLog()" class="textArea" type="text" name="email" placeholder="email" autocomplete="off" required><br>
+                    <input id="emailControlLog" onfocusout="controlEmailLog()" class="textArea" type="text" name="email" placeholder="email" autocomplete="off" maxlength="256" required><br>
 
                     <h4 class="h4">Password</h4>
-                    <input class="textArea" type="password" name="password" placeholder="password"  autocomplete="off" required><br>
+                    <input class="textArea" type="password" name="password" placeholder="password"  autocomplete="off" maxlength="15" required><br>
                     <input class="buttonLogin" type="submit" value="Login"/>
                     <input class="buttonLogin" type="reset" value="Reset"/><br>
 

@@ -35,12 +35,19 @@ public class AddNewIndirizzoControl extends HttpServlet {
         try {
             //se sto salvando il primo indirizzo
             if(account.salvaIndirizzo(nome,cognome,indirizzo,cap,città,provincia,alis,idAccount)==0){
+                //reimposto la lista di indirizzi nella sessione
+                req.getSession().removeAttribute("indirizzi");
+                req.getSession().setAttribute("indirizzi",account.doRetriveIndirizzi(idAccount));
 
                 //dico alla jsp che ho inserito il primo indirizzo
                 req.setAttribute("insertFirstIndirizzo",Boolean.TRUE);
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Carrello/CartCheckoutView.jsp");
                 dispatcher.forward(req, resp);
             }else {
+                //reimposto la lista di indirizzi nella sessione
+                req.getSession().removeAttribute("indirizzi");
+                req.getSession().setAttribute("indirizzi",account.doRetriveIndirizzi(idAccount));
+
                 //se l'utente ha già altri indirizzi
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Carrello/CartCheckoutView.jsp");
                 dispatcher.forward(req, resp);
