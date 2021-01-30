@@ -3,7 +3,7 @@
     String adminRoles = (String) session.getAttribute("adminRoles");
     if ((adminRoles == null) || (!adminRoles.equalsIgnoreCase("gestCat")))
     {
-        response.sendRedirect("../Login_Logout/LoginView.jsp");
+        response.sendRedirect("${pageContext.servletContext.contextPath}/View/Login_Logout/LoginView.jsp");
         return;
     }
 
@@ -74,13 +74,13 @@
                     <input name="annata" type="number" min="0" max="4000" value="annata" required><br>
 
                     Prezzo:<br>
-                    <input name="prezzo" type="number" min="1" value="1" step="any" required><br>
+                    <input name="prezzo" type="number" min="1" step="any" required><br>
 
                     Disponibilità:<br>
                     <input name="disponibilita" type="number" min="0" value="0" required><br>
 
 
-                    <input class="file" type="file" name="talkPhoto" value="" maxlength="255" required><br>
+                    <input class="file" type="file" accept="image/jpeg,image/png" name="talkPhoto" value="" maxlength="255" required><br>
 
                     <input class="buttonProtected" type="submit" value="Add"> <input class="buttonProtected" type="reset" value="Reset">
                 </form>

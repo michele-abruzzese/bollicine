@@ -89,7 +89,7 @@ public class ProdottoDAO {
             prod.setDescrizione(rs.getString("Descrizione"));
             prod.setTipo(rs.getString("Tipo"));
             prod.setAnnata(rs.getInt("Annata"));
-            prod.setPrezzo(rs.getFloat("Prezzo"));
+            prod.setPrezzo(rs.getDouble("Prezzo"));
             prod.setDisponibilità(rs.getInt("Disponibilità"));
 
             prodotti.add(prod);
@@ -120,7 +120,7 @@ public class ProdottoDAO {
             prod.setDescrizione(rs.getString("Descrizione"));
             prod.setTipo(rs.getString("Tipo"));
             prod.setAnnata(rs.getInt("Annata"));
-            prod.setPrezzo(rs.getFloat("Prezzo"));
+            prod.setPrezzo(rs.getDouble("Prezzo"));
             prod.setDisponibilità(rs.getInt("Disponibilità"));
 
             prodotti.add(prod);
@@ -165,7 +165,7 @@ public class ProdottoDAO {
             prod.setDescrizione(rs.getString("Descrizione"));
             prod.setTipo(rs.getString("Tipo"));
             prod.setAnnata(rs.getInt("Annata"));
-            prod.setPrezzo(rs.getFloat("Prezzo"));
+            prod.setPrezzo(rs.getDouble("Prezzo"));
             prod.setDisponibilità(rs.getInt("Disponibilità"));
         }
 
