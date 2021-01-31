@@ -33,7 +33,7 @@
                 String errore=(String)request.getAttribute("invalidAccess");
                 if(errore!=null && errore.equalsIgnoreCase("true")){
             %>
-                <div id="errorLogin"><p>Username o password errati!</p></div>
+                <div id="errorLogin"><p>Password errata!</p></div>
             <%
                 }
             %>
@@ -42,7 +42,7 @@
                 <form action="${pageContext.servletContext.contextPath}/Login" method="post">
 
                     <h4 class="h4">Email</h4>
-                    <input id="emailControlLog" onfocusout="controlEmailLog()" class="textArea" type="text" name="email" placeholder="email" autocomplete="off" maxlength="256" required><br>
+                    <input id="emailControlLog" onfocusout="controlEmailLog()" class="textArea" type="text" name="email" placeholder="email" autocomplete="off" minlength="2" maxlength="256" required><br>
 
                     <h4 class="h4">Password</h4>
                     <input class="textArea" type="password" name="password" placeholder="password"  autocomplete="off" maxlength="15" required><br>
@@ -74,7 +74,7 @@
                             Nome<br>
                             <input  name="nome" type="text" minlength="2" maxlength="30" required><br>
                             Email<br>
-                            <input id="emailControl" name="email" type="text" onfocusout="controlEmail()" maxlength="256" required><br>
+                            <input id="emailControl" name="email" type="text" onfocusout="controlEmail()" minlength="2" maxlength="256" required><br>
                             Password<br>
                             <input id="pwd" name="password" type="password" maxlength="15" required><br>
 

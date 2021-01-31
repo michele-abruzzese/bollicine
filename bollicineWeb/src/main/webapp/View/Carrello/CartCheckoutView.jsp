@@ -147,7 +147,7 @@
                     Cognome<input type="text" name="cognome" minlength="2" maxlength="30" required>
                     Indirizzo<input type="text" name="indirizzo" minlength="2" maxlength="50" required>
                     Città<input type="text" name="citta" minlength="2" maxlength="50" required>
-                    Cap<input type="number" name="cap" max="99999" required>
+                    Cap<input type="text" name="cap" pattern="^[0-9]{5}$" placeholder="5 cifre" required>
                     Provincia<input type="text" name="provincia" minlength="2" maxlength="50" required>
                     Alias<input type="text" name="alias" required minlength="2" maxlength="30" placeholder="es. casa, lavoro ecc">
                     <input class="buttonFormModal" type="submit" value="salva">

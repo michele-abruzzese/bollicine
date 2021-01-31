@@ -48,7 +48,7 @@
                             Nome<br>
                             <input  name="nome" type="text" minlength="2" maxlength="30" required><br>
                             Email<br>
-                            <input id="emailControl" name="email" type="text" onfocusout="controlEmail()" maxlength="256" required><br>
+                            <input id="emailControl" name="email" type="text" onfocusout="controlEmail()" minlength="2" maxlength="256" required><br>
                             Password<br>
                             <input id="pw" name="password" type="password" required><br>
 
@@ -80,7 +80,7 @@
                             Nome<br>
                             <input  name="nome" type="text" minlength="2" maxlength="30" required><br>
                             Email<br>
-                            <input id="emailControl1" name="email" type="text" onfocusout="controlEmail()" maxlength="256" required><br>
+                            <input id="emailControl1" name="email" type="text" onfocusout="controlEmail()" minlength="2" maxlength="256" required><br>
                             Password<br>
                             <input id="pw1" name="password" type="password" maxlength="15" required><br>
 
@@ -169,7 +169,7 @@
 
         var confermato=<%=request.getSession().getAttribute("confermato")%>
         if(confermato!=null && confermato){
-            alert("L'account è stato registrato! accedi per visualizzzare le funzionalità");
+            alert("L'account è stato registrato! accedi per visualizzare le funzionalità");
             <%request.getSession().removeAttribute("confermato");%>
         }
     }
