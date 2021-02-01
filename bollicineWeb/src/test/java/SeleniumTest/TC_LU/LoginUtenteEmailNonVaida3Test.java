@@ -29,6 +29,7 @@ public class LoginUtenteEmailNonVaida3Test {
     JavascriptExecutor js;
     @Before
     public void setUp() {
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\Michele\\IdeaProjects\\bollicine\\bollicineWeb\\src\\main\\webapp\\WEB-INF\\utility\\chromedriver.exe");
         driver = new ChromeDriver();
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
@@ -43,7 +44,7 @@ public class LoginUtenteEmailNonVaida3Test {
         driver.manage().window().setSize(new Dimension(1936, 1056));
         driver.findElement(By.id("emailControlLog")).click();
         driver.findElement(By.id("emailControlLog")).sendKeys("email@ema.ue");
+        driver.findElement(By.name("password")).click();
         assertThat(driver.switchTo().alert().getText(), is("Email non valida!"));
-        driver.findElement(By.id("formLogin")).click();
     }
 }

@@ -29,6 +29,7 @@ public class RegistrazioneUtenteEmailNoNValida5Test {
     JavascriptExecutor js;
     @Before
     public void setUp() {
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\Michele\\IdeaProjects\\bollicine\\bollicineWeb\\src\\main\\webapp\\WEB-INF\\utility\\chromedriver.exe");
         driver = new ChromeDriver();
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
@@ -46,6 +47,8 @@ public class RegistrazioneUtenteEmailNoNValida5Test {
         driver.findElement(By.name("cognome")).sendKeys("Rossi");
         driver.findElement(By.name("nome")).sendKeys("Mario");
         driver.findElement(By.id("emailControl")).sendKeys("email@ema.it");
-        assertThat(driver.switchTo().alert().getText(), is("Email già in uso!"));
+        driver.findElement(By.id("pwd")).click();
+        Alert a=driver.switchTo().alert();
+        a.accept();
     }
 }

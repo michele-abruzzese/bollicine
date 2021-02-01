@@ -28,7 +28,7 @@ public class NuovoIndirizzoSuccesso9Test {
     private Map<String, Object> vars;
     JavascriptExecutor js;
     @Before
-    public void setUp() {
+    public void setUp() {System.setProperty("webdriver.chrome.driver","C:\\Users\\Michele\\IdeaProjects\\bollicine\\bollicineWeb\\src\\main\\webapp\\WEB-INF\\utility\\chromedriver.exe");
         driver = new ChromeDriver();
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
