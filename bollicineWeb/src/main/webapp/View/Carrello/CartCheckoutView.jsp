@@ -143,8 +143,8 @@
                 <h3>Inserisci un nuovo indirizzo di spedizione</h3>
                 <form class="formModal" action="${pageContext.servletContext.contextPath}/AddNewIndirizzo" method="post">
                     <input type="hidden" name="idCliente" value="<%=cliente.getId()%>">
-                    Nome<input type="text" name="nome" minlength="2" maxlength="30" required>
                     Cognome<input type="text" name="cognome" minlength="2" maxlength="30" required>
+                    Nome<input type="text" name="nome" minlength="2" maxlength="30" required>
                     Indirizzo<input type="text" name="indirizzo" minlength="2" maxlength="50" required>
                     Città<input type="text" name="citta" minlength="2" maxlength="50" required>
                     Cap<input type="text" name="cap" pattern="^[0-9]{5}$" placeholder="5 cifre" required>
@@ -171,8 +171,8 @@
                 <h3>Inserisci una nuova carta di credito</h3>
                 <form class="formModal" action="${pageContext.servletContext.contextPath}/AddNewCard" method="post">
                     <input type="hidden" name="idCliente" value="<%=cliente.getId()%>">
-                    Nome<input type="text" name="nome" minlength="2" maxlength="30" required>
                     Cognome<input type="text" name="cognome" minlength="2" maxlength="30"  required>
+                    Nome<input type="text" name="nome" minlength="2" maxlength="30" required>
                     Numero<input type="text" name="numero" pattern="^[0-9]{13,16}$" placeholder="da 13 a 16 cifre" required>
                     CCV<input type="text" name="ccv" pattern="^[0-9]{3}$" placeholder="3 cifre" required>
                     Scadenza<input type="date" name="scadenza" min="<%=LocalDate.now().plus(1,ChronoUnit.DAYS)%>" required>
