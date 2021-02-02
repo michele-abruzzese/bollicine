@@ -1,51 +1,44 @@
 package Control;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import Control.User_Manager.LoginControl;
-
-import org.junit.Before;
-import org.junit.Test;
-
-import org.mockito.Mockito;
-
+import java.io.IOException;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.mock.web.MockHttpSession;
+import org.springframework.mock.web.MockServletConfig;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+class LoginControlTest {
 
-import javax.servlet.ServletException;
-import java.io.IOException;
-import java.sql.SQLException;
-
-public class LoginControlTest extends Mockito {
     private LoginControl servlet;
     private MockHttpServletRequest request;
     private MockHttpServletResponse response;
+    private MockHttpSession session;
 
-    /**
-     * Before.
-     */
-    @Before
+    @BeforeEach
     public void setUp() {
         servlet = new LoginControl();
         request = new MockHttpServletRequest();
         response = new MockHttpServletResponse();
+        request.setSession(session);
+
     }
 
-    @Test
-    public void testLoginUtente() throws ServletException, IOException {
-
-        request.addParameter("email","giuseppe4@live.it");
-        request.addParameter("password","password");
-
-        servlet.doGet(request,response);
-
-        assertNotNull(request.getSession().getAttribute("utente"));
+    @BeforeEach
+    public void oneWaySetup() throws ServletException {
+        ServletConfig sg = new MockServletConfig();
+        servlet.init(sg);
     }
 
+
     @Test
-    public void testLoginAdmin() throws ServletException, IOException{
+    public void testLoginAdmin() throws ServletException, IOException {
 
         request.addParameter("email","email@admin.com");
         request.addParameter("password","admin");
@@ -53,5 +46,16 @@ public class LoginControlTest extends Mockito {
         servlet.doGet(request,response);
 
         assertEquals("admin",request.getSession().getAttribute("adminRoles"));
+    }
+
+   @Test
+    public void testLoginUtente() throws ServletException, IOException {
+
+        request.addParameter("email","higelik497@febula.com");
+        request.addParameter("password","terra");
+
+        servlet.doGet(request,response);
+
+        assertNotNull(request.getSession().getAttribute("utente"));
     }
 }
