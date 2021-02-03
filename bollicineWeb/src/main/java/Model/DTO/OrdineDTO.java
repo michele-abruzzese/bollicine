@@ -2,7 +2,7 @@ package Model.DTO;
 
 public class OrdineDTO {
     int idOrdine;
-    float totOrdine;
+    double totOrdine;
     String data;
     String metodoPag;
     int idCarta;
@@ -12,7 +12,7 @@ public class OrdineDTO {
     public OrdineDTO() {
     }
 
-    public OrdineDTO(int idOrdine, float totOrdine, String data, String metodoPag, int idCarta, int idIndirizzo, int idAccount) {
+    public OrdineDTO(int idOrdine, double totOrdine, String data, String metodoPag, int idCarta, int idIndirizzo, int idAccount) {
         this.idOrdine = idOrdine;
         this.totOrdine = totOrdine;
         this.data = data;
@@ -30,7 +30,7 @@ public class OrdineDTO {
         this.idOrdine = idOrdine;
     }
 
-    public float getTotOrdine() {
+    public double getTotOrdine() {
         return totOrdine;
     }
 

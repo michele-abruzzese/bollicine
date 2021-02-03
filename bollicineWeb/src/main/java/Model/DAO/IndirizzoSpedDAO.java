@@ -96,5 +96,17 @@ public class IndirizzoSpedDAO {
         return indirizzo;
     }
 
+    public void removeIndirizzo(int id) throws SQLException{
+        PreparedStatement ps = null;
+
+        String query ="DELETE FROM "+IndirizzoSpedDAO.TABLE_NAME+" WHERE (idIndirizzoSpedizione=?)";
+        ps=con.prepareStatement(query);
+
+        ps.setInt(1,id);
+
+        ps.executeUpdate();
+
+    }
+
 
 }

@@ -6,10 +6,7 @@ import Model.DatabaseConnection;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,11 +15,11 @@ public class ProdottoDAO {
     private static final String TABLE_NAME = "prodotto";
 
 
-    public synchronized void doSaveProdotto(ProdottoDTO prod) throws SQLException, IOException {
+    public synchronized int doSaveProdotto(ProdottoDTO prod) throws SQLException, IOException {
 
         String query="INSERT INTO "+ProdottoDAO.TABLE_NAME+" (Nome,Categoria,Descrizione,Immagine,Tipo,Annata,Prezzo,Disponibilità) VALUES (?,?,?,?,?,?,?,?)";
 
-        PreparedStatement ps=con.prepareStatement(query);
+        PreparedStatement ps=con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
 
         ps.setString(1,prod.getNome());
@@ -42,6 +39,12 @@ public class ProdottoDAO {
         ps.setInt(8,prod.getDisponibilità());
 
         ps.executeUpdate();
+
+        ResultSet rs = ps.getGeneratedKeys();
+        rs.next();
+        int key= rs.getInt(1);
+
+        return key;
     }
 
 
@@ -185,6 +188,15 @@ public class ProdottoDAO {
         st.executeUpdate();
 
 
+    }
+
+    public void removeProdotto(int id) throws SQLException {
+        PreparedStatement ps = null;
+        String query="DELETE FROM "+ProdottoDAO.TABLE_NAME+" WHERE (idProdotto=?)";
+        ps=con.prepareStatement(query);
+        ps.setInt(1,id);
+
+        ps.executeUpdate();
     }
 
 

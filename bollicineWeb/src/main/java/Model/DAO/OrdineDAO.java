@@ -57,4 +57,12 @@ public class OrdineDAO {
         }
         return ordini;
     }
+
+    public void removeOrder(int id) throws SQLException {
+        PreparedStatement ps=null;
+        String query="DELETE FROM "+OrdineDAO.TABLE_NAME+" WHERE (idOrdine=?)";
+        ps=con.prepareStatement(query);
+        ps.setInt(1,id);
+        ps.executeUpdate();
+    }
 }
