@@ -44,7 +44,7 @@ public class LoginUtenteEmailNonVaida1Test {
         driver.manage().window().setSize(new Dimension(1936, 1056));
         driver.findElement(By.id("emailControlLog")).click();
         driver.findElement(By.id("emailControlLog")).sendKeys("e");
-        driver.findElement(By.name("password")).click();
-        assertThat(driver.switchTo().alert().getText(), is("Email non valida!"));
+        driver.findElement(By.id("pwd1")).click();
+        assertEquals("Email non valida!",driver.switchTo().alert().getText());
     }
 }

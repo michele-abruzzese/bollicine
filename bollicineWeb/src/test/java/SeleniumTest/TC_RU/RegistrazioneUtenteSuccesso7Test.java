@@ -47,8 +47,9 @@ public class RegistrazioneUtenteSuccesso7Test {
         driver.findElement(By.name("cognome")).sendKeys("Rossi");
         driver.findElement(By.name("nome")).sendKeys("Mario");
         driver.findElement(By.id("emailControl")).sendKeys("rossimario@email.it");
-        driver.findElement(By.id("pwd")).sendKeys("RossiMArio34");
+        driver.findElement(By.cssSelector(".dati_anagrafici2 > #pwd")).sendKeys("RossiMArio34");
         driver.findElement(By.cssSelector(".buttonRegi")).click();
-        assertThat(driver.switchTo().alert().getText(), is("abbiamo inviato l\'email al tuo account, vai a confermare entro 10 minuti"));
+
+        assertEquals("abbiamo inviato l\'email al tuo account, vai a confermare entro 10 minuti",driver.switchTo().alert().getText());
     }
 }

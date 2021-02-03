@@ -46,5 +46,9 @@ public class LoginUtenteSuccesso5Test {
         driver.findElement(By.id("emailControlLog")).sendKeys("email@ema.it");
         driver.findElement(By.name("password")).sendKeys("rocco");
         driver.findElement(By.cssSelector(".buttonLogin:nth-child(7)")).click();
+
+        String urlPg=driver.getCurrentUrl();
+
+        assertNotEquals("http://localhost:8080/bollicineSito_war_exploded/View/Login_Logout/LoginView.jsp",urlPg);
     }
 }

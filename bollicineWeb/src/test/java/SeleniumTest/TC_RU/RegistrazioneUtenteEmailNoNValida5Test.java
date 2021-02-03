@@ -47,8 +47,8 @@ public class RegistrazioneUtenteEmailNoNValida5Test {
         driver.findElement(By.name("cognome")).sendKeys("Rossi");
         driver.findElement(By.name("nome")).sendKeys("Mario");
         driver.findElement(By.id("emailControl")).sendKeys("email@ema.it");
-        driver.findElement(By.id("pwd")).click();
-        Alert a=driver.switchTo().alert();
-        a.accept();
+        driver.findElement(By.cssSelector(".dati_anagrafici2")).click();
+
+        assertEquals("Email già in uso!",driver.switchTo().alert().getText());
     }
 }

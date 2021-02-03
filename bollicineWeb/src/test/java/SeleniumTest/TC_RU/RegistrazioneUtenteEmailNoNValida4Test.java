@@ -52,21 +52,15 @@ public class RegistrazioneUtenteEmailNoNValida4Test {
             Actions builder = new Actions(driver);
             builder.moveToElement(element).perform();
         }
+        driver.findElement(By.cssSelector(".buttonRegi")).click();
         {
             WebElement element = driver.findElement(By.tagName("body"));
             Actions builder = new Actions(driver);
             builder.moveToElement(element, 0, 0).perform();
         }
-        {
-            WebElement element = driver.findElement(By.cssSelector(".buttonRegi"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element).clickAndHold().perform();
-        }
-        {
-            WebElement element = driver.findElement(By.cssSelector(".dati_anagrafici2"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element).release().perform();
-        }
-        driver.findElement(By.cssSelector(".dati_anagrafici2")).click();
+
+        String errorMsg=driver.findElement(By.id("emailControl-error")).getText();
+
+        assertEquals("Indirizzo email non valido!",errorMsg);
     }
 }

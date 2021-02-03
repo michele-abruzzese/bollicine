@@ -41,13 +41,13 @@ public class RegistrazioneUtentePasswordNoNValida6Test {
     @Test
     public void registrazioneUtentePasswordNoNValida6() {
         driver.get("http://localhost:8080/bollicineSito_war_exploded/View/Login_Logout/LoginView.jsp");
-        driver.manage().window().setSize(new Dimension(1920, 1040));
+        driver.manage().window().setSize(new Dimension(1936, 1056));
         driver.findElement(By.id("BtnRegi")).click();
         driver.findElement(By.name("cognome")).click();
         driver.findElement(By.name("cognome")).sendKeys("Rossi");
         driver.findElement(By.name("nome")).sendKeys("Mario");
         driver.findElement(By.id("emailControl")).sendKeys("rossimario@email.it");
-        driver.findElement(By.id("pwd")).sendKeys("psw");
+        driver.findElement(By.cssSelector(".dati_anagrafici2 > #pwd")).sendKeys("pas");
         {
             WebElement element = driver.findElement(By.cssSelector(".buttonRegi"));
             Actions builder = new Actions(driver);
@@ -69,5 +69,9 @@ public class RegistrazioneUtentePasswordNoNValida6Test {
             builder.moveToElement(element).release().perform();
         }
         driver.findElement(By.cssSelector(".dati_anagrafici2")).click();
+
+        String errorMsg=driver.findElement(By.id("pwd-error")).getText();
+
+        assertEquals("Almeno 4 caratteri",errorMsg);
     }
 }

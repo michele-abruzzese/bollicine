@@ -46,5 +46,8 @@ public class LoginUtentePasswordlNonVaida4Test {
         driver.findElement(By.id("emailControlLog")).sendKeys("email@ema.it");
         driver.findElement(By.name("password")).sendKeys("roc");
         driver.findElement(By.cssSelector(".buttonLogin:nth-child(7)")).click();
+        String messError=driver.findElement(By.id("errorLogin")).getText();
+
+        assertEquals("Password errata!",messError);
     }
 }

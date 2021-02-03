@@ -45,7 +45,7 @@
                     <input id="emailControlLog" onfocusout="controlEmailLog()" class="textArea" type="text" name="email" placeholder="email" autocomplete="off" minlength="2" maxlength="256" required><br>
 
                     <h4 class="h4">Password</h4>
-                    <input class="textArea" type="password" name="password" placeholder="password"  autocomplete="off" maxlength="15" required><br>
+                    <input id="pwd1" class="textArea" type="password" name="password" placeholder="password"  autocomplete="off" maxlength="15" required><br>
                     <input class="buttonLogin" type="submit" value="Login"/>
                     <input class="buttonLogin" type="reset" value="Reset"/><br>
 

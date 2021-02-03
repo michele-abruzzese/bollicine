@@ -56,5 +56,9 @@ public class RegistrazioneUtenteCognomeNoNValido1Test {
             Actions builder = new Actions(driver);
             builder.moveToElement(element, 0, 0).perform();
         }
+
+        String errorMsg=driver.findElement(By.id("cognome-error")).getText();
+
+        assertEquals("Please enter at least 2 characters.",errorMsg);
     }
 }
