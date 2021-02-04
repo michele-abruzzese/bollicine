@@ -18,8 +18,8 @@ class AccountDAOTest {
 
         AccountDTO ac1= ac.doRetriveByEmail("alfre@gmail.com");
 
-       /* assertEquals(id,ac1.getId());*/
-        assertNotNull(ac1);
+       assertEquals(id,ac1.getId());
+
 
         ac.removeAccount(id);
     }

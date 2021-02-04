@@ -19,7 +19,7 @@ class CartaCreditoDAOTest {
 
         CartaCreditoDTO card2 = c.doRetriveById(id);
 
-        assertNotNull(card2);
+        assertEquals(id,card2.getIdCartaCredito());
 
         c.doDelete(id);
 
