@@ -93,8 +93,8 @@ CarrelloService cart = (CarrelloService) request.getSession().getAttribute("cart
 											<h3>Inserisci la quantità da aggiungere al carrello</h3>
 											<form action="./AddInCart">
 												<input type="hidden" name="id" value="<%=bean.getIdProdotto()%>">
-												<input id="qtDaInserire" class="qtAddCart" type="text" pattern="^[1-<%=bean.getDisponibilità()-cart.getQ(bean)%>]$" name="quantita" placeholder="max <%=(bean.getDisponibilità()-cart.getQ(bean))%>" required>
-												<input id="buttonAddCartModal" type="submit" value="aggiungi al carrello">
+												<input id="qtDaInserire<%=i%>" class="qtAddCart" type="text" pattern="^[1-<%=bean.getDisponibilità()-cart.getQ(bean)%>]$" name="quantita" placeholder="max <%=(bean.getDisponibilità()-cart.getQ(bean))%>" required>
+												<input id="buttonAddCartModal<%=i%>" class="buttonAddCartModal" type="submit" value="aggiungi al carrello">
 											</form>
 										<%
 											}else{
@@ -125,6 +125,7 @@ CarrelloService cart = (CarrelloService) request.getSession().getAttribute("cart
 	<script>
 		var num=0;
 		function myfunction(name) {
+			<%System.out.println("provaaa");%>
 			var a=name.replace(/[^\d]+/g, '');
 			num=Number(a);
 

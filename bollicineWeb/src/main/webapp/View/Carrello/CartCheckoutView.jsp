@@ -153,7 +153,7 @@
                     Cap<input type="text" name="cap"  placeholder="5 cifre" required>
                     Provincia<input type="text" name="provincia" maxlength="50" required>
                     Alias<input type="text" name="alias" required  maxlength="30" placeholder="es. casa, lavoro ecc">
-                    <input class="buttonFormModal" type="submit" value="salva">
+                    <input id="salvaIndirizzo" class="buttonFormModal" type="submit" value="salva">
                 </form>
             </div>
 

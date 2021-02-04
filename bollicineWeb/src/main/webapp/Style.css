@@ -1213,7 +1213,7 @@ div#descrizioneProd {
 	font-size:14px;
 }
 
-#buttonAddCartModal{
+.buttonAddCartModal{
 	background-color: #9c1a1a;
 	color:#fff;
 	height:30px;
