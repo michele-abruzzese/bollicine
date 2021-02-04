@@ -40,8 +40,17 @@ public class InserimentoModificaProdottoSuccesso8Test {
     }
     @Test
     public void inserimentoModificaProdottoSuccesso8() {
-        driver.get("http://localhost:8080/bollicineSito_war_exploded/VisualizzaProdotti");
+        driver.get("http://localhost:8080/bollicineSito_war_exploded/View/Login_Logout/LoginView.jsp");
         driver.manage().window().setSize(new Dimension(1936, 1056));
+        driver.findElement(By.id("emailControlLog")).click();
+        driver.findElement(By.id("emailControlLog")).sendKeys("michele@email.it");
+        driver.findElement(By.id("pwd1")).sendKeys("michele");
+        driver.findElement(By.cssSelector(".buttonLogin:nth-child(7)")).click();
+
+        //prendo il numero di righe nella tabella che rappresentano i prodotti
+        List <WebElement> nProdotti=driver.findElements(By.cssSelector(".no-more-tables > table > tbody"));
+
+
         driver.findElement(By.cssSelector("#formInsert > form")).click();
         driver.findElement(By.name("nome")).click();
         driver.findElement(By.name("nome")).sendKeys("Colli Di Luni Vermentino DOC");
@@ -55,8 +64,14 @@ public class InserimentoModificaProdottoSuccesso8Test {
         driver.findElement(By.name("prezzo")).sendKeys("10.5");
         driver.findElement(By.name("disponibilita")).click();
         driver.findElement(By.name("disponibilita")).sendKeys("3");
-        driver.findElement(By.name("talkPhoto")).click();
-        driver.findElement(By.name("talkPhoto")).sendKeys("C:\\fakepath\\vino1.jpg");
+       // driver.findElement(By.id("foto")).click();
+        driver.findElement(By.id("foto")).sendKeys("C:\\Users\\Michele\\IdeaProjects\\bollicine\\bollicineWeb\\src\\main\\webapp\\imgs\\vino1.jpg");
         driver.findElement(By.cssSelector(".buttonProtected:nth-child(25)")).click();
+
+        //prendo il numero di righe nella tabella che rappresentano i prodotti
+        List <WebElement> nProdottiAfter=driver.findElements(By.cssSelector(".no-more-tables > table > tbody"));
+
+        //vedo se nella tabella vi è un prodotto in più
+        assertEquals(nProdotti.size()+1,nProdottiAfter.size());
     }
 }

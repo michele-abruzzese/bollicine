@@ -40,8 +40,13 @@ public class InserimentoModificaProdottoPrezzoNoNValido5Test {
     }
     @Test
     public void inserimentoModificaProdottoPrezzoNoNValido5() {
-        driver.get("http://localhost:8080/bollicineSito_war_exploded/VisualizzaProdotti");
+        driver.get("http://localhost:8080/bollicineSito_war_exploded/View/Login_Logout/LoginView.jsp");
         driver.manage().window().setSize(new Dimension(1936, 1056));
+        driver.findElement(By.id("emailControlLog")).click();
+        driver.findElement(By.id("emailControlLog")).sendKeys("michele@email.it");
+        driver.findElement(By.id("pwd1")).sendKeys("michele");
+        driver.findElement(By.cssSelector(".buttonLogin:nth-child(7)")).click();
+
         driver.findElement(By.name("nome")).click();
         driver.findElement(By.name("nome")).sendKeys("Colli DI Luni Vermentino DOC");
         driver.findElement(By.name("descrizione")).click();
@@ -50,5 +55,9 @@ public class InserimentoModificaProdottoPrezzoNoNValido5Test {
         driver.findElement(By.name("annata")).sendKeys("2020");
         driver.findElement(By.name("prezzo")).sendKeys("0.5");
         driver.findElement(By.cssSelector(".buttonProtected:nth-child(25)")).click();
+
+        String errorMsg=driver.findElement(By.id("prezzo-error")).getText();
+
+        assertEquals("il valore deve essere superiore o ugulale a 1",errorMsg);
     }
 }

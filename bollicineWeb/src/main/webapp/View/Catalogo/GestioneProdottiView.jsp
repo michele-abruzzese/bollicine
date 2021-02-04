@@ -38,6 +38,10 @@
 </head>
 
 <body>
+<script src="http://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
 <%@ include file="../header.jsp" %>
 <div id="protectedPage">
     <div id="contenutoProtected">
@@ -51,7 +55,7 @@
         <div id="InsertUpdate">
             <div id="formInsert">
                 <h2 class="h2Form">Inserisci prodotto</h2>
-                <form action="./InsertUpdateProduct" enctype="multipart/form-data"  method="post">
+                <form action="./InsertUpdateProduct" enctype="multipart/form-data"  method="post" id="formInserimento">
                     <input type="hidden" name="action" value="ins">
 
                     Nome:<br>
@@ -77,10 +81,10 @@
                     <input name="prezzo" type="number" min="1" step="any" required><br>
 
                     Disponibilità:<br>
-                    <input name="disponibilita" type="number" min="0" value="0" required><br>
+                    <input name="disponibilita" type="number" min="0"  required><br>
 
 
-                    <input class="file" type="file" accept="image/jpeg,image/png" name="talkPhoto" value="" maxlength="255" required><br>
+                    <input id="foto" class="file" type="file" accept="image/jpeg,image/png" name="talkPhoto" value="" maxlength="255" required><br>
 
                     <input class="buttonProtected" type="submit" value="Add"> <input class="buttonProtected" type="reset" value="Reset">
                 </form>
@@ -216,5 +220,68 @@
 
 </div>
 <%@include file="../footer.html"%>
+<script>
+    $.validator.addMethod("regex",
+        function (value, element, regexp) {
+            var re = new RegExp(regexp);
+            return this.optional(element) || re.test(value);
+        },"Please check your input."
+    );
+    $(document).ready(function()
+    {
+
+        $("#formInserimento").validate(
+            {
+                rules:
+                    {
+                        'nome':{
+                            required: true
+                        },
+                        'descrizione':{
+                            required: true
+                        },
+                        'tipo':{
+                            required: true
+                        },
+                        'annata':{
+                            required: true
+                        },
+                        'prezzo':{
+                            min: 1
+                        },
+                        'diaponibilita':{
+                            required: true
+                        },
+                        'talkPhoto':{
+                            required: true
+                        }
+                    },
+                messages:
+                    {
+                        'nome':{
+                            required: '<br><b>campo obbligatorio</b>'
+                        },
+                        'descrizione':{
+                            required: '<br><b>campo obbligatorio</b>'
+                        },
+                        'tipo':{
+                            required: '<br><b>campo obbligatorio</b>'
+                        },
+                        'annata':{
+                            required: '<br><b>campo obbligatorio</b>'
+                        },
+                        'prezzo':{
+                            min: '<br><b>il valore deve essere superiore o ugulale a 1</b>'
+                        },
+                        'disponibilita':{
+                            required: '<br><b>campo obbligatorio</b>'
+                        },
+                        'talkPhoto':{
+                            required: '<br><b>campo obbligatorio</b>'
+                        }
+                    }
+            });
+    });
+</script>
 </body>
 </html>

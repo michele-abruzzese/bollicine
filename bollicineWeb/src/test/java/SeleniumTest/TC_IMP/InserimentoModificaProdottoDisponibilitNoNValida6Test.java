@@ -40,8 +40,13 @@ public class InserimentoModificaProdottoDisponibilitNoNValida6Test {
     }
     @Test
     public void inserimentoModificaProdottoDisponibilitNoNValida6() {
-        driver.get("http://localhost:8080/bollicineSito_war_exploded/VisualizzaProdotti");
+        driver.get("http://localhost:8080/bollicineSito_war_exploded/View/Login_Logout/LoginView.jsp");
         driver.manage().window().setSize(new Dimension(1936, 1056));
+        driver.findElement(By.id("emailControlLog")).click();
+        driver.findElement(By.id("emailControlLog")).sendKeys("michele@email.it");
+        driver.findElement(By.id("pwd1")).sendKeys("michele");
+        driver.findElement(By.cssSelector(".buttonLogin:nth-child(7)")).click();
+
         driver.findElement(By.cssSelector("#formInsert > form")).click();
         driver.findElement(By.name("nome")).click();
         driver.findElement(By.name("nome")).sendKeys("Colli Di Luni Vermentino DOC");
@@ -53,6 +58,10 @@ public class InserimentoModificaProdottoDisponibilitNoNValida6Test {
         driver.findElement(By.name("annata")).sendKeys("2020");
         driver.findElement(By.name("prezzo")).click();
         driver.findElement(By.name("prezzo")).sendKeys("10.5");
+        driver.findElement(By.name("disponibilita")).click();
         driver.findElement(By.cssSelector(".buttonProtected:nth-child(25)")).click();
+
+        String errorMsg=driver.findElement(By.id("disponibilita-error")).getText();
+        assertEquals("campo obbligatorio",errorMsg);
     }
 }

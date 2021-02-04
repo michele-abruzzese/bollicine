@@ -93,7 +93,7 @@ CarrelloService cart = (CarrelloService) request.getSession().getAttribute("cart
 											<h3>Inserisci la quantità da aggiungere al carrello</h3>
 											<form action="./AddInCart">
 												<input type="hidden" name="id" value="<%=bean.getIdProdotto()%>">
-												<input class="qtAddCart" type="number" name="quantita" min="1"  max="<%=bean.getDisponibilità()-cart.getQ(bean)%>" placeholder="max <%=(bean.getDisponibilità()-cart.getQ(bean))%>" required>
+												<input id="qtDaInserire" class="qtAddCart" type="text" pattern="^[1-<%=bean.getDisponibilità()-cart.getQ(bean)%>]$" name="quantita" placeholder="max <%=(bean.getDisponibilità()-cart.getQ(bean))%>" required>
 												<input id="buttonAddCartModal" type="submit" value="aggiungi al carrello">
 											</form>
 										<%

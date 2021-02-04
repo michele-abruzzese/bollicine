@@ -65,7 +65,7 @@
         %>
         <h3>TOTALE: <%=cart.getTotal() %> €</h3>
         <div id=checkoutCart>
-            <a class="buttonCart" href="CartCheckoutView.jsp">procedi all'acquisto</a>
+            <a id="buttonProcedi" class="buttonCart" href="CartCheckoutView.jsp">procedi all'acquisto</a>
         </div>
 
     </div>

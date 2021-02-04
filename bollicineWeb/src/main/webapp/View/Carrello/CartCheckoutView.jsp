@@ -15,7 +15,10 @@
     <link href="../../Style.css?ts=<?=time()?>&quot" rel="stylesheet" type="text/css">
 </head>
 <body>
+<script src="http://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
 
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
 <%@ include file="../header.jsp" %>
 <div id="cartIndirizzi">
     <%
@@ -141,15 +144,15 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h3>Inserisci un nuovo indirizzo di spedizione</h3>
-                <form class="formModal" action="${pageContext.servletContext.contextPath}/AddNewIndirizzo" method="post">
+                <form id="formIndirizzo" class="formModal" action="${pageContext.servletContext.contextPath}/AddNewIndirizzo" method="post">
                     <input type="hidden" name="idCliente" value="<%=cliente.getId()%>">
-                    Cognome<input type="text" name="cognome" minlength="2" maxlength="30" required>
-                    Nome<input type="text" name="nome" minlength="2" maxlength="30" required>
-                    Indirizzo<input type="text" name="indirizzo" minlength="2" maxlength="50" required>
-                    Città<input type="text" name="citta" minlength="2" maxlength="50" required>
-                    Cap<input type="text" name="cap" pattern="^[0-9]{5}$" placeholder="5 cifre" required>
-                    Provincia<input type="text" name="provincia" minlength="2" maxlength="50" required>
-                    Alias<input type="text" name="alias" required minlength="2" maxlength="30" placeholder="es. casa, lavoro ecc">
+                    Cognome<input type="text" name="cognome"  maxlength="30" required>
+                    Nome<input type="text" name="nome" maxlength="30" required>
+                    Indirizzo<input type="text" name="indirizzo"  maxlength="50" required>
+                    Città<input type="text" name="citta"  maxlength="50" required>
+                    Cap<input type="text" name="cap"  placeholder="5 cifre" required>
+                    Provincia<input type="text" name="provincia" maxlength="50" required>
+                    Alias<input type="text" name="alias" required  maxlength="30" placeholder="es. casa, lavoro ecc">
                     <input class="buttonFormModal" type="submit" value="salva">
                 </form>
             </div>
@@ -217,7 +220,7 @@
                 }
             %>
         </select>
-        <input class="buttonCeckout" type="submit" value="Checkout">
+        <input  class="buttonCeckout" type="submit" value="Checkout">
     </form>
     <%
         }
@@ -225,7 +228,72 @@
 </div>
 
 <%@include file="../footer.html" %>
+<script>
+    $.validator.addMethod("regex",
+        function (value, element, regexp) {
+            var re = new RegExp(regexp);
+            return this.optional(element) || re.test(value);
+        },"Please check your input."
+    );
+    $(document).ready(function()
+    {
 
+        $("#formIndirizzo").validate(
+            {
+                rules:
+                    {
+                        'cognome':{
+                            minlength: 2
+                        },
+                        'nome':{
+                            minlength: 2
+                        },
+                        'indirizzo':{
+                            minlength: 2
+                        },
+                        'citta':{
+                            minlength: 2
+                        },
+                        'cap':{
+                            regex:"^[0-9]{5}$"
+                        },
+                        'provincia':{
+                            minlength: 2
+                        },
+                        'alias':{
+                            minlength: 2
+                        }
+                    },
+                messages:
+                    {
+                        'cognome':{
+                            minlength: '<br><b>si prega di inserire almeno due caratteri</b>'
+                        },
+                        'nome':{
+                            minlength: '<br><b>si prega di inserire almeno due caratteri</b>'
+                        },
+                        'indirizzo':{
+                            minlength: '<br><b>si prega di inserire almeno due caratteri</b>'
+                        },
+                        'indirizzo':{
+                            minlength: '<br><b>si prega di inserire almeno due caratteri</b>'
+                        },
+                        'citta':{
+                            minlength: '<br><b>si prega di inserire almeno due caratteri</b>'
+                        },
+                        'cap':{
+                            regex: '<br><b>rispetta il formato richiesto</b>'
+                        },
+                        'provincia':{
+                            minlength: '<br><b>si prega di inserire almeno due caratteri</b>'
+                        },
+                        'alias':{
+                            minlength: '<br><b>si prega di inserire almeno due caratteri</b>'
+                        }
+                    }
+            });
+    });
+</script>
 <script>
     // Get the modal
     var modal1 = document.getElementById("myModalIn1");
