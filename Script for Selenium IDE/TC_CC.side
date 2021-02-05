@@ -1,0 +1,926 @@
+{
+  "id": "4b8444fd-62c5-44dc-8728-2fe80c2d9854",
+  "version": "2.0",
+  "name": "TC_CC",
+  "url": "http://localhost:8080/bollicineSito_war_exploded/View/Carrello/CartCheckoutView.jsp",
+  "tests": [{
+    "id": "4f04aab6-8346-4639-a9cf-1b2a592cb53d",
+    "name": "NuovaCarta_CognomeNonValido_1",
+    "commands": [{
+      "id": "de04ac1d-3826-4c24-bfd4-7aa4e30e958c",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/bollicineSito_war_exploded/View/Carrello/CartCheckoutView.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f4c9277a-2b60-48db-91b3-2c08e8b40f98",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6ad8e5d0-f68d-4636-b791-73ab7cf81981",
+      "comment": "",
+      "command": "click",
+      "target": "id=myBtnCt1",
+      "targets": [
+        ["id=myBtnCt1", "id"],
+        ["css=#myBtnCt1", "css:finder"],
+        ["xpath=//button[@id='myBtnCt1']", "xpath:attributes"],
+        ["xpath=//div[@id='nuovaCarta']/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Aggiungi nuova carta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a73397b-b891-40ed-ab22-940c0cb412c1",
+      "comment": "",
+      "command": "click",
+      "target": "css=#formCC > input:nth-child(2)",
+      "targets": [
+        ["css=#formCC > input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='cognome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d6da731-54a8-429f-9713-2aa481310f3a",
+      "comment": "",
+      "command": "type",
+      "target": "css=#formCC > input:nth-child(2)",
+      "targets": [
+        ["css=#formCC > input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='cognome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[2]", "xpath:position"]
+      ],
+      "value": "R"
+    }, {
+      "id": "a02a4674-52c7-40e9-bd47-4d6e2c72b010",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=salvaCarta",
+      "targets": [
+        ["id=salvaCarta", "id"],
+        ["css=#salvaCarta", "css:finder"],
+        ["xpath=//input[@id='salvaCarta']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[7]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ddb0200-9050-492f-8c75-2068ebe566f8",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "id=formCC",
+      "targets": [
+        ["id=formCC", "id"],
+        ["css=#formCC", "css:finder"],
+        ["xpath=//form[@id='formCC']", "xpath:attributes"],
+        ["xpath=//div[@id='myModalCt1']/div/form", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db66de87-5e13-4304-acd4-208395a6ae34",
+      "comment": "",
+      "command": "click",
+      "target": "id=formCC",
+      "targets": [
+        ["id=formCC", "id"],
+        ["css=#formCC", "css:finder"],
+        ["xpath=//form[@id='formCC']", "xpath:attributes"],
+        ["xpath=//div[@id='myModalCt1']/div/form", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7215f3e1-6baa-4ad7-8a08-4e9691410eae",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=cognome-error",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "465edb91-4135-4fff-931a-824d56232e54",
+    "name": "NuovaCarta_NomeNonValido_2",
+    "commands": [{
+      "id": "80a2a6c5-451e-4040-a40a-b1acba8eb1da",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/bollicineSito_war_exploded/View/Carrello/CartCheckoutView.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ecdb5ab4-7acf-4f85-bd47-0964899518aa",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "feb9e62c-cbb5-4dba-aea1-1ebc2367654b",
+      "comment": "",
+      "command": "click",
+      "target": "id=myBtnCt1",
+      "targets": [
+        ["id=myBtnCt1", "id"],
+        ["css=#myBtnCt1", "css:finder"],
+        ["xpath=//button[@id='myBtnCt1']", "xpath:attributes"],
+        ["xpath=//div[@id='nuovaCarta']/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Aggiungi nuova carta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c946430c-573b-4b7d-9807-7ac7e4b3c188",
+      "comment": "",
+      "command": "click",
+      "target": "css=#formCC > input:nth-child(2)",
+      "targets": [
+        ["css=#formCC > input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='cognome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91b3cc6b-723e-4cb1-8fbe-f3539726a04f",
+      "comment": "",
+      "command": "type",
+      "target": "css=#formCC > input:nth-child(2)",
+      "targets": [
+        ["css=#formCC > input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='cognome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[2]", "xpath:position"]
+      ],
+      "value": "Rossi"
+    }, {
+      "id": "1e3f00b8-37ec-4859-b0a5-40fa45f5e6c1",
+      "comment": "",
+      "command": "type",
+      "target": "css=#formCC > input:nth-child(3)",
+      "targets": [
+        ["css=#formCC > input:nth-child(3)", "css:finder"],
+        ["xpath=(//input[@name='nome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[3]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[3]", "xpath:position"]
+      ],
+      "value": "M"
+    }, {
+      "id": "733c10b9-ff92-4c68-b768-2795a350b522",
+      "comment": "",
+      "command": "click",
+      "target": "id=salvaCarta",
+      "targets": [
+        ["id=salvaCarta", "id"],
+        ["css=#salvaCarta", "css:finder"],
+        ["xpath=//input[@id='salvaCarta']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[7]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8fb643e-713a-4531-9f05-ac55b3ccaf7c",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=nome-error",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "1293f9af-1695-4165-9a58-a12be38033c3",
+    "name": "NuovaCarta_NumeroNonValido_3",
+    "commands": [{
+      "id": "985f5bb4-82e8-44c0-93ed-178aee5cfaf8",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/bollicineSito_war_exploded/View/Carrello/CartCheckoutView.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fcc8411a-747b-4826-9981-d4a059acd637",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fba620ac-8cb8-400e-bc8d-ff4ed43d8440",
+      "comment": "",
+      "command": "click",
+      "target": "id=myBtnCt1",
+      "targets": [
+        ["id=myBtnCt1", "id"],
+        ["css=#myBtnCt1", "css:finder"],
+        ["xpath=//button[@id='myBtnCt1']", "xpath:attributes"],
+        ["xpath=//div[@id='nuovaCarta']/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Aggiungi nuova carta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0cc50ad5-2c32-4842-909d-80b8d89a6fa2",
+      "comment": "",
+      "command": "click",
+      "target": "css=#formCC > input:nth-child(2)",
+      "targets": [
+        ["css=#formCC > input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='cognome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a42a391d-616e-430a-abb1-7915b15f045f",
+      "comment": "",
+      "command": "type",
+      "target": "css=#formCC > input:nth-child(2)",
+      "targets": [
+        ["css=#formCC > input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='cognome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[2]", "xpath:position"]
+      ],
+      "value": "Rossi"
+    }, {
+      "id": "b708084a-75da-4c65-bed0-2a1705835ac5",
+      "comment": "",
+      "command": "type",
+      "target": "css=#formCC > input:nth-child(3)",
+      "targets": [
+        ["css=#formCC > input:nth-child(3)", "css:finder"],
+        ["xpath=(//input[@name='nome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[3]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[3]", "xpath:position"]
+      ],
+      "value": "Mario"
+    }, {
+      "id": "ffaf2e42-48de-4411-8448-f1f407a59a51",
+      "comment": "",
+      "command": "type",
+      "target": "name=numero",
+      "targets": [
+        ["name=numero", "name"],
+        ["css=#formCC > input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='numero']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[4]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[4]", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "5bf303fe-262b-4b75-a870-b907a100a98e",
+      "comment": "",
+      "command": "click",
+      "target": "id=salvaCarta",
+      "targets": [
+        ["id=salvaCarta", "id"],
+        ["css=#salvaCarta", "css:finder"],
+        ["xpath=//input[@id='salvaCarta']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[7]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "278a0791-aef7-4619-a781-aa02e1547e77",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=numero-error",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "5b5d3db0-a331-4d69-8636-667bee09d18f",
+    "name": "NuovaCarta_NumeroNonValido_4",
+    "commands": [{
+      "id": "aed9151d-bc97-4ff7-8b4f-8dd14f35673a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/bollicineSito_war_exploded/View/Carrello/CartCheckoutView.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6edf6f05-7a33-451d-8d4c-e0ff823d1c90",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x708",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59c88e2f-6058-4964-a00f-e08c610e01f7",
+      "comment": "",
+      "command": "click",
+      "target": "id=myBtnCt1",
+      "targets": [
+        ["id=myBtnCt1", "id"],
+        ["css=#myBtnCt1", "css:finder"],
+        ["xpath=//button[@id='myBtnCt1']", "xpath:attributes"],
+        ["xpath=//div[@id='nuovaCarta']/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Aggiungi nuova carta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3c8c94d-b312-470a-8125-98c1f720ad60",
+      "comment": "",
+      "command": "click",
+      "target": "css=#formCC > input:nth-child(2)",
+      "targets": [
+        ["css=#formCC > input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='cognome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16078a8a-3362-4be5-875e-d28f50548ad2",
+      "comment": "",
+      "command": "type",
+      "target": "css=#formCC > input:nth-child(2)",
+      "targets": [
+        ["css=#formCC > input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='cognome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[2]", "xpath:position"]
+      ],
+      "value": "Rossi"
+    }, {
+      "id": "a1364e7b-0f91-43ea-a4b0-440642e9dda8",
+      "comment": "",
+      "command": "type",
+      "target": "css=#formCC > input:nth-child(3)",
+      "targets": [
+        ["css=#formCC > input:nth-child(3)", "css:finder"],
+        ["xpath=(//input[@name='nome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[3]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[3]", "xpath:position"]
+      ],
+      "value": "Mario"
+    }, {
+      "id": "d3f10bff-a8e6-4e2b-95b8-d2f604c5de79",
+      "comment": "",
+      "command": "type",
+      "target": "name=numero",
+      "targets": [
+        ["name=numero", "name"],
+        ["css=#formCC > input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='numero']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[4]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[4]", "xpath:position"]
+      ],
+      "value": "123456789112a"
+    }, {
+      "id": "875aeb8a-a974-4d18-bb04-5ec426818882",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=salvaCarta",
+      "targets": [
+        ["id=salvaCarta", "id"],
+        ["css=#salvaCarta", "css:finder"],
+        ["xpath=//input[@id='salvaCarta']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[7]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f3add96-6c62-4fc1-b82e-0b287d2911d7",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=salvaCarta",
+      "targets": [
+        ["id=salvaCarta", "id"],
+        ["css=#salvaCarta", "css:finder"],
+        ["xpath=//input[@id='salvaCarta']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[7]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "babeeab3-7d64-4cbf-8744-e77d475955cf",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=salvaCarta",
+      "targets": [
+        ["id=salvaCarta", "id"],
+        ["css=#salvaCarta", "css:finder"],
+        ["xpath=//input[@id='salvaCarta']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[7]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "010159b9-e68a-4e98-bef2-d5d6b92744da",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "name=scadenza",
+      "targets": [
+        ["name=scadenza", "name"],
+        ["css=#formCC > input:nth-child(7)", "css:finder"],
+        ["xpath=//input[@name='scadenza']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[6]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe40a6ca-ad5a-4312-a3a2-d8e54faac089",
+      "comment": "",
+      "command": "click",
+      "target": "id=formCC",
+      "targets": [
+        ["id=formCC", "id"],
+        ["css=#formCC", "css:finder"],
+        ["xpath=//form[@id='formCC']", "xpath:attributes"],
+        ["xpath=//div[@id='myModalCt1']/div/form", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3a97b10-7ced-4a30-830f-eb0272a481c6",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=numero-error",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a7a0145e-b2b3-4e41-b7a7-482f14e82c21",
+    "name": "NuovaCarta_CCVNonValido_5",
+    "commands": [{
+      "id": "aeb7ff6a-77b4-4a23-bbe7-3a2d6c20c1fa",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/bollicineSito_war_exploded/View/Carrello/CartCheckoutView.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7c8010b9-d128-4595-a502-e3e8042490dc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x708",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b401b543-21e1-455b-8544-e6913674eafd",
+      "comment": "",
+      "command": "click",
+      "target": "id=myBtnCt1",
+      "targets": [
+        ["id=myBtnCt1", "id"],
+        ["css=#myBtnCt1", "css:finder"],
+        ["xpath=//button[@id='myBtnCt1']", "xpath:attributes"],
+        ["xpath=//div[@id='nuovaCarta']/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Aggiungi nuova carta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e0fc5c5d-cc3f-4e75-83fd-a344ed44f774",
+      "comment": "",
+      "command": "click",
+      "target": "css=#formCC > input:nth-child(2)",
+      "targets": [
+        ["css=#formCC > input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='cognome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "57a3f038-0333-4d84-bd68-9d19d8094be6",
+      "comment": "",
+      "command": "type",
+      "target": "css=#formCC > input:nth-child(2)",
+      "targets": [
+        ["css=#formCC > input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='cognome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[2]", "xpath:position"]
+      ],
+      "value": "Rossi"
+    }, {
+      "id": "6ea6789d-4762-4697-ae97-0fca9ae4a4f0",
+      "comment": "",
+      "command": "type",
+      "target": "css=#formCC > input:nth-child(3)",
+      "targets": [
+        ["css=#formCC > input:nth-child(3)", "css:finder"],
+        ["xpath=(//input[@name='nome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[3]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[3]", "xpath:position"]
+      ],
+      "value": "Mario"
+    }, {
+      "id": "979eef1d-782c-4bd5-a3b5-1e05bcaf00db",
+      "comment": "",
+      "command": "type",
+      "target": "name=numero",
+      "targets": [
+        ["name=numero", "name"],
+        ["css=#formCC > input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='numero']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[4]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[4]", "xpath:position"]
+      ],
+      "value": "1234567891123"
+    }, {
+      "id": "1c711701-f028-4a92-a35d-ff0a4eca8bfb",
+      "comment": "",
+      "command": "type",
+      "target": "name=ccv",
+      "targets": [
+        ["name=ccv", "name"],
+        ["css=#formCC > input:nth-child(5)", "css:finder"],
+        ["xpath=//input[@name='ccv']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[5]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[5]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "18d2c693-f4c9-4572-b047-ddea82561253",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=salvaCarta",
+      "targets": [
+        ["id=salvaCarta", "id"],
+        ["css=#salvaCarta", "css:finder"],
+        ["xpath=//input[@id='salvaCarta']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[7]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3aa37a0c-4797-42e9-9305-209bedf480b4",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=salvaCarta",
+      "targets": [
+        ["id=salvaCarta", "id"],
+        ["css=#salvaCarta", "css:finder"],
+        ["xpath=//input[@id='salvaCarta']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[7]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbe69a08-7233-42b3-8be3-19bb2b53ec43",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=salvaCarta",
+      "targets": [
+        ["id=salvaCarta", "id"],
+        ["css=#salvaCarta", "css:finder"],
+        ["xpath=//input[@id='salvaCarta']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[7]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b48b36bd-85dc-4c52-912f-acb1d00911ea",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "name=scadenza",
+      "targets": [
+        ["name=scadenza", "name"],
+        ["css=#formCC > input:nth-child(7)", "css:finder"],
+        ["xpath=//input[@name='scadenza']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[6]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f0a6e93-5a33-45ec-af32-6ff9993e4dbd",
+      "comment": "",
+      "command": "click",
+      "target": "id=formCC",
+      "targets": [
+        ["id=formCC", "id"],
+        ["css=#formCC", "css:finder"],
+        ["xpath=//form[@id='formCC']", "xpath:attributes"],
+        ["xpath=//div[@id='myModalCt1']/div/form", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f26d2d1e-ed66-4484-b947-48a86d6f47e6",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=ccv-error",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "ce07efe7-3cc7-449e-809d-32c6176af557",
+    "name": "NuovaCarta_CCVNonValido_6",
+    "commands": [{
+      "id": "0af9bf38-c763-44b8-aaeb-4e43d1c0f072",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/bollicineSito_war_exploded/View/Carrello/CartCheckoutView.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3a9f2e84-72dd-46dd-88e4-64c007d0f832",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x708",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "458c21fc-1052-4eb5-9dc2-6692cc347d47",
+      "comment": "",
+      "command": "click",
+      "target": "id=myBtnCt1",
+      "targets": [
+        ["id=myBtnCt1", "id"],
+        ["css=#myBtnCt1", "css:finder"],
+        ["xpath=//button[@id='myBtnCt1']", "xpath:attributes"],
+        ["xpath=//div[@id='nuovaCarta']/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Aggiungi nuova carta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "51587bbd-dae1-49b6-bd0e-13a70ffc6247",
+      "comment": "",
+      "command": "click",
+      "target": "css=#formCC > input:nth-child(2)",
+      "targets": [
+        ["css=#formCC > input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='cognome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ef7e68b-77d8-4f01-894a-2d11bf904a45",
+      "comment": "",
+      "command": "type",
+      "target": "css=#formCC > input:nth-child(2)",
+      "targets": [
+        ["css=#formCC > input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='cognome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[2]", "xpath:position"]
+      ],
+      "value": "Rossi"
+    }, {
+      "id": "83388759-38a0-44b1-8525-8f2758933f91",
+      "comment": "",
+      "command": "type",
+      "target": "css=#formCC > input:nth-child(3)",
+      "targets": [
+        ["css=#formCC > input:nth-child(3)", "css:finder"],
+        ["xpath=(//input[@name='nome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[3]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[3]", "xpath:position"]
+      ],
+      "value": "Mario"
+    }, {
+      "id": "adc50a35-bd50-4595-add1-78aa01775e8a",
+      "comment": "",
+      "command": "type",
+      "target": "name=numero",
+      "targets": [
+        ["name=numero", "name"],
+        ["css=#formCC > input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='numero']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[4]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[4]", "xpath:position"]
+      ],
+      "value": "1234567891123"
+    }, {
+      "id": "339a941a-865b-42f1-8c08-1693a63c6fcd",
+      "comment": "",
+      "command": "type",
+      "target": "name=ccv",
+      "targets": [
+        ["name=ccv", "name"],
+        ["css=#formCC > input:nth-child(5)", "css:finder"],
+        ["xpath=//input[@name='ccv']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[5]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[5]", "xpath:position"]
+      ],
+      "value": "12a"
+    }, {
+      "id": "3555a87a-7133-477a-a86e-14b5e1fa3815",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=salvaCarta",
+      "targets": [
+        ["id=salvaCarta", "id"],
+        ["css=#salvaCarta", "css:finder"],
+        ["xpath=//input[@id='salvaCarta']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[7]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3427de8-ccd3-4e5e-8578-32abb46a4ffe",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=salvaCarta",
+      "targets": [
+        ["id=salvaCarta", "id"],
+        ["css=#salvaCarta", "css:finder"],
+        ["xpath=//input[@id='salvaCarta']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[7]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d014033f-8c64-482f-9f5e-8be23abf1055",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=salvaCarta",
+      "targets": [
+        ["id=salvaCarta", "id"],
+        ["css=#salvaCarta", "css:finder"],
+        ["xpath=//input[@id='salvaCarta']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[7]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "285c12ac-ea6d-47e8-bfbf-1586cc0e1148",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "name=scadenza",
+      "targets": [
+        ["name=scadenza", "name"],
+        ["css=#formCC > input:nth-child(7)", "css:finder"],
+        ["xpath=//input[@name='scadenza']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[6]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a1b3f4be-9ce4-45d0-af6d-e73e27a979bd",
+      "comment": "",
+      "command": "click",
+      "target": "id=formCC",
+      "targets": [
+        ["id=formCC", "id"],
+        ["css=#formCC", "css:finder"],
+        ["xpath=//form[@id='formCC']", "xpath:attributes"],
+        ["xpath=//div[@id='myModalCt1']/div/form", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "182acf10-9751-45dd-a06d-0def021a6f7f",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=ccv-error",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a30c8032-6dc6-4eba-a6dc-33784aa3e517",
+    "name": "NuovaCarta_Successo_7",
+    "commands": [{
+      "id": "ee0dadf4-83af-4b19-bf91-930eac193174",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/bollicineSito_war_exploded/View/Carrello/CartCheckoutView.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a477d78c-16cc-4cd4-aae1-30a2208176d3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x708",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f61bd832-74fc-45eb-8304-1c6976afb641",
+      "comment": "",
+      "command": "click",
+      "target": "id=myBtnCt1",
+      "targets": [
+        ["id=myBtnCt1", "id"],
+        ["css=#myBtnCt1", "css:finder"],
+        ["xpath=//button[@id='myBtnCt1']", "xpath:attributes"],
+        ["xpath=//div[@id='nuovaCarta']/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Aggiungi nuova carta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf004d80-89e0-4b57-910c-1f4b5d98e522",
+      "comment": "",
+      "command": "click",
+      "target": "css=#formCC > input:nth-child(2)",
+      "targets": [
+        ["css=#formCC > input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='cognome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1a346b7-d6dc-4dc0-9ab4-d9f61c014d2d",
+      "comment": "",
+      "command": "type",
+      "target": "css=#formCC > input:nth-child(2)",
+      "targets": [
+        ["css=#formCC > input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='cognome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[2]", "xpath:position"]
+      ],
+      "value": "Rossi"
+    }, {
+      "id": "e22fb03b-19c1-4620-8552-28b0fed4c031",
+      "comment": "",
+      "command": "type",
+      "target": "css=#formCC > input:nth-child(3)",
+      "targets": [
+        ["css=#formCC > input:nth-child(3)", "css:finder"],
+        ["xpath=(//input[@name='nome'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[3]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[3]", "xpath:position"]
+      ],
+      "value": "Mario"
+    }, {
+      "id": "52703c4e-b751-4726-a3b2-b501ead0d410",
+      "comment": "",
+      "command": "type",
+      "target": "name=numero",
+      "targets": [
+        ["name=numero", "name"],
+        ["css=#formCC > input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='numero']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[4]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[4]", "xpath:position"]
+      ],
+      "value": "1234567891123"
+    }, {
+      "id": "f824c595-697d-4367-b220-d2d36b49b115",
+      "comment": "",
+      "command": "type",
+      "target": "name=ccv",
+      "targets": [
+        ["name=ccv", "name"],
+        ["css=#formCC > input:nth-child(5)", "css:finder"],
+        ["xpath=//input[@name='ccv']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[5]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[5]", "xpath:position"]
+      ],
+      "value": "123"
+    }, {
+      "id": "bcb42b96-948a-45f3-baeb-ddfb05de17fe",
+      "comment": "",
+      "command": "click",
+      "target": "name=scadenza",
+      "targets": [
+        ["name=scadenza", "name"],
+        ["css=#formCC > input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='scadenza']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[6]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a15bac0-9ab9-4167-a916-c07c46f9caa7",
+      "comment": "",
+      "command": "type",
+      "target": "name=scadenza",
+      "targets": [
+        ["name=scadenza", "name"],
+        ["css=#formCC > input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='scadenza']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[6]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[6]", "xpath:position"]
+      ],
+      "value": "2023-02-06"
+    }, {
+      "id": "5031d48a-f2e9-4ad7-ab11-c4d1a3b39647",
+      "comment": "",
+      "command": "click",
+      "target": "id=salvaCarta",
+      "targets": [
+        ["id=salvaCarta", "id"],
+        ["css=#salvaCarta", "css:finder"],
+        ["xpath=//input[@id='salvaCarta']", "xpath:attributes"],
+        ["xpath=//form[@id='formCC']/input[7]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/form/input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "dd886252-f8ff-479d-b522-d327e0b371ec",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": true,
+    "timeout": 300,
+    "tests": ["4f04aab6-8346-4639-a9cf-1b2a592cb53d", "ce07efe7-3cc7-449e-809d-32c6176af557", "a7a0145e-b2b3-4e41-b7a7-482f14e82c21", "465edb91-4135-4fff-931a-824d56232e54", "1293f9af-1695-4165-9a58-a12be38033c3", "5b5d3db0-a331-4d69-8636-667bee09d18f", "a30c8032-6dc6-4eba-a6dc-33784aa3e517"]
+  }],
+  "urls": ["http://localhost:8080/bollicineSito_war_exploded/View/Carrello/CartCheckoutView.jsp"],
+  "plugins": []
+}
