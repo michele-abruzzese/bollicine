@@ -125,7 +125,7 @@ CarrelloService cart = (CarrelloService) request.getSession().getAttribute("cart
 	<script>
 		var num=0;
 		function myfunction(name) {
-			<%System.out.println("provaaa");%>
+
 			var a=name.replace(/[^\d]+/g, '');
 			num=Number(a);
 
