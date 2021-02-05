@@ -40,16 +40,12 @@ public class CarrelloService {
         return flag;//se true allora presente
     }
 
-    public List<ProdottoDTO> getProducts() {
+    public List<ProdottoDTO> getProducts() throws SQLException {
         List<Integer> chiavi=new ArrayList<>(map.keySet());
         List<ProdottoDTO> prodotti= new ArrayList<>();
 
         for (Integer id: chiavi){
-            try {
                 prodotti.add(prodDao.doRetriveById(id));
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
         }
         return  prodotti;
     }
@@ -74,7 +70,7 @@ public class CarrelloService {
 
     }
 
-    public double getTotal() {
+    public double getTotal() throws SQLException {
 
         double total=0;
         List<ProdottoDTO> prodotti = getProducts();

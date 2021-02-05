@@ -48,6 +48,10 @@ public class AccountService {
         return accountDao.doRetriveByEmail(email);
     }
 
+    public void removeIndirizzo(int id) throws SQLException {
+        indirizzoDao.removeIndirizzo(id);
+    }
+
     public int salvaIndirizzo(String nome,String cognome,String indirizzo,int cap,String città,String provincia,String alias, int idAccount) throws SQLException{
         IndirizzoSpedDTO indirizzoSped = new IndirizzoSpedDTO();
 
@@ -94,6 +98,10 @@ public class AccountService {
         }
     }
 
+    public void removeCarta(int id) throws SQLException {
+        cartaDao.doDelete(id);
+    }
+
     public int controlEmail(String email)throws SQLException{
 
         return accountDao.controlEmail(email);
@@ -131,7 +139,7 @@ public class AccountService {
         account.setStato("confermato");
     }
 
-    public void sandEmail(String dest,String testo) throws MessagingException, UnsupportedEncodingException {
+    public int sandEmail(String dest,String testo) throws MessagingException, UnsupportedEncodingException {
 
         // Sender's email ID needs to be mentioned
         String from = "bollicine.noreply@gmail.com";
@@ -182,9 +190,10 @@ public class AccountService {
             // Send message
             Transport.send(message);
             System.out.println("Sent message successfully....");
+            return 1;
         } catch (MessagingException mex) {
             mex.printStackTrace();
+            return 0;
         }
-
     }
 }

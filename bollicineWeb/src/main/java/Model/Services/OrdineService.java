@@ -51,7 +51,7 @@ public class OrdineService {
         int idOrdine= ordineDAO.doSaveOrdine(ordine);
 
         //leggo l'iva da file
-        FileReader fr = new FileReader("C:\\Users\\Michele\\IdeaProjects\\bollicine\\bollicineWeb\\src\\main\\webapp\\WEB-INF\\iva.txt");
+        FileReader fr = new FileReader("src/main/webapp/WEB-INF/iva.txt");
         int next = fr.read();
         String iva = "";
         while(next != -1) {
