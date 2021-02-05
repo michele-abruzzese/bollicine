@@ -13,7 +13,7 @@ class DettaglioOrdineDAOTest {
 
     @Test
     void doSaveDettaglioOrdine() throws SQLException, IOException {
-        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","/Users/roccopagliarulo/IdeaProjects/bollicine/bollicineWeb/src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
+        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         ProdottoDAO p = new ProdottoDAO();
         int idP=p.doSaveProdotto(prod);
 
@@ -52,7 +52,7 @@ class DettaglioOrdineDAOTest {
 
     @Test
     void doRetriveAll() throws SQLException, IOException {
-        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","/Users/roccopagliarulo/IdeaProjects/bollicine/bollicineWeb/src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
+        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         ProdottoDAO p = new ProdottoDAO();
         int idP=p.doSaveProdotto(prod);
 
@@ -91,7 +91,7 @@ class DettaglioOrdineDAOTest {
 
     @Test
     void removeDettaglioOrdine() throws IOException, SQLException {
-        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","/Users/roccopagliarulo/IdeaProjects/bollicine/bollicineWeb/src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
+        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         ProdottoDAO p = new ProdottoDAO();
         int idP=p.doSaveProdotto(prod);
 
