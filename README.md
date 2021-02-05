@@ -21,3 +21,19 @@ Passi per eseguire i test di cui sopra:
 5. Fare click su "Run all tests"
 
 Nell Log di Selenium IDE si evince il risultato di ogni Test Case eseguito
+
+---------- Selenium Test in Intellij IDE ----------
+I test funzionali dell'inserimento/modifica prodotto, login utente e registrazione utente possono essere eseguiti in Intellij.
+I test sono stati configurati con un driver di tipo ChromeDriver
+
+Prerequisiti per l'esecuzione dei test:
+1. Browser Chrome
+2. ChromeDriver.exe compatibile con la prpria versione di Chrome
+3. Il file ChromeDriver deve essere presente nella cartella:"src/main/webapp/WEB-INF/utility/chromedriver.exe"
+4. Avviare il server (Tomcat)
+
+Passi per eseguire i test:
+1. Tasto destro sulla cartella "src/test/java/SeleniumTest"
+2. Click su "Run Test in Selenium Test"
+
+Nell Log di Intellij si evince il risultato di ogni Test Case eseguito
