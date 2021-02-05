@@ -172,14 +172,14 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h3>Inserisci una nuova carta di credito</h3>
-                <form class="formModal" action="${pageContext.servletContext.contextPath}/AddNewCard" method="post">
+                <form id ="formCC" class="formModal" action="${pageContext.servletContext.contextPath}/AddNewCard" method="post">
                     <input type="hidden" name="idCliente" value="<%=cliente.getId()%>">
-                    Cognome<input type="text" name="cognome" minlength="2" maxlength="30"  required>
-                    Nome<input type="text" name="nome" minlength="2" maxlength="30" required>
-                    Numero<input type="text" name="numero" pattern="^[0-9]{13,16}$" placeholder="da 13 a 16 cifre" required>
-                    CCV<input type="text" name="ccv" pattern="^[0-9]{3}$" placeholder="3 cifre" required>
+                    Cognome<input type="text" name="cognome"  maxlength="30"  required>
+                    Nome<input type="text" name="nome"  maxlength="30" required>
+                    Numero<input type="text" name="numero" placeholder="da 13 a 16 cifre" required>
+                    CCV<input type="text" name="ccv"  placeholder="3 cifre" required>
                     Scadenza<input type="date" name="scadenza" min="<%=LocalDate.now().plus(1,ChronoUnit.DAYS)%>" required>
-                    <input class="buttonFormModal" type="submit" value="salva">
+                    <input id="salvaCarta" class="buttonFormModal" type="submit" value="salva">
                 </form>
             </div>
 
@@ -289,6 +289,39 @@
                         },
                         'alias':{
                             minlength: '<br><b>si prega di inserire almeno due caratteri</b>'
+                        }
+                    }
+            });
+        $("#formCC").validate(
+            {
+                rules:
+                    {
+                        'cognome':{
+                            minlength: 2
+                        },
+                        'nome':{
+                            minlength: 2
+                        },
+                        'numero':{
+                            regex: "^[0-9]{13,16}$"
+                        },
+                        'ccv':{
+                            regex: "^[0-9]{3}$"
+                        }
+                    },
+                messages:
+                    {
+                        'cognome':{
+                            minlength: '<br><b>si prega di inserire almeno due caratteri</b>'
+                        },
+                        'nome':{
+                            minlength: '<br><b>si prega di inserire almeno due caratteri</b>'
+                        },
+                        'numero':{
+                            regex: '<br><b>rispetta il formato richiesto</b>'
+                        },
+                        'ccv':{
+                            regex: '<br><b>rispetta il formato richiesto</b>'
                         }
                     }
             });
