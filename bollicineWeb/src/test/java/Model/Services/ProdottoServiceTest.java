@@ -86,7 +86,7 @@ class ProdottoServiceTest {
     @Test
     void inserisciProdottoNelCatalogo() throws IOException, SQLException {
         ProdottoService p = new ProdottoService();
-        p.inserisciProdottoNelCatalogo("Tavernello","Bianco","Vino in cartone","/Users/roccopagliarulo/IdeaProjects/bollicine/bollicineWeb/src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
+        p.inserisciProdottoNelCatalogo("Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         List<ProdottoDTO> products = p.tuttiIProdotti();
         assertEquals("Tavernello",products.get(products.size()-1).getNome());
 
@@ -99,11 +99,11 @@ class ProdottoServiceTest {
     void aggiornaProdotto() throws IOException, SQLException {
         ProdottoService p = new ProdottoService();
 
-        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","/Users/roccopagliarulo/IdeaProjects/bollicine/bollicineWeb/src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
+        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         ProdottoDAO pr = new ProdottoDAO();
         int key=pr.doSaveProdotto(prod);
 
-        p.aggiornaProdotto(key,"Tavernello","Bianco","Vino in cartone","/Users/roccopagliarulo/IdeaProjects/bollicine/bollicineWeb/src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,2,5);
+        p.aggiornaProdotto(key,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,2,5);
 
         assertEquals(2,p.prodottoPerId(key).getPrezzo());
 
@@ -114,7 +114,7 @@ class ProdottoServiceTest {
     @Test
     void rimuoviProdottoDalCatalogo() throws IOException, SQLException {
         ProdottoService p = new ProdottoService();
-        p.inserisciProdottoNelCatalogo("Tavernello","Bianco","Vino in cartone","/Users/roccopagliarulo/IdeaProjects/bollicine/bollicineWeb/src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
+        p.inserisciProdottoNelCatalogo("Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         List<ProdottoDTO> products1 = p.tuttiIProdotti();
         p.rimuoviProdottoDalCatalogo(products1.get(products1.size()-1).getIdProdotto());
 
