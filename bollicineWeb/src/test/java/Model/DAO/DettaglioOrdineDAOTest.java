@@ -46,6 +46,8 @@ class DettaglioOrdineDAOTest {
         i.removeIndirizzo(idInd);
         c.doDelete(idCard);
         a.removeAccount(idAc);
+        p.removeProdotto(idP);
+
     }
 
     @Test
@@ -84,6 +86,7 @@ class DettaglioOrdineDAOTest {
         i.removeIndirizzo(idInd);
         c.doDelete(idCard);
         a.removeAccount(idAc);
+        p.removeProdotto(idP);
     }
 
     @Test
@@ -117,6 +120,8 @@ class DettaglioOrdineDAOTest {
         i.removeIndirizzo(idInd);
         c.doDelete(idCard);
         a.removeAccount(idAc);
+        p.removeProdotto(idP);
+
 
         List<DettaglioOrdineDTO> dettagli = d.doRetriveAll();
 
