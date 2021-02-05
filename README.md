@@ -28,7 +28,7 @@ I test sono stati configurati con un driver di tipo ChromeDriver
 
 Prerequisiti per l'esecuzione dei test:
 1. Browser Chrome
-2. ChromeDriver.exe compatibile con la prpria versione di Chrome
+2. ChromeDriver.exe compatibile con la propria versione di Chrome
 3. Il file ChromeDriver deve essere presente nella cartella:"src/main/webapp/WEB-INF/utility/chromedriver.exe"
 4. Avviare il server (Tomcat)
 
