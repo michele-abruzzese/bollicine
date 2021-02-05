@@ -3,7 +3,7 @@
 I test funzionali sono stati divisi per funzionalità (vedi Test Plan/ paragrafo 9)
 I test funzionali dell'inserimento/modifica prodotto, login utente e registrazione utente possono essere eseguiti in intellij
 
-I Test per L'inserimento di una nuova carta di credito in fase di acuisto e per l'inserimento di un nuovo indirizzo di spedizione in fase di acquisto 
+I Test per L'inserimento di una nuova carta di credito in fase di acquisto e per l'inserimento di un nuovo indirizzo di spedizione in fase di acquisto 
 sono eseguibili tramite Slenium IDE come estensione del browser.
 
 Prerequisiti per l'esecuzione dei test:
