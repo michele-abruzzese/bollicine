@@ -1,6 +1,6 @@
 # bollicine
 ---------- Run Test in Selenium IDE ----------
-I test funzionali sono stati divisi per funzionalità (vedi Test Plan/ paragrafo 9)
+I test sono stati divisi per funzionalità (vedi Test Plan/ paragrafo 9)
 I test funzionali dell'inserimento/modifica prodotto, login utente e registrazione utente possono essere eseguiti in intellij
 
 I Test per L'inserimento di una nuova carta di credito in fase di acquisto e per l'inserimento di un nuovo indirizzo di spedizione in fase di acquisto 
