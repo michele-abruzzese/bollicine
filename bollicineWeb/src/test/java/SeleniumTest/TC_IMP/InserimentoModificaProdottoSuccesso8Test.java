@@ -20,6 +20,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
+
+import java.io.File;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -29,7 +31,7 @@ public class InserimentoModificaProdottoSuccesso8Test {
     JavascriptExecutor js;
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\Michele\\IdeaProjects\\bollicine\\bollicineWeb\\src\\main\\webapp\\WEB-INF\\utility\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","src/main/webapp/WEB-INF/utility/chromedriver.exe");
         driver = new ChromeDriver();
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
@@ -64,8 +66,8 @@ public class InserimentoModificaProdottoSuccesso8Test {
         driver.findElement(By.name("prezzo")).sendKeys("10.5");
         driver.findElement(By.name("disponibilita")).click();
         driver.findElement(By.name("disponibilita")).sendKeys("3");
-       // driver.findElement(By.id("foto")).click();
-        driver.findElement(By.id("foto")).sendKeys("C:\\Users\\Michele\\IdeaProjects\\bollicine\\bollicineWeb\\src\\main\\webapp\\imgs\\vino1.jpg");
+        File file= new File("src/main/webapp/imgs/vino1.jpg");
+        driver.findElement(By.id("foto")).sendKeys(file.getAbsolutePath());
         driver.findElement(By.cssSelector(".buttonProtected:nth-child(25)")).click();
 
         //prendo il numero di righe nella tabella che rappresentano i prodotti
