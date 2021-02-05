@@ -13,7 +13,7 @@ class ProdottoDAOTest {
 
     @Test
     void doSaveProdotto() throws IOException, SQLException {
-        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","/Users/roccopagliarulo/IdeaProjects/bollicine/bollicineWeb/src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
+        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         ProdottoDAO p = new ProdottoDAO();
         int key=p.doSaveProdotto(prod);
 
@@ -25,7 +25,7 @@ class ProdottoDAOTest {
 
     @Test
     void doUpdateProdotto() throws IOException, SQLException {
-        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","/Users/roccopagliarulo/IdeaProjects/bollicine/bollicineWeb/src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
+        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         ProdottoDAO p = new ProdottoDAO();
         int key=p.doSaveProdotto(prod);
         prod.setIdProdotto(key);
@@ -39,7 +39,7 @@ class ProdottoDAOTest {
 
     @Test
     void doRetriveAll() throws IOException, SQLException {
-        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","/Users/roccopagliarulo/IdeaProjects/bollicine/bollicineWeb/src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
+        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         ProdottoDAO p = new ProdottoDAO();
         int key=p.doSaveProdotto(prod);
 
@@ -52,7 +52,7 @@ class ProdottoDAOTest {
 
     @Test
     void doRetriveByCat() throws SQLException, IOException {
-        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","/Users/roccopagliarulo/IdeaProjects/bollicine/bollicineWeb/src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
+        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         ProdottoDAO p = new ProdottoDAO();
         int key=p.doSaveProdotto(prod);
 
@@ -65,7 +65,7 @@ class ProdottoDAOTest {
 
     @Test
     void doRetriveImgById() throws IOException, SQLException {
-        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","/Users/roccopagliarulo/IdeaProjects/bollicine/bollicineWeb/src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
+        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         ProdottoDAO p = new ProdottoDAO();
         int key=p.doSaveProdotto(prod);
 
@@ -78,7 +78,7 @@ class ProdottoDAOTest {
 
     @Test
     void doRetriveById() throws IOException, SQLException {
-        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","/Users/roccopagliarulo/IdeaProjects/bollicine/bollicineWeb/src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
+        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         ProdottoDAO p = new ProdottoDAO();
         int key=p.doSaveProdotto(prod);
 
@@ -89,7 +89,7 @@ class ProdottoDAOTest {
 
     @Test
     void updateDispo() throws IOException, SQLException {
-        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","/Users/roccopagliarulo/IdeaProjects/bollicine/bollicineWeb/src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
+        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         ProdottoDAO p = new ProdottoDAO();
         int key=p.doSaveProdotto(prod);
 
@@ -102,7 +102,7 @@ class ProdottoDAOTest {
 
     @Test
     void removeProdotto() throws IOException, SQLException {
-        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","/Users/roccopagliarulo/IdeaProjects/bollicine/bollicineWeb/src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
+        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         ProdottoDAO p = new ProdottoDAO();
         int key=p.doSaveProdotto(prod);
 
