@@ -112,6 +112,9 @@ public class InsertUpdateProductControl extends HttpServlet {
         //perendo il path dell'immagine
         String immagine=null;
         String appPath = req.getServletContext().getRealPath("");
+
+        System.out.println(req.getServletContext().getRealPath(""));
+
         String savePath = appPath + File.separator + SAVE_DIR;
 
         File fileSaveDir = new File(savePath);
