@@ -23,7 +23,6 @@ public class ValidateEmailControl extends HttpServlet {
 
         try {
             int rs=bean.controlEmail(email);
-
             String obj = new Gson().toJson(rs);
 
             resp.setContentType("application/json");

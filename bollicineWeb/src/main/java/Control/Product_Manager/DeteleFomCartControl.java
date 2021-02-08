@@ -21,10 +21,6 @@ public class DeteleFomCartControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CarrelloService cart = (CarrelloService) req.getSession().getAttribute("cart");
-        if(cart == null) {
-            cart = new CarrelloService();
-            req.getSession().setAttribute("cart", cart);
-        }
 
         int id = Integer.parseInt(req.getParameter("id"));
 

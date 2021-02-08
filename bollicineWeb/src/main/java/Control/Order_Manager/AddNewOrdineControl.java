@@ -21,15 +21,19 @@ public class AddNewOrdineControl extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         CarrelloService carrello= (CarrelloService) req.getSession().getAttribute("cart");
         int idCarta = Integer.parseInt(req.getParameter("idCarta"));
         int idIndirizzo= Integer.parseInt(req.getParameter("idIndirizzo"));
+
         int result=-1;
         try {
             result=bean.salvaOdine(((AccountDTO) req.getSession().getAttribute("utente")).getId(),carrello,idCarta,idIndirizzo);
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
 
         if(result==1) {
             //rimuovo il carrello dalla sessione
@@ -52,7 +56,7 @@ public class AddNewOrdineControl extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);
     }
 }

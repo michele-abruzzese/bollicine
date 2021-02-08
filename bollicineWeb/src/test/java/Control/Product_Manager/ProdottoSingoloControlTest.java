@@ -1,12 +1,14 @@
-package Control;
+package Control.Product_Manager;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-import Control.User_Manager.LoginControl;
+import static org.junit.jupiter.api.Assertions.*;
 import java.io.IOException;
+import java.sql.SQLException;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+
+import Model.DAO.*;
+import Model.DTO.*;
+import Model.Services.CarrelloService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
@@ -14,16 +16,15 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.mock.web.MockServletConfig;
 
-class LoginControlTest {
-
-    private LoginControl servlet;
+class ProdottoSingoloControlTest {
+    private ProdottoSingoloControl servlet;
     private MockHttpServletRequest request;
     private MockHttpServletResponse response;
     private MockHttpSession session;
 
     @BeforeEach
     public void setUp() {
-        servlet = new LoginControl();
+        servlet = new ProdottoSingoloControl();
         request = new MockHttpServletRequest();
         response = new MockHttpServletResponse();
         request.setSession(session);
@@ -36,26 +37,20 @@ class LoginControlTest {
         servlet.init(sg);
     }
 
-
     @Test
-    public void testLoginAdmin() throws ServletException, IOException {
+    public void testProdottoSingolo() throws IOException, SQLException, ServletException {
+        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
+        ProdottoDAO p = new ProdottoDAO();
+        int idP=p.doSaveProdotto(prod);
 
-        request.addParameter("email","email@admin.com");
-        request.addParameter("password","admin");
+        request.setParameter("id", String.valueOf(idP));
 
-        servlet.doGet(request,response);
+        servlet.doPost(request,response);
 
-        assertEquals("admin",request.getSession().getAttribute("adminRoles"));
-    }
+        ProdottoDTO prod2 = (ProdottoDTO) request.getAttribute("product");
 
-   @Test
-    public void testLoginUtente() throws ServletException, IOException {
+        assertEquals(idP,prod2.getIdProdotto());
 
-        request.addParameter("email","higelik497@febula.com");
-        request.addParameter("password","terra");
-
-        servlet.doGet(request,response);
-
-        assertNotNull(request.getSession().getAttribute("utente"));
+        p.removeProdotto(idP);
     }
 }

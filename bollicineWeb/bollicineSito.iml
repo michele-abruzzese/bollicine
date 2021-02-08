@@ -68,5 +68,7 @@
     <orderEntry type="library" name="okio-1.14.0" level="project" />
     <orderEntry type="library" name="byte-buddy-1.8.15" level="project" />
     <orderEntry type="library" name="guava-25.0-jre" level="project" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="spring-web-5.3.3" level="project" />
   </component>
 </module>

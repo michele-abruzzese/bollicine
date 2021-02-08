@@ -13,9 +13,10 @@ import java.sql.SQLException;
 public class GetImmagineControl extends HttpServlet {
     static ProdottoService bean=new ProdottoService();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         int id = Integer.parseInt(request.getParameter("id"));
+
 
         if (id != 0)
         {
@@ -40,7 +41,7 @@ public class GetImmagineControl extends HttpServlet {
         }
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
 }
