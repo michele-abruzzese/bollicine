@@ -191,8 +191,6 @@ class OrdineServiceTest {
 
 
 
-        OrdineDAO or = new OrdineDAO();
-        or.removeOrder(or.doRetriveAll().get(or.doRetriveAll().size()-1).getIdOrdine());
         p.removeProdotto(idP);
         a.removeAccount(idAc);
         a.removeAccount(idAc2);
