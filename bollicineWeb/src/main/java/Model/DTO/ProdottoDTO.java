@@ -1,5 +1,7 @@
 package Model.DTO;
 
+import java.util.Objects;
+
 public class ProdottoDTO {
     int idProdotto;
     String nome;
@@ -97,5 +99,18 @@ public class ProdottoDTO {
 
     public void setDisponibilità(int disponibilità) {
         this.disponibilità = disponibilità;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ProdottoDTO that = (ProdottoDTO) o;
+        return idProdotto == that.idProdotto && annata == that.annata && Double.compare(that.prezzo, prezzo) == 0 && disponibilità == that.disponibilità && nome.equals(that.nome) && categoria.equals(that.categoria) && descrizione.equals(that.descrizione) && immagine.equals(that.immagine) && tipo.equals(that.tipo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idProdotto, nome, categoria, descrizione, immagine, tipo, annata, prezzo, disponibilità);
     }
 }

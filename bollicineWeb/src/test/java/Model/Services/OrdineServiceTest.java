@@ -196,4 +196,79 @@ class OrdineServiceTest {
         a.removeAccount(idAc2);
 
     }
+
+    @Test
+    void salvaOrdineWE4() throws SQLException, IOException {
+        AccountDTO account = new AccountDTO(0,"Giulio","Costante","giu@gmail.com","password","confermato","utente");
+        AccountDAO a= new AccountDAO();
+        int idAc=a.doSaveAcount(account);
+
+        CartaCreditoDTO card = new CartaCreditoDTO(0,"Giulio","Costante",123456L,123,"2020-07-12",idAc);
+        CartaCreditoDAO c = new CartaCreditoDAO();
+        int idCard=c.doSaveCartaCredito(card);
+
+        OrdineService o = new OrdineService();
+
+        assertEquals(0,o.salvaOdine(-1,null,idCard,-1));
+
+        a.removeAccount(idAc);
+    }
+
+    @Test
+    void salvaOrdineWE5() throws SQLException, IOException {
+        AccountDTO account = new AccountDTO(0,"Giulio","Costante","giu@gmail.com","password","confermato","utente");
+        AccountDAO a= new AccountDAO();
+        int idAc=a.doSaveAcount(account);
+
+        AccountDTO account2 = new AccountDTO(0,"Alfredo", "Cornacchia", "alfre@gmail.com","passowrd","confermato","utente");
+        int idAc2 = a.doSaveAcount(account2);
+
+        CarrelloService cart = new CarrelloService();
+
+        CartaCreditoDTO card = new CartaCreditoDTO(0,"Giulio","Costante",123456L,123,"2021-07-12",idAc2);
+        CartaCreditoDAO c = new CartaCreditoDAO();
+        int idCard=c.doSaveCartaCredito(card);
+
+        IndirizzoSpedDTO ind = new IndirizzoSpedDTO(0,"Giulio","Costante","Via Roma",84084,"Fisciano","Salerno","ufficio",idAc2);
+        IndirizzoSpedDAO i=new IndirizzoSpedDAO();
+        int idInd=i.doSaveIndirizzo(ind);
+
+        a.removeAccount(idAc);
+        i.removeIndirizzo(idInd);
+
+        OrdineService o= new OrdineService();
+
+        assertEquals(-1,o.salvaOdine(idAc,cart,idCard,idInd));
+
+        a.removeAccount(idAc2);
+    }
+
+    @Test
+    void salvaOrdineWE6() throws SQLException, IOException {
+        AccountDTO account = new AccountDTO(0,"Giulio","Costante","giu@gmail.com","password","confermato","utente");
+        AccountDAO a= new AccountDAO();
+        int idAc=a.doSaveAcount(account);
+
+        ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,22,5);
+        ProdottoDAO p = new ProdottoDAO();
+        int idP=p.doSaveProdotto(prod);
+
+        CarrelloService cart = new CarrelloService();
+        cart.addProduct(p.doRetriveById(idP),2);
+
+        CartaCreditoDTO card = new CartaCreditoDTO(0,"Giulio","Costante",123456L,123,"2020-07-12",idAc);
+        CartaCreditoDAO c = new CartaCreditoDAO();
+        int idCard=c.doSaveCartaCredito(card);
+
+        IndirizzoSpedDTO ind = new IndirizzoSpedDTO(0,"Giulio","Costante","Via Roma",84084,"Fisciano","Salerno","ufficio",idAc);
+        IndirizzoSpedDAO i=new IndirizzoSpedDAO();
+        int idInd=i.doSaveIndirizzo(ind);
+
+        OrdineService o = new OrdineService();
+        assertEquals(0,o.salvaOdine(idAc,cart,idCard,idInd));
+
+        a.removeAccount(idAc);
+        p.removeProdotto(idP);
+
+    }
 }

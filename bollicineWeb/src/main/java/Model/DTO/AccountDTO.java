@@ -1,5 +1,7 @@
 package Model.DTO;
 
+import java.util.Objects;
+
 public class AccountDTO {
     int id;
     String nome;
@@ -78,6 +80,18 @@ public class AccountDTO {
         this.tipo = tipo;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AccountDTO that = (AccountDTO) o;
+        return id == that.id && nome.equals(that.nome) && cognome.equals(that.cognome) && email.equals(that.email) && password.equals(that.password) && stato.equals(that.stato) && tipo.equals(that.tipo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nome, cognome, email, password, stato, tipo);
+    }
 }
 
 

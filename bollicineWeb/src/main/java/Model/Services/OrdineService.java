@@ -37,9 +37,12 @@ public class OrdineService {
             return 0;
         }
 
+
         //prendo i prodotti dal carrello
         List<ProdottoDTO> prodotti = cart.getProducts();
-
+        if(prodotti.size()==0){
+            return -1;
+        }
         //dati dell'ordine
         OrdineDTO ordine = new OrdineDTO();
         ordine.setIdAccount(idAccount);
@@ -49,12 +52,15 @@ public class OrdineService {
         ordine.setIdIndirizzo(idIndirizzo);
         ordine.setIdCarta(idCarta);
 
+
         int idOrdine=-1;
+
+
+
         if(carteDiAccount.contains(cartaCreditoDAO.doRetriveById(idCarta)) && indirizziDiAccount.contains(indirizzoSpedDAO.doRetriveById(idIndirizzo))) {
             //salvo l'ordine
             idOrdine= ordineDAO.doSaveOrdine(ordine);
         }
-
 
         //leggo l'iva da file
         FileReader fr = new FileReader("src/main/webapp/WEB-INF/iva.txt");

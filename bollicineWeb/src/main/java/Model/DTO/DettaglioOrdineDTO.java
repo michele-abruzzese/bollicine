@@ -1,5 +1,7 @@
 package Model.DTO;
 
+import java.util.Objects;
+
 public class DettaglioOrdineDTO {
     int idPodotto;
     int idOrdine;
@@ -56,5 +58,18 @@ public class DettaglioOrdineDTO {
 
     public void setIva(int iva) {
         this.iva = iva;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DettaglioOrdineDTO that = (DettaglioOrdineDTO) o;
+        return idPodotto == that.idPodotto && idOrdine == that.idOrdine && quantità == that.quantità && Double.compare(that.prezzoUnit, prezzoUnit) == 0 && iva == that.iva;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idPodotto, idOrdine, quantità, prezzoUnit, iva);
     }
 }

@@ -89,8 +89,5 @@ class DettaglioOrdineDTOTest {
         assertEquals(1,dettaglio.getIva());
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
+
 }

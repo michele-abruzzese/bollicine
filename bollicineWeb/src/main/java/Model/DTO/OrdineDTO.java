@@ -1,5 +1,7 @@
 package Model.DTO;
 
+import java.util.Objects;
+
 public class OrdineDTO {
     int idOrdine;
     double totOrdine;
@@ -76,5 +78,18 @@ public class OrdineDTO {
 
     public void setIdAccount(int idAccount) {
         this.idAccount = idAccount;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrdineDTO ordineDTO = (OrdineDTO) o;
+        return idOrdine == ordineDTO.idOrdine && Double.compare(ordineDTO.totOrdine, totOrdine) == 0 && idCarta == ordineDTO.idCarta && idIndirizzo == ordineDTO.idIndirizzo && idAccount == ordineDTO.idAccount && data.equals(ordineDTO.data) && metodoPag.equals(ordineDTO.metodoPag);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idOrdine, totOrdine, data, metodoPag, idCarta, idIndirizzo, idAccount);
     }
 }

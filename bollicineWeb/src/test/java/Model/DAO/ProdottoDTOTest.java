@@ -148,8 +148,5 @@ class ProdottoDTOTest {
         assertEquals(1,prod.getDisponibilità());
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
+
 }

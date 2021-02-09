@@ -39,7 +39,7 @@ class DettaglioOrdineDAOTest {
 
         List<DettaglioOrdineDTO> dettagli = d.doRetriveAll();
 
-        assertEquals(idOr,dettagli.get(dettagli.size()-1).getIdOrdine());
+        assertEquals(dett,dettagli.get(dettagli.size()-1));
 
         d.removeDettaglioOrdine(idP,idOr);
         o.removeOrder(idOr);
@@ -115,6 +115,8 @@ class DettaglioOrdineDAOTest {
         DettaglioOrdineDAO d = new DettaglioOrdineDAO();
         d.doSaveDettaglioOrdine(dett);
 
+        List<DettaglioOrdineDTO> dettagli = d.doRetriveAll();
+
         d.removeDettaglioOrdine(idP,idOr);
         o.removeOrder(idOr);
         i.removeIndirizzo(idInd);
@@ -122,9 +124,10 @@ class DettaglioOrdineDAOTest {
         a.removeAccount(idAc);
         p.removeProdotto(idP);
 
+        List<DettaglioOrdineDTO> dettagli2 = d.doRetriveAll();
 
-        List<DettaglioOrdineDTO> dettagli = d.doRetriveAll();
 
-        assertNotEquals(idOr,dettagli.get(dettagli.size()-1).getIdOrdine());
+
+        assertEquals(dettagli.size()-1,dettagli2.size());
     }
 }

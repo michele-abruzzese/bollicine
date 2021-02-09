@@ -15,12 +15,17 @@ class ProdottoDAOTest {
     void doSaveProdotto() throws IOException, SQLException {
         ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         ProdottoDAO p = new ProdottoDAO();
-        int key=p.doSaveProdotto(prod);
 
-        assertEquals(key,p.doRetriveById(key).getIdProdotto());
+        List <ProdottoDTO>products=p.doRetriveAll();
+
+        int key=p.doSaveProdotto(prod);
+        prod.setIdProdotto(key);
+
+        List <ProdottoDTO>products2=p.doRetriveAll();
+
+        assertEquals(products.size(),products2.size()-1);
 
         p.removeProdotto(key);
-
     }
 
     @Test
@@ -41,11 +46,15 @@ class ProdottoDAOTest {
     void doRetriveAll() throws IOException, SQLException {
         ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         ProdottoDAO p = new ProdottoDAO();
+
+        List <ProdottoDTO>products=p.doRetriveAll();
+
         int key=p.doSaveProdotto(prod);
+        prod.setIdProdotto(key);
 
-        List<ProdottoDTO> prods =p.doRetriveAll();
+        List <ProdottoDTO>products2=p.doRetriveAll();
 
-        assertEquals(key,prods.get(prods.size()-1).getIdProdotto());
+        assertEquals(products.size(),products2.size()-1);
 
         p.removeProdotto(key);
     }
@@ -68,8 +77,6 @@ class ProdottoDAOTest {
         ProdottoDTO prod = new ProdottoDTO(0,"Tavernello","Bianco","Vino in cartone","src/main/webapp/imgs/vino-bianco.jpg","Bianco",2020,1.2,5);
         ProdottoDAO p = new ProdottoDAO();
         int key=p.doSaveProdotto(prod);
-
-
 
         assertNotNull(p.doRetriveImgById(key));
 
@@ -106,8 +113,12 @@ class ProdottoDAOTest {
         ProdottoDAO p = new ProdottoDAO();
         int key=p.doSaveProdotto(prod);
 
+        List<ProdottoDTO>products= p.doRetriveAll();
+
         p.removeProdotto(key);
 
-        assertNotEquals(key,p.doRetriveById(key).getIdProdotto());
+        List<ProdottoDTO>products2= p.doRetriveAll();
+
+        assertEquals(products.size(),products2.size()+1);
     }
 }

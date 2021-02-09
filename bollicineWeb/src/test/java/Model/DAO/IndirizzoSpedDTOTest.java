@@ -145,8 +145,4 @@ class IndirizzoSpedDTOTest {
         assertEquals(1,sped.getIdAccount());
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
 }

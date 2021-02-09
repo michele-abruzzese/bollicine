@@ -14,12 +14,11 @@ class AccountDAOTest {
         AccountDTO account = new AccountDTO(0,"Alfredo","Cornacchia","alfre@gmail.com","password","confermato","utente");
         AccountDAO ac= new AccountDAO();
 
+
         int id= ac.doSaveAcount(account);
+        account.setId(id);
 
-        AccountDTO ac1= ac.doRetriveByEmail("alfre@gmail.com");
-
-       assertEquals(id,ac1.getId());
-
+       assertEquals(account,ac.doRetriveById(id));
 
         ac.removeAccount(id);
     }
@@ -34,7 +33,8 @@ class AccountDAOTest {
         ac.removeAccount(id);
 
         AccountDTO ac1= ac.doRetriveById(id);
-        assertNotEquals(ac1,account);
+
+        assertNotEquals(id,ac1.getId());
     }
 
     @Test
@@ -43,10 +43,9 @@ class AccountDAOTest {
         AccountDAO ac= new AccountDAO();
 
         int id=ac.doSaveAcount(account);
+        account.setId(id);
 
-        AccountDTO ac1=ac.doRetriveById(id);
-
-        assertEquals(id,ac1.getId());
+        assertEquals(account,ac.doRetriveById(id));
 
         ac.removeAccount(id);
     }
@@ -57,10 +56,9 @@ class AccountDAOTest {
         AccountDAO ac= new AccountDAO();
 
         int id= ac.doSaveAcount(account);
+        account.setId(id);
 
-        AccountDTO ac1= ac.doRetriveByEmail("alfre@gmail.com");
-
-        assertEquals(account.getEmail(),ac1.getEmail());
+        assertEquals(account,ac.doRetriveByEmail("alfre@gmail.com"));
 
         ac.removeAccount(id);
 
@@ -83,5 +81,8 @@ class AccountDAOTest {
         int control1=ac.controlEmail(account.getEmail());
 
         assertEquals(0,control1);
+        /*
+        ritorna 0 allora vuol dire che non esiste nel db
+         */
     }
 }

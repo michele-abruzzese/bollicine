@@ -49,6 +49,7 @@ public class OrdineDAO {
             ordine.setIdOrdine(rs.getInt("idOrdine"));
             ordine.setTotOrdine(rs.getFloat("TotaleOrdine"));
             ordine.setData(rs.getString("Data"));
+            ordine.setMetodoPag(rs.getString("MetodoPagamento"));
             ordine.setIdCarta(rs.getInt("idCarta"));
             ordine.setIdIndirizzo(rs.getInt("idIndirizzo"));
             ordine.setIdAccount(rs.getInt("idAccount"));

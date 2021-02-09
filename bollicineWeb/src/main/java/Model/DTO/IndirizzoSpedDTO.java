@@ -1,5 +1,7 @@
 package Model.DTO;
 
+import java.util.Objects;
+
 public class IndirizzoSpedDTO {
     int idIndirizzo;
     String nome;
@@ -96,5 +98,18 @@ public class IndirizzoSpedDTO {
 
     public void setIdAccount(int idAccount) {
         this.idAccount = idAccount;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        IndirizzoSpedDTO that = (IndirizzoSpedDTO) o;
+        return idIndirizzo == that.idIndirizzo && cap == that.cap && idAccount == that.idAccount && Objects.equals(nome, that.nome) && Objects.equals(cognome, that.cognome) && Objects.equals(indirizzo, that.indirizzo) && Objects.equals(città, that.città) && Objects.equals(provincia, that.provincia) && Objects.equals(alias, that.alias);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idIndirizzo, nome, cognome, indirizzo, cap, città, provincia, alias, idAccount);
     }
 }
