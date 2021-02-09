@@ -27,7 +27,7 @@ public class InsertUpdateProductControl extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action=req.getParameter("action");
         if (action!=null && action.equalsIgnoreCase("ins")){
 
@@ -42,6 +42,7 @@ public class InsertUpdateProductControl extends HttpServlet {
             //prendo il path dell'immagine
             String immagine=getPathImage(req);
 
+            System.out.println(immagine);
 
             try {
                 bean.inserisciProdottoNelCatalogo(nome,categoria,descrizione,immagine,tipo,annata,prezzo,disponibilità);
@@ -113,14 +114,18 @@ public class InsertUpdateProductControl extends HttpServlet {
         String immagine=null;
         String appPath = req.getServletContext().getRealPath("");
 
-        System.out.println(req.getServletContext().getRealPath(""));
+        System.out.println(appPath);
 
         String savePath = appPath + File.separator + SAVE_DIR;
+
+        System.out.println(savePath);
 
         File fileSaveDir = new File(savePath);
         if (!fileSaveDir.exists()) {
             fileSaveDir.mkdir();
         }
+
+
 
         for (Part part : req.getParts() ){
             String fileName = extractFileName(part);

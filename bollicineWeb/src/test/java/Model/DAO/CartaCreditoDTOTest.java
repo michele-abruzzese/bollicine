@@ -130,4 +130,8 @@ class CartaCreditoDTOTest {
         assertEquals(1,carta.getIdAccount());
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }

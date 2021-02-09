@@ -26,7 +26,7 @@ public class OrdineService {
     //DAO crate
     static  CartaCreditoDAO cartaCreditoDAO = new CartaCreditoDAO();
 
-    public int salvaOdine(int idAccount, CarrelloService cart, int idCarta, int idIndirizzo) throws SQLException, IOException {
+    public int salvaOdine(int idAccount, CarrelloService cart, int idCarta, int idIndirizzo) throws IOException, SQLException {
 
         LocalDate dataScadenza= LocalDate.parse(cartaCreditoDAO.doRetriveById(idCarta).getScandenza());
         //se è scaduta la carta
