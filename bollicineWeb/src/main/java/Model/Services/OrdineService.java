@@ -28,6 +28,9 @@ public class OrdineService {
 
     public int salvaOdine(int idAccount, CarrelloService cart, int idCarta, int idIndirizzo) throws IOException, SQLException {
 
+        List <CartaCreditoDTO> carteDiAccount = cartaCreditoDAO.doRetriveByAccount(idAccount);
+        List <IndirizzoSpedDTO> indirizziDiAccount = indirizzoSpedDAO.doRetriveByAcount(idAccount);
+
         LocalDate dataScadenza= LocalDate.parse(cartaCreditoDAO.doRetriveById(idCarta).getScandenza());
         //se è scaduta la carta
         if(dataScadenza.isBefore(LocalDate.now()) || dataScadenza.isEqual(LocalDate.now())) {
@@ -46,9 +49,12 @@ public class OrdineService {
         ordine.setIdIndirizzo(idIndirizzo);
         ordine.setIdCarta(idCarta);
 
+        int idOrdine=-1;
+        if(carteDiAccount.contains(cartaCreditoDAO.doRetriveById(idCarta)) && indirizziDiAccount.contains(indirizzoSpedDAO.doRetriveById(idIndirizzo))) {
+            //salvo l'ordine
+            idOrdine= ordineDAO.doSaveOrdine(ordine);
+        }
 
-        //salvo l'ordine
-        int idOrdine= ordineDAO.doSaveOrdine(ordine);
 
         //leggo l'iva da file
         FileReader fr = new FileReader("src/main/webapp/WEB-INF/iva.txt");
