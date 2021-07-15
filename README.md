@@ -1,4 +1,12 @@
 # bollicine
+
+Progetto realizzato per il corso di Ingegneria del software della laurea triennale in Informatica presso l'Università degli studi di Salerno.
+
+Il progetto prevede la realizzazione di un sito di e-commerce che mira alla vendita di vini e, in primo luogo, lo scopo fondamentale del progetto è quello di generare la documentazione adatta alla descrizione di tutte le scelte architetturali e non. 
+
+Il progetto è  stato realizzato da Michele Abruzzese e Rocco Pagliarulo.
+
+
 ---------- Run Test in Selenium IDE ----------
 I test sono stati divisi per funzionalità (vedi Test Plan/ paragrafo 9)
 I test funzionali dell'inserimento/modifica prodotto, login utente e registrazione utente possono essere eseguiti in intellij
